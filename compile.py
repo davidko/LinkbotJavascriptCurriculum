@@ -8,60 +8,85 @@ def main():
     print('Usage: {0} <curriculum_file.xml>'.format(sys.argv[0]))
     return
 
-class HTMLElement():
+  h = Book()
+  print(h.parse(sys.argv[1]))
+
+class Book():
   def __init__(self):
     self.root = etree.Element('html')
     self.head = etree.SubElement(self.root, 'head')
     self.title = etree.SubElement(self.head, 'title')
     self.body = etree.SubElement(self.root, 'body')
-    self.tags = ['book', 'chapter', 'section', 'subsection', 
-                 'p', 'figure', 'figref', 'question', 'answer']
-    self.parseFuncs = {}
-    for t in self.tags:
-      self.parseFuncs[t] = getattr(self, '_parseTag_'+t)
+
+    self.chapterNum = 0
+    self.figNum = 0
+
+    self.sectionDepth = 0
+    self.sectionCount = [0, 0, 0, 0, 0]
 
   def parse(self, filename):
     self.tree = etree.parse(filename)
     root = self.tree.getroot()
-    self.parseFuncs[root.tag](None, root)
+#self.parseFuncs[root.tag](None, root)
+    getattr(self, '_parseTag_' + root.tag)(None, root)
+    return etree.dump(self.root)
+
+  def _call_parseFunc(self, parent, elem):
+    try:
+      #print('BEGINPARSE: {0}'.format(elem.tag))
+      getattr(self, '_parseTag_' + elem.tag)(parent, elem)
+      #print('PARSE: {0}'.format(elem.tag))
+    except Exception as e:
+      #print(e)
+      parent.append(elem)
+      #print('PARSEPASS: {0}'.format(elem.tag))
 
   def _parseTag_book(self, parent, elem):
-    self.title.text = elem['title']
+    self.title.text = elem.attrib['title']
     for child in elem:
-      self.parseFuncs[child.tag](self.body, child)
+      self._call_parseFunc(self.body, child)
 
   def _parseTag_chapter(self, parent, elem):
     header = etree.SubElement(parent, 'h1')
-    header.text = elem.text
+    self.chapterNum += 1
+    self.sectionDepth = 0;
+    self.sectionCount = [0]*len(self.sectionCount)
+    header.text = 'Chapter ' + str(self.chapterNum) + ': ' + elem.attrib['title']
     for child in elem:
-      self.parseFuncs[child.tag](parent, child)
+      self._call_parseFunc(parent, child)
 
   def _parseTag_section(self, parent, elem):
-    header = etree.SubElement(parent, 'h2')
-    header.text = elem.text
+    header = etree.SubElement(parent, 'h' + str(self.sectionDepth+2))
+    self.sectionCount[self.sectionDepth] += 1
+    self.sectionDepth += 1
+    self.sectionCount[self.sectionDepth:] = [0]*(len(self.sectionCount)-self.sectionDepth)
+    header.text = 'Section ' + str(self.chapterNum)
+    for i in range(self.sectionDepth):
+      header.text += '.' + str(self.sectionCount[i])
+    if 'title' in elem.attrib:
+      header.text += ': ' + elem.attrib['title']
     for child in elem:
-      self.parseFuncs[child.tag](parent, child)
-
-  def _parseTag_subsection(self, parent, elem):
-    header = etree.SubElement(parent, 'h3')
-    header.text = elem.text
-    for child in elem:
-      self.parseFuncs[child.tag](parent, child)
-
-  def _parseTag_subsubsection(self, parent, elem):
-    header = etree.SubElement(parent, 'h4')
-    header.text = elem.text
-    for child in elem:
-      self.parseFuncs[child.tag](parent, child)
+      self._call_parseFunc(parent, child)
+    self.sectionDepth -= 1
 
   def _parseTag_p(self, parent, elem):
     e = etree.SubElement(parent, 'p')
     e.text = elem.text
     for child in elem:
-      self.parseFuncs[child.tag](e, child)
+      self._call_parseFunc(parent, child)
 
   def _parseTag_figure(self, parent, elem):
-    pass
+    figure = etree.SubElement(parent, 'figure')
+    img = etree.SubElement(figure, 'img')
+    img.attrib['src'] = elem.text
+    caption = etree.SubElement(figure, 'figcaption')
+    caption.text = 'Figure ' + str(self.chapterNum)
+    for i in range(self.sectionDepth):
+      caption.text += '.' + str(self.sectionCount[i])
+    self.figNum += 1
+    caption.text += '.' + str(self.figNum)
+    if 'caption' in elem.attrib:
+      caption.text += ': ' + elem.attrib['caption']
 
   def _parseTag_figref(self, parent, elem):
     pass

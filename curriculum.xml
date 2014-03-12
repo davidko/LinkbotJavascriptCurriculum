@@ -1,20 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE book [ 
 <!ELEMENT book (chapter)>
-<!ELEMENT chapter(section, question, figure, figref, p)>
-<!ELEMENT section(subsection, question, figure, figref, p)>
-<!ELEMENT subsection(subsubsection, question, figure, figref, p)>
-<!ELEMENT p("#PCDATA", question, figure, figref)>
-<!ELEMENT figure("#PCDATA")>
-<!ELEMENT figref("#PCDATA")>
-<!ELEMENT question("#PCDATA", answer)>
-<!ELEMENT answer("#PCDATA")>
+<!ELEMENT chapter (section, question, figure, figref, p)>
+<!ELEMENT section (section, question, figure, figref, p)>
+<!ELEMENT p (question, figure, figref)>
+<!ELEMENT figure (#PCDATA)>
+<!ELEMENT figref (#PCDATA)>
+<!ELEMENT question (answer)>
+<!ELEMENT answer (#PCDATA)>
 
 <!ATTLIST book title CDATA #REQUIRED>
 <!ATTLIST chapter title CDATA #REQUIRED>
 <!ATTLIST section title CDATA #REQUIRED>
-<!ATTLIST subsection title CDATA #IMPLIED>
-<!ATTLIST subsubsection title CDATA #IMPLIED>
+<!ATTLIST section title CDATA #IMPLIED>
+<!ATTLIST section title CDATA #IMPLIED>
 <!ATTLIST figure caption CDATA #IMPLIED>
 <!ATTLIST figure name CDATA #IMPLIED>
 <!ATTLIST figref name CDATA #REQUIRED>
@@ -93,7 +92,7 @@
     </p>
   </section>
   <section title="Linkbot Motor Zero Positions">
-    <subsection title="Moving the Motors to Zero Positions">
+    <section title="Moving the Motors to Zero Positions">
       <p>
       While the robot is on, you may make the robot move its joints to its
       zero positions by pressing and releasing the 'A' and 'B' buttons
@@ -109,8 +108,8 @@
       the zero positions may need to be recalibrated. The recalibration
       process is described in the next section.
       </p>
-    </subsection>
-    <subsection title="Recalibrating the Linkbot Zero Positions">
+    </section>
+    <section title="Recalibrating the Linkbot Zero Positions">
       To recalibrate the Linkbot zero positions, follow the following steps:
       <ol>
         <li> Manually move the motors to their zero positions by aligning
@@ -122,11 +121,12 @@
              the robot will flash its LED. It has now remembered its
              current motor positions as the new "Zero" position. </li>
       </ol>
-    </subsection>
+    </section>
   </section>
   <section title="Controlling a Linkbot with another Linkbot">
-    <p> Details in this section require you to have at least two Linkbots. </p>
-    <subsection title="Pairing Linkbots Together and Creating Linkbot Groups">
+    <p> Details in this section require you to have at least two Linkbots. 
+    </p>
+    <section title="Pairing Linkbots Together and Creating Linkbot Groups">
       <p> To pair two linkbots together we use a process called "bump-connect"; follow these steps:
         <ol>
           <li> Press and hold the 'B' button on the robot you want to be the controller robot. </li>
@@ -143,7 +143,8 @@
                will automatically join that group.  </li>
         </ol>
       </p>
-    <subsection title="Cycling Through Robot Control Modes">
+    </section>
+    <section title="Cycling Through Robot Control Modes">
       <p> There are a few ways the controller robot can be used to control the rost of
       the group member robots. Each different control mode is indicated by the color 
       of the LED on the controller robot. The modes may be cycled through by pressing 
@@ -153,7 +154,7 @@
         <li> Green: Tilt-Drive Mode </li>
         <li> Light Blue: Copy-Cat Mode </li>
       </ul>
-      <subsubsection title="Pose Teaching Mode">
+      <section title="Pose Teaching Mode">
         <p>
         In Pose Teaching mode, the robots can remember and play back a set of "poses". 
         In this mode, the 'A' button is used to record a pose, the Power button is used
@@ -172,8 +173,8 @@
         goes back to the first pose and repeats the process until the 'B' button is
         pressed again.
         </p>
-      </subsubsection>
-      <subsubsection title="Tilt-Drive Mode">
+      </section>
+      <section title="Tilt-Drive Mode">
         <p>
         In Tilt-Drive mode, the controller robot uses its current orientation to drive
         the motors on the group-member robots. This mode is typically used with
@@ -181,15 +182,15 @@
         robot can be tilted forward, backward, or side to side in order to drive
         the group member(s) forward, backward, or turn.
         </p>
-      </subsubsection>
-      <subsubsection title="Copy-Cat Mode">
+      </section>
+      <section title="Copy-Cat Mode">
         <p>
         In Copy-Cat mode, the group members all copy the motor positions on the 
         controller robot. You can move the motors on the controller robot and all
         of the group members will try to copy the controller.
         </p>
-      </subsubsection>
-    </subsection>
+      </section>
+    </section>
   </section>
 </chapter>
 
@@ -204,6 +205,7 @@
   </p>
   <section title="Motor Zero Positions">
     <p> Each Linkbot has 
+    </p>
   </section>
 </chapter>
 </book>

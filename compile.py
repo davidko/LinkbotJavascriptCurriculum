@@ -9,14 +9,23 @@ def main():
     return
 
   h = Book()
-  print(h.parse(sys.argv[1]))
+  h.parse(sys.argv[1])
+  h.write()
 
-class Book():
-  def __init__(self):
+class Page():
+  def __init__(self, title="title", filename="out.html"):
     self.root = etree.Element('html')
     self.head = etree.SubElement(self.root, 'head')
     self.title = etree.SubElement(self.head, 'title')
+    self.title.text = title
     self.body = etree.SubElement(self.root, 'body')
+    self.filename = filename
+
+class Book():
+  def __init__(self, hostname = None):
+    self.mainPage = Page()
+    self.title = ''
+    self.chapters = []
 
     self.chapterNum = 0
     self.figNum = 0
@@ -29,7 +38,11 @@ class Book():
     root = self.tree.getroot()
 #self.parseFuncs[root.tag](None, root)
     getattr(self, '_parseTag_' + root.tag)(None, root)
-    return etree.dump(self.root)
+
+  def write(self):
+    for c in self.chapters:
+      t = etree.ElementTree(c.root)
+      t.write(c.filename)
 
   def _call_parseFunc(self, parent, elem):
     try:
@@ -42,13 +55,17 @@ class Book():
       #print('PARSEPASS: {0}'.format(elem.tag))
 
   def _parseTag_book(self, parent, elem):
-    self.title.text = elem.attrib['title']
+    self.mainPage.title.text = elem.attrib['title']
+    self.title = elem.attrib['title']
     for child in elem:
-      self._call_parseFunc(self.body, child)
+      self._call_parseFunc(self.mainPage.body, child)
 
   def _parseTag_chapter(self, parent, elem):
-    header = etree.SubElement(parent, 'h1')
     self.chapterNum += 1
+    self.chapters.append(Page(title='Chapter '+str(self.chapterNum), 
+          filename='chapter'+str(self.chapterNum)+'.html'))
+    parent = self.chapters[-1].body
+    header = etree.SubElement(parent, 'h1')
     self.sectionDepth = 0;
     self.sectionCount = [0]*len(self.sectionCount)
     header.text = 'Chapter ' + str(self.chapterNum) + ': ' + elem.attrib['title']

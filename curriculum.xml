@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<!DOCTYPE book [ 
+<!ELEMENT book (chapter)>
+<!ELEMENT chapter(section, question, figure, figref, p)>
+<!ELEMENT section(subsection, question, figure, figref, p)>
+<!ELEMENT subsection(subsubsection, question, figure, figref, p)>
+<!ELEMENT p("#PCDATA", question, figure, figref)>
+<!ELEMENT figure("#PCDATA")>
+<!ELEMENT figref("#PCDATA")>
+<!ELEMENT question("#PCDATA", answer)>
+<!ELEMENT answer("#PCDATA")>
+
+<!ATTLIST book title CDATA #REQUIRED>
+<!ATTLIST chapter title CDATA #REQUIRED>
+<!ATTLIST section title CDATA #REQUIRED>
+<!ATTLIST subsection title CDATA #IMPLIED>
+<!ATTLIST subsubsection title CDATA #IMPLIED>
+<!ATTLIST figure caption CDATA #IMPLIED>
+<!ATTLIST figure name CDATA #IMPLIED>
+<!ATTLIST figref name CDATA #REQUIRED>
+]>
+
+<book title="Programming the Barobo Linkbot with Python">
+<chapter title="Introduction">
+<p>
+  You may already have an idea of what a robot is from a variety of TV shows 
+  and movies. They vary from tiny wheeled vehicles that beep and boop to
+  humanoid intellegent translators such as C-3PO to gigantic transforming
+  robots like Optimus Prime. Indeed, the definition of a robot is any
+  machine capable of performing a programmed task and interacting with
+  its physical environment with motors, actuators, and sensors. You may
+  be surprised to know that, by this definition, even your refrigerator 
+  may be considered a robot! Many modern refrigerators are capable of 
+  automatically making ice, maintaining a correct amount of ice in the
+  freezer, and even dispensing the ice at the touch of a button. This
+  machine is running a program, uses actuators to move the ice around,
+  and has sensors such as buttons and temperature sensors.
+</p>
+<p>
+  Indeed, robots and robotic systems have proliferated modern life, and
+  as such, the study of robotics has become extremely important. In 
+  addition to learning about robotics for the sake of robotics, certain
+  robots are specifically designed to help teach programming, math, science, 
+  physics, and even music! One such robot is the Linkbot modular robot.
+  The Linkbot has been designed to be low-cost, fully-featured, tough, and
+  easily programmable for day-to-day use by students and hobbyists of all 
+  ages. 
+</p>
+<p>
+  This curriculum is designed to bring someone with limited programming
+  experience up to speed with programming a Linkbot using the Python
+  programming language. Python is a free, fully featured, and easy 
+  language to learn and use. It's unique design makes it popular among
+  a large spectrum of programmers from absolute beginners to Google
+  wizards. 
+</p>
+<section title="Exercises">
+  <question>
+    What is a robot?
+    <answer>
+      A robot is a programmable machine that is able to perform an 
+      task which includes sensing and acting on its environment.
+    </answer>
+  </question>
+  <question>
+    Is your lawn-mower a robot? Why or why not?
+    <answer>
+      Your lawn mower is probably not considered a robot. Although it
+      acts on its environment and may have sensors, it is not 
+      programmable and does not perform an automated task.
+    </answer>
+  </question>
+</section>
+</chapter>
+
+<chapter title="Introduction to the Barobo Linkbot">
+  This chapter will discuss how to operate your Linkbots.
+  <figure 
+    caption="Linkbot Diagram and Features"
+    name="fig_schematic">images/linkbot_diagram.png</figure>
+  <section title="Turning your Linkbot On and Off">
+    <p>
+    To turn your Linkbot on and off, press and hold the power button as shown
+    in Figure <figref name="fig_schematic"/> . When turning the robot on, 
+    a purple LED will light up between the 'A' and 'B' buttons as soon as
+    you press the button. Continue holding the button until that purple LED 
+    turns blue. After the LED turns blue, you may release the power button.
+    </p>
+    <p>
+    Turning off the robot follows a similar process. As you press and hold the 
+    power button, the LED between buttons 'A' and 'B' will turn purple. Continue
+    holding the power button until the robot turns off all LEDs and shuts off.
+    </p>
+  </section>
+  <section title="Linkbot Motor Zero Positions">
+    <subsection title="Moving the Motors to Zero Positions">
+      <p>
+      While the robot is on, you may make the robot move its joints to its
+      zero positions by pressing and releasing the 'A' and 'B' buttons
+      simultaneously. The robot will move both of its motors to its zero
+      positions and lock there. To release the joints, press the 'A' and 'B'
+      buttons together again. This can be used to check the calibration of 
+      the motors. When the joints are in their zero positions, the large
+      notch on the black joint face should line up with the notch on the
+      white plastic, as shown in Figure <figref name="fig_wheelnotch"/>.
+      </p>
+      <p>
+      If the notches do not line up after the robot moves to its zero positions,
+      the zero positions may need to be recalibrated. The recalibration
+      process is described in the next section.
+      </p>
+    </subsection>
+    <subsection title="Recalibrating the Linkbot Zero Positions">
+      To recalibrate the Linkbot zero positions, follow the following steps:
+      <ol>
+        <li> Manually move the motors to their zero positions by aligning
+             the notch on the motors with the notch on the while plastic
+             body, as shown in Figure <figref name="fig_wheelnotch"/>. If
+             the motors are locked, press and release buttons 'A' and 'B' 
+             simultaneously, or power-cycle the robot to release the motors.</li>
+        <li> Hold down both buttons 'A' and 'B'. After about three seconds,
+             the robot will flash its LED. It has now remembered its
+             current motor positions as the new "Zero" position. </li>
+      </ol>
+    </subsection>
+  </section>
+  <section title="Controlling a Linkbot with another Linkbot">
+    <p> Details in this section require you to have at least two Linkbots. </p>
+    <subsection title="Pairing Linkbots Together and Creating Linkbot Groups">
+      <p> To pair two linkbots together we use a process called "bump-connect"; follow these steps:
+        <ol>
+          <li> Press and hold the 'B' button on the robot you want to be the controller robot. </li>
+          <li> Next, press and hold the 'B' button on the robot you want to be a group member
+               which will be controlled by the controller robot. </li>
+          <li> Firmly (yet gently) "bump" the two robots together. Both robots should flash
+               immediately. Then, after a second, the controller robot will display a blue
+               LED while intermittently flashing a randomly chosen group color while the
+               group member robot will display a solid group-color. The two robots are
+               now paired. </li>
+          <li> To add more robots to the group, follow the same steps above, except 
+               make sure one of the robots is already in the group. When bump-connecting
+               two robots, if one of the robots is already in a group, the other robot
+               will automatically join that group.  </li>
+        </ol>
+      </p>
+    <subsection title="Cycling Through Robot Control Modes">
+      <p> There are a few ways the controller robot can be used to control the rost of
+      the group member robots. Each different control mode is indicated by the color 
+      of the LED on the controller robot. The modes may be cycled through by pressing 
+      the 'B' button on the master robot. The control modes are: </p>
+      <ul>
+        <li> Blue: Pose Teaching Mode </li>
+        <li> Green: Tilt-Drive Mode </li>
+        <li> Light Blue: Copy-Cat Mode </li>
+      </ul>
+      <subsubsection title="Pose Teaching Mode">
+        <p>
+        In Pose Teaching mode, the robots can remember and play back a set of "poses". 
+        In this mode, the 'A' button is used to record a pose, the Power button is used
+        to reset all recorded poses, and the 'B' button is used to play or pause the
+        poses. Note that if the 'B' button is pressed while there are no recorded poses,
+        the robot will cycle to the next control method, which is Tilt-Drive mode.
+        </p>
+        <p>
+        Typically, in this mode, the user will move the robot motors to their first 
+        desired configuration and then press the 'Record' button once on any of the
+        robots in the group. Then, the user will move the robots to the next desired
+        position and press 'Record' again. They will repeat the process until they are
+        satisfied with the number of poses and then click on the 'Play' button. The
+        robots will begin by moving to the first pose, then the second, and so on
+        until it reaches the last pose. Once it reaches the last pose, it automatically
+        goes back to the first pose and repeats the process until the 'B' button is
+        pressed again.
+        </p>
+      </subsubsection>
+      <subsubsection title="Tilt-Drive Mode">
+        <p>
+        In Tilt-Drive mode, the controller robot uses its current orientation to drive
+        the motors on the group-member robots. This mode is typically used with
+        group-member robots that have wheels and are driving around. The controller
+        robot can be tilted forward, backward, or side to side in order to drive
+        the group member(s) forward, backward, or turn.
+        </p>
+      </subsubsection>
+      <subsubsection title="Copy-Cat Mode">
+        <p>
+        In Copy-Cat mode, the group members all copy the motor positions on the 
+        controller robot. You can move the motors on the controller robot and all
+        of the group members will try to copy the controller.
+        </p>
+      </subsubsection>
+    </subsection>
+  </section>
+</chapter>
+
+<chapter title="Controlling Linkbots with BaroboLink">
+  <p>
+  BaroboLink is a computer program that allows you to connect to and 
+  directly control your robots with an intuitive user-interface. It
+  can also be used to locate and organize robots so that your Python
+  programs can easily find and control robots. This chapter will familiarize
+  you with BaroboLink and concepts such as connecting to robots, motor 
+  positions, moving motors, and reading sensor values.
+  </p>
+  <section title="Motor Zero Positions">
+    <p> Each Linkbot has 
+  </section>
+</chapter>
+</book>

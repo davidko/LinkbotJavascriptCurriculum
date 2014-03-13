@@ -124,7 +124,7 @@ class Book():
     else:
       self.figures.append(Figure(url, None, fignum))
     # If there is a tail after the figure, append it onto the parent
-    print('Adding tail: {0} to {1}'.format(elem.tail, parent.tail))
+    #print('Adding tail: {0} to {1}'.format(elem.tail, parent.tail))
 
   def _parseTag_figref(self, parent, elem):
     name = elem.attrib['name']
@@ -141,6 +141,13 @@ class Book():
 
   def _parseTag_answer(self, parent, elem):
     pass
+
+  def _parseTag_output(self, parent, elem):
+    p = etree.SubElement(parent, 'p')
+    code = etree.SubElement(p, 'code')
+    code.text = elem.text
+    p = etree.SubElement(parent, 'p')
+    p.text = elem.tail
 
 if __name__ == "__main__":
   main()

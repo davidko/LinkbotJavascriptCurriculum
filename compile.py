@@ -113,17 +113,23 @@ class Book():
     if 'caption' in elem.attrib:
       caption.text += ': ' + elem.attrib['caption']
     if 'name' in elem.attrib:
-      self.figures[elem.attrib['name']] = Figure(url, elem.attrib['name'], fignum)
-      anchor = etree.SubElement(figure, 'a')
-      anchor.attrib['id'] = elem.attrib['name']
+      if elem.attrib['name'] not in self.figures:
+        self.figures[elem.attrib['name']] = Figure(url, elem.attrib['name'], fignum)
+        anchor = etree.SubElement(figure, 'a')
+        anchor.attrib['id'] = elem.attrib['name']
+      else:
+        print('WARNING: figref \'{0}\' defined multiple times.'.format(elem.attrib['name'])
     else:
       self.figures.append(Figure(url, None, fignum))
 
   def _parseTag_figref(self, parent, elem):
-    a = etree.SubElement(parent, 'a')
     name = elem.attrib['name']
-    a.attrib['href'] = self.figures[name].url + '#' + name
-    a.text = self.figures[name].number
+    if name in self.figures:
+      a = etree.SubElement(parent, 'a')
+      a.attrib['href'] = self.figures[name].url + '#' + name
+      a.text = self.figures[name].number
+    else:
+      print('WARNING: figref \'{0}\' not found.'.format(name)
 
   def _parseTag_question(self, parent, elem):
     pass

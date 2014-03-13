@@ -3,7 +3,7 @@
 <!ELEMENT book (chapter)>
 <!ELEMENT chapter (section, question, figure, figref, p)>
 <!ELEMENT section (section, question, figure, figref, p)>
-<!ELEMENT p (question, figure, figref)>
+<!ELEMENT p (question, figure, figref, output, code, snippet)>
 <!ELEMENT figure (#PCDATA)>
 <!ELEMENT figref (#PCDATA)>
 <!ELEMENT question (answer)>
@@ -19,56 +19,79 @@
 ]>
 
 <book title="Programming the Barobo Linkbot with Python">
+<chapter title="Preface">
+  <p>
+    Welcome to "Programming the Barobo Linkbot with Python". The goals of
+    this book are to familiarize you with the Python programming language
+    and essential concepts of programming robots.
+  </p> <p>
+    Some additional software is required for you to follow along with the
+    lessons in this book. The required software includes Python, several
+    third-party Python packages including our own Linkbot Control package,
+    and a good code editor. The easiest way to obtain, install, and setup
+    all of the software is to download and install our all-in-one Python
+    Curriculum bundle. The bundle includes:
+    <ul>
+      <li> Python and all required and suggested Python packages. </li>
+      <li> Ninja-IDE : A powerful and pretty looking code editor. </li>
+      <li> Curriculum code example programs. </li>
+    </ul>
+    Some users may not want to install our bundle. These include Python
+    gurus who already have a version of Python installed, and other advanced
+    users. For everyone else, we highly recommend you use our bundled.
+  </p>
+</chapter>
+
 <chapter title="Introduction">
-<p>
-  You may already have an idea of what a robot is from a variety of TV shows 
-  and movies. They vary from tiny wheeled vehicles that beep and boop to
-  humanoid intellegent translators such as C-3PO to gigantic transforming
-  robots like Optimus Prime. Indeed, the definition of a robot is any
-  machine capable of performing a programmed task and interacting with
-  its physical environment with motors, actuators, and sensors. You may
-  be surprised to know that, by this definition, even your refrigerator 
-  may be considered a robot! Many modern refrigerators are capable of 
-  automatically making ice, maintaining a correct amount of ice in the
-  freezer, and even dispensing the ice at the touch of a button. This
-  machine is running a program, uses actuators to move the ice around,
-  and has sensors such as buttons and temperature sensors.
-</p>
-<p>
-  Indeed, robots and robotic systems have proliferated modern life, and
-  as such, the study of robotics has become extremely important. In 
-  addition to learning about robotics for the sake of robotics, certain
-  robots are specifically designed to help teach programming, math, science, 
-  physics, and even music! One such robot is the Linkbot modular robot.
-  The Linkbot has been designed to be low-cost, fully-featured, tough, and
-  easily programmable for day-to-day use by students and hobbyists of all 
-  ages. 
-</p>
-<p>
-  This curriculum is designed to bring someone with limited programming
-  experience up to speed with programming a Linkbot using the Python
-  programming language. Python is a free, fully featured, and easy 
-  language to learn and use. It's unique design makes it popular among
-  a large spectrum of programmers from absolute beginners to Google
-  wizards. 
-</p>
-<section title="Exercises">
-  <question>
-    What is a robot?
-    <answer>
-      A robot is a programmable machine that is able to perform an 
-      task which includes sensing and acting on its environment.
-    </answer>
-  </question>
-  <question>
-    Is your lawn-mower a robot? Why or why not?
-    <answer>
-      Your lawn mower is probably not considered a robot. Although it
-      acts on its environment and may have sensors, it is not 
-      programmable and does not perform an automated task.
-    </answer>
-  </question>
-</section>
+  <p>
+    You may already have an idea of what a robot is from a variety of TV shows 
+    and movies. They vary from tiny wheeled vehicles that beep and boop to
+    humanoid intellegent translators such as C-3PO to gigantic transforming
+    robots like Optimus Prime. Indeed, the definition of a robot is any
+    machine capable of performing a programmed task and interacting with
+    its physical environment with motors, actuators, and sensors. You may
+    be surprised to know that, by this definition, even your refrigerator 
+    may be considered a robot! Many modern refrigerators are capable of 
+    automatically making ice, maintaining a correct amount of ice in the
+    freezer, and even dispensing the ice at the touch of a button. This
+    machine is running a program, uses actuators to move the ice around,
+    and has sensors such as buttons and temperature sensors.
+  </p>
+  <p>
+    Indeed, robots and robotic systems have proliferated modern life, and
+    as such, the study of robotics has become extremely important. In 
+    addition to learning about robotics for the sake of robotics, certain
+    robots are specifically designed to help teach programming, math, science, 
+    physics, and even music! One such robot is the Linkbot modular robot.
+    The Linkbot has been designed to be low-cost, fully-featured, tough, and
+    easily programmable for day-to-day use by students and hobbyists of all 
+    ages. 
+  </p>
+  <p>
+    This curriculum is designed to bring someone with limited programming
+    experience up to speed with programming a Linkbot using the Python
+    programming language. Python is a free, fully featured, and easy 
+    language to learn and use. It's unique design makes it popular among
+    a large spectrum of programmers from absolute beginners to Google
+    wizards. 
+  </p>
+  <section title="Exercises">
+    <question>
+      What is a robot?
+      <answer>
+        A robot is a programmable machine that is able to perform an 
+        task which includes sensing and acting on its environment.
+      </answer>
+    </question>
+    <question>
+      Is your lawn-mower a robot? Why or why not?
+      <answer>
+        Your lawn mower is probably not considered a robot. Although it
+        acts on its environment and may have sensors, it is not 
+        programmable and does not perform an automated task.
+      </answer>
+    </question>
+  </section>
 </chapter>
 
 <chapter title="Introduction to the Barobo Linkbot">
@@ -195,16 +218,191 @@
 
 <chapter title="Controlling Linkbots with BaroboLink">
   <p>
-  BaroboLink is a computer program that allows you to connect to and 
-  directly control your robots with an intuitive user-interface. It
-  can also be used to locate and organize robots so that your Python
-  programs can easily find and control robots. This chapter will familiarize
-  you with BaroboLink and concepts such as connecting to robots, motor 
-  positions, moving motors, and reading sensor values.
+    BaroboLink is a computer program that allows you to connect to and 
+    directly control your robots with an intuitive user-interface. It
+    can also be used to locate and organize robots so that your Python
+    programs can easily find and control robots. This chapter will familiarize
+    you with BaroboLink and concepts such as connecting to robots, motor 
+    positions, moving motors, and reading sensor values.
   </p>
-  <section title="Motor Zero Positions">
-    <p> Each Linkbot has 
+  <section title="Starting BaroboLink">
+    <p>
+      In Windows, BaroboLink can usually be found in the Start menu under
+      Start -> All Programs -> Barobo -> BaroboLink.
     </p>
+    <p>
+      On Mac OS X systems, BaroboLink can usually be found in the Finder under
+      Applications -> BaroboLink
+    </p>
+  </section>
+  <section title="Connecting to Robots">
+    <p>
+      <figure caption="BaroboLink Connect Panel"
+              name="fig_barobolink_connect">images/barobolink_connect.png</figure>
+      To connect to robots, they have to first be added to the list of known robots.
+      On the connect panel, shown in Figure <figref name="fig_barobolink_connect"/>,
+      type the Serial ID of the robot you want to connect to in the entry box at the
+      top and click the button labeled "Add Robot". This can be repeated for any number
+      of robots. Once robots are added to the connect panel, they will be remembered
+      in the future when you start BaroboLink again.
+    </p>
+    <p>
+      Once the robots are added to the connect panel, they still need to be connected.
+      To connect to a robot, first make sure that there is at least one Linkbot or
+      Linkbot-Dongle connected to the computer with a Micro-USB cable. The robots
+      are capable of communicating to each other wirelessly, but they cannot communicate
+      wirelessly to a computer. The connected robot or dongle acts as a translator
+      so that your computer can talk to the rest of your robots wirelessly.
+    </p>
+    <p>
+      Once the robots are added to the connect panel, you may double-click on a robot
+      to connect to it. When the robot connects, it should change its LED color
+      to green. 
+    </p>
+    <p>
+      If you experience any trouble during the connection process, rebooting the robots
+      and BaroboLink can help. Make sure the robots are not currently connected to
+      anything else, and that they are currently not paired or bumpconnected with any
+      other robots.
+    </p>
+  </section>
+  <section title="The Control Panel">
+    <p>
+      The "Control" panel in BaroboLink can be used to move a robot in various ways.
+      Once a robot is connected to BaroboLink, the joint angles and speeds of
+      the robot are displayed on the Motion Control Panel as shown in Figure
+      <figref name="fig_control_panel"\>. The Motion Control
+      Panel can be used to display information about the Linkbot’s joint
+      positions, and also control the speeds and positions of the Linkbot’s
+      joints. The panel is divided into five sections; three on the top half of
+      the panel, and two on the bottom half. The functions of these five
+      sections will be discussed in the next section.
+    </p>
+    <p>
+      Note that the Control panel can only control one robot at a time. You can
+      select which robot to control by clicking and selecting that robot's Serial ID
+      on the Connect pane on the left-hand side of the application.
+    </p>
+    <section title="Joint Control">
+      <p>
+        This portion of the Control panel can be used to make the motors on the robot
+        begin turning indefinitely. Clicking on either "up" arrow will cause that motor
+        to begin rotating in the positive direction. Similarly, clicking on either
+        "down" arrow will cause that motor to begin rotating in the negative 
+        direction. Finally, clicking on the "stop" button will cause that motor to
+        stop moving.
+      </p>
+    </section>
+    <section title="Drive Control">
+      <p>
+        This portion of the Control Panel is designed to be used with a Linkbot-I with
+        two wheels attached. The buttons in this portion of the Control Panel
+        make the robot drive forward, turn left and right, and drive backward.
+      </p>
+      <p>
+        The "Zero" button makes the robot move all of its motors to its zero positions.
+      </p>
+      <p>
+        The "Stop" button makes the robot immediately stop moving all of its motors.
+      </p>
+    </section>
+    <section title="Position (degrees)">
+      <p>
+        In this portion of the Control panel, you will find two dials which represent the
+        current joint positions of the two motors on the robot. The dials serve as both
+        input and output. You can click an drag on the dials to move the motors on the 
+        robot. You can also manually move the motors on the robot and the dials will update
+        to show the current positions of each motor.
+      </p>
+    </section>
+    <section title="Speed">
+      <p>
+        In this portion of the Control panel, you can modify the speed settings of each 
+        motor on the robot. The speed settings determine how fast the motors move
+        when using the "Joint Control" and "Drive Control" portions of the control panel.
+      </p>
+    </section>
+  </section>
+  <section title="The Auxiliary Control, Sensors Panel">
+    <p>
+      This panel allows you to access some other functionality on the
+      Linkbot, including the buzzer, LED, and accelerometer. This dialog
+      is subdivided into three sections: Buzzer Control, Accelerometer, and
+      LED Color.
+    </p>
+    <section title="Buzzer Control">
+    </section>
+    <section title="Accelerometer">
+    </section>
+    <section title="LED Color">
+    </section>
+  </section>
+</chapter>
+
+<chapter title="Introduction to Programming Linkbots with Python">
+  <section title="Getting Started with Python for Computer Programming">
+    <p>
+      In the previous chapter, we learned how to control a Linkbot using the
+      Control Panel. However, the Control panel requires human interaction
+      to control the Linkbots. In order for the Linkbot to qualify as a
+      real robot, it must be able to perform automated tasks using computer
+      programs. By using computer programs to control the Linkbot, we can
+      make the Linkbot solve complicated tasks or perform tasks automatically.
+      Each program can be saved to a different file and different programs
+      can be executed depending on what you want your robot to do. 
+      Existing programs can also be modified to solve similar problems.
+    </p>
+    <section title="Getting Started with Ninja-IDE">
+      <p>
+        Ninja-IDE is a type of program called an "Integrated Development
+        Environment (IDE)". Typically, IDE's are capable of editing code,
+        displaying code in a visually appealing manner, executing code, and
+        debugging code all in one program. 
+      </p> <p>
+        You can start Ninja by double-clicking on the Ninja-IDE icon on your
+        desktop, or by finding it in the Start menu under "Start -> All
+        Programs -> Ninja".
+      </p>
+    </section>
+    <section title="Your First Python Program">
+      <p>
+        Once you have opened Ninja, begin by creating a new program. You 
+        can do this by clicking on the "New File" icon in the toolbar on
+        the left hand side, or by clicking "File -> New" in the menu.
+      </p><p>
+        Once you have opened a new file, try typing the following code
+        into the window. Make sure you type the code in exactly as shown,
+        including capitolization and punctuation.
+        <code name="hello.py" caption="A simple Python program">code/hello.py</code>
+        After you have typed it in, save it to a file called "hello.py". 
+        Python programs typically use the suffix ".py".
+      </p><p>
+        <figure name="fig_ninja_hello" caption="A Ninja-IDE Window after executing hello.py.">
+          images/fig_ninja_hello.png </figure>
+        Once you have saved your new program to a file, click on the "Run File"
+        icon <img src="images/ninja_runfile.png"/> on the toolbar an the left-hand
+        side to run your program. Ninja should pop up an output window pane
+        with the results of your program, which should appear as shown in Figure
+        <figref name="fig_ninja_hello"/>. As shown in the figure, the output of
+        this program is
+        <output>Hello, world!</output>
+        Congratulations! You have just written and executed your first Python program!
+      </p> <p>
+        Now, lets talk about the program you just wrote. The file, "hello.py",
+        is called "Source Code". Source code for most major programming languages
+        is in a format called "plain text", which is the same format in ".txt"
+        files, which you may already be familiar with. This bare-bones format
+        cannot support any word-processor features which you may be used to, such as
+        different fonts, font sizes, embedded images, etc. 
+      </p> <p>
+        Python is capable of running program directly from source code using a 
+        process called "interpretation". Some other languages like C, C++, and
+        Java require the source code to be first "compiled" before it can be 
+        executed. The process of compilation is basically when another program,
+        called a "compiler", interprets human-readable source code into a
+        machine-native program (ones and zeros). 
+      </p>
+    </section>
   </section>
 </chapter>
 </book>

@@ -26,6 +26,16 @@
     this book are to familiarize you with the Python programming language
     and essential concepts of programming robots.
   </p> <p>
+    The intended audience for this book are people with some computer
+    experience and some basic math (Pre-Algebra) experience. The user
+    should be familiar with the concept of files and folders, and
+    opening and saving files, such as in Microsoft Word. 
+    Familiarity with word processing concepts, such as copy/paste, will
+    also be extremely useful when copying large parts of code from
+    file to file.
+    No prior 
+    programming or robotics experience is required to follow this curriculum.
+  </p> <p>
     Some additional software is required for you to follow along with the
     lessons in this book. The required software includes Python, several
     third-party Python packages including our own Linkbot Control package,
@@ -377,7 +387,7 @@
         Once you have opened a new file, try typing the following code
         into the window. Make sure you type the code in exactly as shown,
         including capitolization and punctuation.
-        <code name="hello.py" caption="A simple Python program">code/hello.py</code>
+        <codefile name="hello.py" caption="A simple Python program">code/hello.py</codefile>
         After you have typed it in, save it to a file called "hello.py". 
         Python programs typically use the suffix ".py".
       </p><p>
@@ -408,6 +418,75 @@
         called a "compiler", interprets human-readable source code into a
         machine-native program (ones and zeros). 
       </p>
+      <section title="Dissecting Your First Python Program">
+        <p>
+          Lets take a closer look at your first Python program. The first line
+          looks like this:
+          <snippet> #!/usr/bin/env python </snippet>
+          This line tells the computer that the program is a Python program.
+          You should remember to put this line at the top of all of your 
+          Python programs. This type of code which goes into all of your programs
+          is known as "Boilerplate" code. Many different languages have some sort
+          of boilerplate code; some more complex than others. The next two lines
+          look like this:
+          <snippet>
+# File: hello.py
+# Prints the text "Hello, world!" onto the screen
+          </snippet>
+          Note that both this code and the first line of code begin with the '#'
+          character. In programmer-speak, this character is usually referred to
+          as the "pound" character or a "hash" character. This character has
+          special meaning in Python. It tells the Python interpreter to ignore
+          anything else that comes after it in the line. This is known as a 
+          <b> comment </b>. Comments are text that are meant tell a human reader
+          some information but are ignored by the computer.
+        </p> <p>
+          Finally, the last line of code in the program is
+          <snippet>
+print('Hello, world!')
+          </snippet>
+          This is where the real stuff happens: printing text onto the screen.
+          The word <code>print</code> is a special command in python that is
+          used to print text onto the screen. It is known as a <b>function</b>. Python
+          comes with hundreds of built-in functions you can use to do a variety
+          of stuff. The simplest functions are fairly straight-forward to use:
+          Type the name of the function, followed by an open-parentheses '(', 
+          followed by any arguments the function needs or expects, followed by a close
+          paretheses ')'. In our case, the print function needs you to give it something
+          to print. In our example, we gave it the string 'Hello, world!' to print.
+          We will introduce more functions as you become familiar
+          with the language. 
+        </p>
+      </section>
+      <section title="Debugging Python Programs">
+        <p>
+          Eventually, you will accidentally try to run Python programs
+          with typos in them. This is totally normal and completely unavoidable.
+          Depending on where you make your typos, you may damage your Python
+          program enough such that Python can no longer properly run your program.
+          This type of error is called a "Syntax Error". Common syntax errors are
+          missing parentheses, missing quotation marks, and improperly indented
+          code. When Python encounters
+          a syntax error, it will give you an error message.
+        </p> <p>
+          Consider the following program:
+          <codefile name="hello_bad.py" caption="A Python program with a syntax error.">code/hello_bad.py</codefile>
+          When we try to run the program, we get the following output:
+          <output>
+  File "./hello_bad.py", line 7
+    print('Hello, world!)
+                        ^
+SyntaxError: EOL while scanning string literal
+          </output>
+          Errors like this may seem daunting at first. Sometimes, the error 
+          messages can be cryptic. However, the first two lines indicate that
+          the error is possibly at line 7, and even points to a possible location
+          with a little tick mark. Can you spot the error there? Generally, syntax 
+          errors are on the reported line or sometimes a few lines before.
+        </p>
+      </section>
+      <section title="Exercises">
+      </section>
     </section>
   </section>
 </chapter>

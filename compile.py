@@ -3,6 +3,15 @@
 import sys
 import xml.etree.ElementTree as etree
 
+style="""
+div.code
+{
+padding:10px;
+border:5px solid gray;
+margin:0px;
+}
+"""
+
 def main():
   if len(sys.argv) != 2:
     print('Usage: {0} <curriculum_file.xml>'.format(sys.argv[0]))
@@ -16,6 +25,8 @@ class Page():
   def __init__(self, title="title", filename="out.html"):
     self.root = etree.Element('html')
     self.head = etree.SubElement(self.root, 'head')
+    self.style = etree.SubElement(self.head, 'style')
+    self.style.text = style
     self.title = etree.SubElement(self.head, 'title')
     self.title.text = title
     self.body = etree.SubElement(self.root, 'body')
@@ -143,11 +154,27 @@ class Book():
     pass
 
   def _parseTag_output(self, parent, elem):
-    p = etree.SubElement(parent, 'p')
-    code = etree.SubElement(p, 'code')
+    code = etree.SubElement(parent, 'pre')
     code.text = elem.text
-    p = etree.SubElement(parent, 'p')
-    p.text = elem.tail
+    code.tail = elem.tail
+
+  def _parseTag_snippet(self, parent, elem):
+    code = etree.SubElement(parent, 'pre')
+    code.text = elem.text
+    code.tail = elem.tail
+
+  def _parseTag_codefile(self, parent, elem):
+    div = etree.SubElement(parent, 'div')
+    div.attrib['class'] = 'code'
+    code = etree.SubElement(div, 'pre')
+    try:
+      f = open(elem.text)
+      code.text = f.read()
+      f.close()
+    except:
+      print('WARNING: Could not open code file {0} for reading.'.format(elem.text))
+      code.text = 'ERROR: CODE FILE {0} NOT FOUND'.format(elem.text)
+    div.tail = elem.tail
 
 if __name__ == "__main__":
   main()

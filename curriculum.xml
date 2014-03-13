@@ -16,7 +16,6 @@
 <!ATTLIST section title CDATA #IMPLIED>
 <!ATTLIST figure caption CDATA #IMPLIED>
 <!ATTLIST figure name CDATA #IMPLIED>
-<!ATTLIST figref name CDATA #REQUIRED>
 ]>
 
 <book title="Programming the Barobo Linkbot with Python">

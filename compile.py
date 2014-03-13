@@ -21,11 +21,18 @@ class Page():
     self.body = etree.SubElement(self.root, 'body')
     self.filename = filename
 
+class Figure():
+  def __init__(self, url = None, name = None, number = None):
+    self.url = url
+    self.name = name
+    self.number = number
+
 class Book():
   def __init__(self, hostname = None):
     self.mainPage = Page()
     self.title = ''
     self.chapters = []
+    self.figures = {}
 
     self.chapterNum = 0
     self.figNum = 0
@@ -90,23 +97,33 @@ class Book():
     e = etree.SubElement(parent, 'p')
     e.text = elem.text
     for child in elem:
-      self._call_parseFunc(parent, child)
+      self._call_parseFunc(e, child)
 
   def _parseTag_figure(self, parent, elem):
+    self.figNum += 1
     figure = etree.SubElement(parent, 'figure')
     img = etree.SubElement(figure, 'img')
     img.attrib['src'] = elem.text
     caption = etree.SubElement(figure, 'figcaption')
-    caption.text = 'Figure ' + str(self.chapterNum)
-    for i in range(self.sectionDepth):
-      caption.text += '.' + str(self.sectionCount[i])
-    self.figNum += 1
-    caption.text += '.' + str(self.figNum)
+    caption.text = 'Figure '
+    fignum = str(self.chapterNum)
+    fignum += '.' + str(self.figNum)
+    caption.text += fignum
+    url = 'chapter'+str(self.chapterNum)+'.html'
     if 'caption' in elem.attrib:
       caption.text += ': ' + elem.attrib['caption']
+    if 'name' in elem.attrib:
+      self.figures[elem.attrib['name']] = Figure(url, elem.attrib['name'], fignum)
+      anchor = etree.SubElement(figure, 'a')
+      anchor.attrib['id'] = elem.attrib['name']
+    else:
+      self.figures.append(Figure(url, None, fignum))
 
   def _parseTag_figref(self, parent, elem):
-    pass
+    a = etree.SubElement(parent, 'a')
+    name = elem.attrib['name']
+    a.attrib['href'] = self.figures[name].url + '#' + name
+    a.text = self.figures[name].number
 
   def _parseTag_question(self, parent, elem):
     pass

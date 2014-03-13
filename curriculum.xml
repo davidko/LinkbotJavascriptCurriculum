@@ -16,6 +16,7 @@
 <!ATTLIST section title CDATA #IMPLIED>
 <!ATTLIST figure caption CDATA #IMPLIED>
 <!ATTLIST figure name CDATA #IMPLIED>
+<!ATTLIST figure file CDATA #REQUIRED>
 ]>
 
 <book title="Programming the Barobo Linkbot with Python">
@@ -98,7 +99,8 @@
   This chapter will discuss how to operate your Linkbots.
   <figure 
     caption="Linkbot Diagram and Features"
-    name="fig_schematic">images/linkbot_diagram.png</figure>
+    name="fig_schematic"
+    file="images/linkbot_diagram.png"/>
   <section title="Turning your Linkbot On and Off">
     <p>
     To turn your Linkbot on and off, press and hold the power button as shown
@@ -238,9 +240,11 @@
   <section title="Connecting to Robots">
     <p>
       <figure caption="BaroboLink Connect Panel"
-              name="fig_barobolink_connect">images/barobolink_connect.png</figure>
+              name="fig_barobolink_connect"
+              file="images/barobolink_connect.png"/>
       To connect to robots, they have to first be added to the list of known robots.
-      On the connect panel, shown in Figure <figref name="fig_barobolink_connect"/>,
+      On the connect panel, shown in Figure 
+      <figref name="fig_barobolink_connect"/>,
       type the Serial ID of the robot you want to connect to in the entry box at the
       top and click the button labeled "Add Robot". This can be repeated for any number
       of robots. Once robots are added to the connect panel, they will be remembered
@@ -271,7 +275,7 @@
       The "Control" panel in BaroboLink can be used to move a robot in various ways.
       Once a robot is connected to BaroboLink, the joint angles and speeds of
       the robot are displayed on the Motion Control Panel as shown in Figure
-      <figref name="fig_control_panel"\>. The Motion Control
+      <figref name="fig_control_panel"/>. The Motion Control
       Panel can be used to display information about the Linkbot’s joint
       positions, and also control the speeds and positions of the Linkbot’s
       joints. The panel is divided into five sections; three on the top half of
@@ -377,8 +381,10 @@
         After you have typed it in, save it to a file called "hello.py". 
         Python programs typically use the suffix ".py".
       </p><p>
-        <figure name="fig_ninja_hello" caption="A Ninja-IDE Window after executing hello.py.">
-          images/fig_ninja_hello.png </figure>
+        <figure 
+          name="fig_ninja_hello" 
+          caption="A Ninja-IDE Window after executing hello.py."
+          file="images/fig_ninja_hello.png"/>
         Once you have saved your new program to a file, click on the "Run File"
         icon <img src="images/ninja_runfile.png"/> on the toolbar an the left-hand
         side to run your program. Ninja should pop up an output window pane

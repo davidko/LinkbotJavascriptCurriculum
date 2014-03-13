@@ -68,6 +68,7 @@ class Book():
       self._call_parseFunc(self.mainPage.body, child)
 
   def _parseTag_chapter(self, parent, elem):
+    self.figNum = 0
     self.chapterNum += 1
     self.chapters.append(Page(title='Chapter '+str(self.chapterNum), 
           filename='chapter'+str(self.chapterNum)+'.html'))
@@ -102,8 +103,9 @@ class Book():
   def _parseTag_figure(self, parent, elem):
     self.figNum += 1
     figure = etree.SubElement(parent, 'figure')
+    figure.tail = elem.tail
     img = etree.SubElement(figure, 'img')
-    img.attrib['src'] = elem.text
+    img.attrib['src'] = elem.attrib['file']
     caption = etree.SubElement(figure, 'figcaption')
     caption.text = 'Figure '
     fignum = str(self.chapterNum)
@@ -118,9 +120,11 @@ class Book():
         anchor = etree.SubElement(figure, 'a')
         anchor.attrib['id'] = elem.attrib['name']
       else:
-        print('WARNING: figref \'{0}\' defined multiple times.'.format(elem.attrib['name'])
+        print('WARNING: figref \'{0}\' defined multiple times.'.format(elem.attrib['name']))
     else:
       self.figures.append(Figure(url, None, fignum))
+    # If there is a tail after the figure, append it onto the parent
+    print('Adding tail: {0} to {1}'.format(elem.tail, parent.tail))
 
   def _parseTag_figref(self, parent, elem):
     name = elem.attrib['name']
@@ -129,14 +133,14 @@ class Book():
       a.attrib['href'] = self.figures[name].url + '#' + name
       a.text = self.figures[name].number
     else:
-      print('WARNING: figref \'{0}\' not found.'.format(name)
+      print('WARNING: figref \'{0}\' not found.'.format(name))
+    a.tail = elem.tail
 
   def _parseTag_question(self, parent, elem):
     pass
 
   def _parseTag_answer(self, parent, elem):
     pass
-      
 
 if __name__ == "__main__":
   main()

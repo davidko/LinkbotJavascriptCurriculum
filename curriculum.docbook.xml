@@ -1,31 +1,20 @@
-<?xml version="1.0"?>
-<!DOCTYPE book [ 
-<!ELEMENT book (chapter)>
-<!ELEMENT chapter (section, question, figure, figref, p)>
-<!ELEMENT section (section, question, figure, figref, p)>
-<!ELEMENT p (question, figure, figref, output, code, snippet)>
-<!ELEMENT figure (#PCDATA)>
-<!ELEMENT figref (#PCDATA)>
-<!ELEMENT question (answer)>
-<!ELEMENT answer (#PCDATA)>
+<?xml version='1.0'?>
 
-<!ATTLIST book title CDATA #REQUIRED>
-<!ATTLIST chapter title CDATA #REQUIRED>
-<!ATTLIST section title CDATA #REQUIRED>
-<!ATTLIST section title CDATA #IMPLIED>
-<!ATTLIST section title CDATA #IMPLIED>
-<!ATTLIST figure caption CDATA #IMPLIED>
-<!ATTLIST figure name CDATA #IMPLIED>
-<!ATTLIST figure file CDATA #REQUIRED>
-]>
+<book>
+<info>
+  <title>Programming the Barobo Linkbot with Python</title>
+  <author>
+    <personname><firstname>David</firstname><surname>Ko</surname></personname>
+  </author>
+  <copyright><year>2014</year><holder>Barobo, Inc. </holder></copyright>
+</info>
 
-<book title="Programming the Barobo Linkbot with Python">
-<chapter title="Preface">
-  <p>
+<preface><title>Preface</title>
+  <para>
     Welcome to "Programming the Barobo Linkbot with Python". The goals of
     this book are to familiarize you with the Python programming language
     and essential concepts of programming robots.
-  </p> <p>
+  </para> <para>
     The intended audience for this book are people with some computer
     experience and some basic math (Pre-Algebra) experience. The user
     should be familiar with the concept of files and folders, and
@@ -35,26 +24,26 @@
     file to file.
     No prior 
     programming or robotics experience is required to follow this curriculum.
-  </p> <p>
+  </para> <para>
     Some additional software is required for you to follow along with the
     lessons in this book. The required software includes Python, several
     third-party Python packages including our own Linkbot Control package,
     and a good code editor. The easiest way to obtain, install, and setup
     all of the software is to download and install our all-in-one Python
     Curriculum bundle. The bundle includes:
-    <ul>
-      <li> Python and all required and suggested Python packages. </li>
-      <li> Ninja-IDE : A powerful and pretty looking code editor. </li>
-      <li> Curriculum code example programs. </li>
-    </ul>
+    <itemizedlist>
+      <listitem> <para>Python and all required and suggested Python packages. </para></listitem>
+      <listitem> <para>Ninja-IDE : A powerful and pretty looking code editor. </para></listitem>
+      <listitem> <para>Curriculum code example programs. </para></listitem>
+    </itemizedlist>
     Some users may not want to install our bundle. These include Python
     gurus who already have a version of Python installed, and other advanced
     users. For everyone else, we highly recommend you use our bundled.
-  </p>
-</chapter>
+  </para>
+</preface>
 
-<chapter title="Introduction">
-  <p>
+<chapter> <title> Introduction </title>
+  <para>
     You may already have an idea of what a robot is from a variety of TV shows 
     and movies. They vary from tiny wheeled vehicles that beep and boop to
     humanoid intellegent translators such as C-3PO to gigantic transforming
@@ -67,8 +56,8 @@
     freezer, and even dispensing the ice at the touch of a button. This
     machine is running a program, uses actuators to move the ice around,
     and has sensors such as buttons and temperature sensors.
-  </p>
-  <p>
+  </para>
+  <para>
     Indeed, robots and robotic systems have proliferated modern life, and
     as such, the study of robotics has become extremely important. In 
     addition to learning about robotics for the sake of robotics, certain
@@ -77,57 +66,76 @@
     The Linkbot has been designed to be low-cost, fully-featured, tough, and
     easily programmable for day-to-day use by students and hobbyists of all 
     ages. 
-  </p>
-  <p>
+  </para>
+  <para>
     This curriculum is designed to bring someone with limited programming
     experience up to speed with programming a Linkbot using the Python
     programming language. Python is a free, fully featured, and easy 
     language to learn and use. It's unique design makes it popular among
     a large spectrum of programmers from absolute beginners to Google
     wizards. 
-  </p>
-  <section title="Exercises">
-    <question>
-      What is a robot?
-      <answer>
-        A robot is a programmable machine that is able to perform an 
-        task which includes sensing and acting on its environment.
-      </answer>
-    </question>
-    <question>
-      Is your lawn-mower a robot? Why or why not?
-      <answer>
-        Your lawn mower is probably not considered a robot. Although it
-        acts on its environment and may have sensors, it is not 
-        programmable and does not perform an automated task.
-      </answer>
-    </question>
+  </para>
+  <section> <title>Exercises</title>
+    <qandaset>
+      <qandaentry>
+        <question>
+          <para>What is a robot?</para>
+        </question>
+        <answer>
+          <para>
+          A robot is a programmable machine that is able to perform an 
+          task which includes sensing and acting on its environment.
+          </para>
+        </answer>
+      </qandaentry>
+      <qandaentry>
+        <question>
+          <para>
+          Is your lawn-mower a robot? Why or why not?
+          </para>
+        </question>
+        <answer>
+          <para>
+          Your lawn mower is probably not considered a robot. Although it
+          acts on its environment and may have sensors, it is not 
+          programmable and does not perform an automated task. 
+          </para>
+        </answer>
+      </qandaentry>
+    </qandaset>
   </section>
 </chapter>
 
-<chapter title="Introduction to the Barobo Linkbot">
-  This chapter will discuss how to operate your Linkbots.
-  <figure 
-    caption="Linkbot Diagram and Features"
-    name="fig_schematic"
-    file="images/linkbot_diagram.png"/>
-  <section title="Turning your Linkbot On and Off">
-    <p>
+<chapter> <title>Introduction to the Barobo Linkbot</title>
+  <para>
+  This chapter will discuss how to operate your Linkbots, including 
+  tasks such as turning your Linkbot on and off and recalibrating
+  your Linkbot's motors. </para>
+  <figure xml:id="fig_schematic">
+    <title>Linkbot Diagram and Features</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/linkbot_diagram.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <section> <title>Turning your Linkbot On and Off</title>
+    <para>
     To turn your Linkbot on and off, press and hold the power button as shown
-    in Figure <figref name="fig_schematic"/> . When turning the robot on, 
+    in <xref linkend="fig_schematic"/> . When turning the robot on, 
     a purple LED will light up between the 'A' and 'B' buttons as soon as
     you press the button. Continue holding the button until that purple LED 
     turns blue. After the LED turns blue, you may release the power button.
-    </p>
-    <p>
+    </para>
+    <para>
     Turning off the robot follows a similar process. As you press and hold the 
     power button, the LED between buttons 'A' and 'B' will turn purple. Continue
     holding the power button until the robot turns off all LEDs and shuts off.
-    </p>
+    </para>
   </section>
-  <section title="Linkbot Motor Zero Positions">
-    <section title="Moving the Motors to Zero Positions">
-      <p>
+  <section> <title>Linkbot Motor Zero Positions</title>
+    <section> <title>Moving the Motors to Zero Positions</title>
+      <para>
       While the robot is on, you may make the robot move its joints to its
       zero positions by pressing and releasing the 'A' and 'B' buttons
       simultaneously. The robot will move both of its motors to its zero
@@ -135,68 +143,68 @@
       buttons together again. This can be used to check the calibration of 
       the motors. When the joints are in their zero positions, the large
       notch on the black joint face should line up with the notch on the
-      white plastic, as shown in Figure <figref name="fig_wheelnotch"/>.
-      </p>
-      <p>
+      white plastic, as shown in Figure <xref linkend="fig_wheelnotch"/>.
+      </para>
+      <para>
       If the notches do not line up after the robot moves to its zero positions,
       the zero positions may need to be recalibrated. The recalibration
       process is described in the next section.
-      </p>
+      </para>
     </section>
-    <section title="Recalibrating the Linkbot Zero Positions">
+    <section> <title>Recalibrating the Linkbot Zero Positions</title>
       To recalibrate the Linkbot zero positions, follow the following steps:
-      <ol>
-        <li> Manually move the motors to their zero positions by aligning
+      <orderedlist>
+        <listitem> Manually move the motors to their zero positions by aligning
              the notch on the motors with the notch on the while plastic
-             body, as shown in Figure <figref name="fig_wheelnotch"/>. If
+             body, as shown in Figure <xref linkend="fig_wheelnotch"/>. If
              the motors are locked, press and release buttons 'A' and 'B' 
-             simultaneously, or power-cycle the robot to release the motors.</li>
-        <li> Hold down both buttons 'A' and 'B'. After about three seconds,
+             simultaneously, or power-cycle the robot to release the motors.</listitem>
+        <listitem> Hold down both buttons 'A' and 'B'. After about three seconds,
              the robot will flash its LED. It has now remembered its
-             current motor positions as the new "Zero" position. </li>
-      </ol>
+             current motor positions as the new "Zero" position. </listitem>
+      </orderedlist>
     </section>
   </section>
-  <section title="Controlling a Linkbot with another Linkbot">
-    <p> Details in this section require you to have at least two Linkbots. 
-    </p>
-    <section title="Pairing Linkbots Together and Creating Linkbot Groups">
-      <p> To pair two linkbots together we use a process called "bump-connect"; follow these steps:
-        <ol>
-          <li> Press and hold the 'B' button on the robot you want to be the controller robot. </li>
-          <li> Next, press and hold the 'B' button on the robot you want to be a group member
-               which will be controlled by the controller robot. </li>
-          <li> Firmly (yet gently) "bump" the two robots together. Both robots should flash
+  <section> <title>Controlling a Linkbot with another Linkbot</title>
+    <para> Details in this section require you to have at least two Linkbots. 
+    </para>
+    <section> <title>Pairing Linkbots Together and Creating Linkbot Groups</title>
+      <para> To pair two linkbots together we use a process called "bump-connect"; follow these steps:
+        <orderedlist>
+          <listitem> Press and hold the 'B' button on the robot you want to be the controller robot. </listitem>
+          <listitem> Next, press and hold the 'B' button on the robot you want to be a group member
+               which will be controlled by the controller robot. </listitem>
+          <listitem> Firmly (yet gently) "bump" the two robots together. Both robots should flash
                immediately. Then, after a second, the controller robot will display a blue
                LED while intermittently flashing a randomly chosen group color while the
                group member robot will display a solid group-color. The two robots are
-               now paired. </li>
-          <li> To add more robots to the group, follow the same steps above, except 
+               now paired. </listitem>
+          <listitem> To add more robots to the group, follow the same steps above, except 
                make sure one of the robots is already in the group. When bump-connecting
                two robots, if one of the robots is already in a group, the other robot
-               will automatically join that group.  </li>
-        </ol>
-      </p>
+               will automatically join that group.  </listitem>
+        </orderedlist>
+      </para>
     </section>
-    <section title="Cycling Through Robot Control Modes">
-      <p> There are a few ways the controller robot can be used to control the rost of
+    <section> <title>Cycling Through Robot Control Modes</title>
+      <para> There are a few ways the controller robot can be used to control the rost of
       the group member robots. Each different control mode is indicated by the color 
       of the LED on the controller robot. The modes may be cycled through by pressing 
-      the 'B' button on the master robot. The control modes are: </p>
-      <ul>
-        <li> Blue: Pose Teaching Mode </li>
-        <li> Green: Tilt-Drive Mode </li>
-        <li> Light Blue: Copy-Cat Mode </li>
-      </ul>
-      <section title="Pose Teaching Mode">
-        <p>
+      the 'B' button on the master robot. The control modes are: </para>
+      <itemizedlist>
+        <listitem> Blue: Pose Teaching Mode </listitem>
+        <listitem> Green: Tilt-Drive Mode </listitem>
+        <listitem> Light Blue: Copy-Cat Mode </listitem>
+      </itemizedlist>
+      <section> <title>Pose Teaching Mode</title>
+        <para>
         In Pose Teaching mode, the robots can remember and play back a set of "poses". 
         In this mode, the 'A' button is used to record a pose, the Power button is used
         to reset all recorded poses, and the 'B' button is used to play or pause the
         poses. Note that if the 'B' button is pressed while there are no recorded poses,
         the robot will cycle to the next control method, which is Tilt-Drive mode.
-        </p>
-        <p>
+        </para>
+        <para>
         Typically, in this mode, the user will move the robot motors to their first 
         desired configuration and then press the 'Record' button once on any of the
         robots in the group. Then, the user will move the robots to the next desired
@@ -206,156 +214,161 @@
         until it reaches the last pose. Once it reaches the last pose, it automatically
         goes back to the first pose and repeats the process until the 'B' button is
         pressed again.
-        </p>
+        </para>
       </section>
-      <section title="Tilt-Drive Mode">
-        <p>
+      <section> <title>Tilt-Drive Mode</title>
+        <para>
         In Tilt-Drive mode, the controller robot uses its current orientation to drive
         the motors on the group-member robots. This mode is typically used with
         group-member robots that have wheels and are driving around. The controller
         robot can be tilted forward, backward, or side to side in order to drive
         the group member(s) forward, backward, or turn.
-        </p>
+        </para>
       </section>
-      <section title="Copy-Cat Mode">
-        <p>
+      <section> <title>Copy-Cat Mode</title>
+        <para>
         In Copy-Cat mode, the group members all copy the motor positions on the 
         controller robot. You can move the motors on the controller robot and all
         of the group members will try to copy the controller.
-        </p>
+        </para>
       </section>
     </section>
   </section>
 </chapter>
 
-<chapter title="Controlling Linkbots with BaroboLink">
-  <p>
+<chapter> <title>Controlling Linkbots with BaroboLink</title>
+  <para>
     BaroboLink is a computer program that allows you to connect to and 
     directly control your robots with an intuitive user-interface. It
     can also be used to locate and organize robots so that your Python
     programs can easily find and control robots. This chapter will familiarize
     you with BaroboLink and concepts such as connecting to robots, motor 
     positions, moving motors, and reading sensor values.
-  </p>
-  <section title="Starting BaroboLink">
-    <p>
+  </para>
+  <section> <title>Starting BaroboLink</title>
+    <para>
       In Windows, BaroboLink can usually be found in the Start menu under
       Start -> All Programs -> Barobo -> BaroboLink.
-    </p>
-    <p>
+    </para>
+    <para>
       On Mac OS X systems, BaroboLink can usually be found in the Finder under
       Applications -> BaroboLink
-    </p>
+    </para>
   </section>
-  <section title="Connecting to Robots">
-    <p>
-      <figure caption="BaroboLink Connect Panel"
-              name="fig_barobolink_connect"
-              file="images/barobolink_connect.png"/>
+  <section> <title>Connecting to Robots</title>
+    <para>
+      <figure id="fig_barobolink_connect">
+        <title> BaroboLink Connect Panel </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/barobolink_connect.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
       To connect to robots, they have to first be added to the list of known robots.
       On the connect panel, shown in Figure 
-      <figref name="fig_barobolink_connect"/>,
+      <xref linkend="fig_barobolink_connect"/>,
       type the Serial ID of the robot you want to connect to in the entry box at the
       top and click the button labeled "Add Robot". This can be repeated for any number
       of robots. Once robots are added to the connect panel, they will be remembered
       in the future when you start BaroboLink again.
-    </p>
-    <p>
+    </para>
+    <para>
       Once the robots are added to the connect panel, they still need to be connected.
       To connect to a robot, first make sure that there is at least one Linkbot or
       Linkbot-Dongle connected to the computer with a Micro-USB cable. The robots
       are capable of communicating to each other wirelessly, but they cannot communicate
       wirelessly to a computer. The connected robot or dongle acts as a translator
       so that your computer can talk to the rest of your robots wirelessly.
-    </p>
-    <p>
+    </para>
+    <para>
       Once the robots are added to the connect panel, you may double-click on a robot
       to connect to it. When the robot connects, it should change its LED color
       to green. 
-    </p>
-    <p>
+    </para>
+    <para>
       If you experience any trouble during the connection process, rebooting the robots
       and BaroboLink can help. Make sure the robots are not currently connected to
       anything else, and that they are currently not paired or bumpconnected with any
       other robots.
-    </p>
+    </para>
   </section>
-  <section title="The Control Panel">
-    <p>
+  <section> <title>The Control Panel</title>
+    <para>
       The "Control" panel in BaroboLink can be used to move a robot in various ways.
       Once a robot is connected to BaroboLink, the joint angles and speeds of
       the robot are displayed on the Motion Control Panel as shown in Figure
-      <figref name="fig_control_panel"/>. The Motion Control
+      <xref linkend="fig_control_panel"/>. The Motion Control
       Panel can be used to display information about the Linkbot’s joint
       positions, and also control the speeds and positions of the Linkbot’s
       joints. The panel is divided into five sections; three on the top half of
       the panel, and two on the bottom half. The functions of these five
       sections will be discussed in the next section.
-    </p>
-    <p>
+    </para>
+    <para>
       Note that the Control panel can only control one robot at a time. You can
       select which robot to control by clicking and selecting that robot's Serial ID
       on the Connect pane on the left-hand side of the application.
-    </p>
-    <section title="Joint Control">
-      <p>
+    </para>
+    <section> <title>Joint Control</title>
+      <para>
         This portion of the Control panel can be used to make the motors on the robot
         begin turning indefinitely. Clicking on either "up" arrow will cause that motor
         to begin rotating in the positive direction. Similarly, clicking on either
         "down" arrow will cause that motor to begin rotating in the negative 
         direction. Finally, clicking on the "stop" button will cause that motor to
         stop moving.
-      </p>
+      </para>
     </section>
-    <section title="Drive Control">
-      <p>
+    <section> <title>Drive Control</title>
+      <para>
         This portion of the Control Panel is designed to be used with a Linkbot-I with
         two wheels attached. The buttons in this portion of the Control Panel
         make the robot drive forward, turn left and right, and drive backward.
-      </p>
-      <p>
+      </para>
+      <para>
         The "Zero" button makes the robot move all of its motors to its zero positions.
-      </p>
-      <p>
+      </para>
+      <para>
         The "Stop" button makes the robot immediately stop moving all of its motors.
-      </p>
+      </para>
     </section>
-    <section title="Position (degrees)">
-      <p>
+    <section> <title>Position (degrees)</title>
+      <para>
         In this portion of the Control panel, you will find two dials which represent the
         current joint positions of the two motors on the robot. The dials serve as both
         input and output. You can click an drag on the dials to move the motors on the 
         robot. You can also manually move the motors on the robot and the dials will update
         to show the current positions of each motor.
-      </p>
+      </para>
     </section>
-    <section title="Speed">
-      <p>
+    <section> <title>Speed</title>
+      <para>
         In this portion of the Control panel, you can modify the speed settings of each 
         motor on the robot. The speed settings determine how fast the motors move
         when using the "Joint Control" and "Drive Control" portions of the control panel.
-      </p>
+      </para>
     </section>
   </section>
-  <section title="The Auxiliary Control, Sensors Panel">
-    <p>
+  <section> <title>The Auxiliary Control, Sensors Panel</title>
+    <para>
       This panel allows you to access some other functionality on the
       Linkbot, including the buzzer, LED, and accelerometer. This dialog
       is subdivided into three sections: Buzzer Control, Accelerometer, and
       LED Color.
-    </p>
-    <section title="Buzzer Control">
+    </para>
+    <section> <title>Buzzer Control</title>
     </section>
-    <section title="Accelerometer">
+    <section> <title>Accelerometer</title>
     </section>
-    <section title="LED Color">
+    <section> <title>LED Color</title>
     </section>
   </section>
 </chapter>
 
-<chapter title="Introduction to Programming Linkbots with Python">
-  <section title="Getting Started with Python for Computer Programming">
-    <p>
+<chapter> <title>Introduction to Programming Linkbots with Python</title>
+  <section> <title>Getting Started with Python for Computer Programming</title>
+    <para>
       In the previous chapter, we learned how to control a Linkbot using the
       Control Panel. However, the Control panel requires human interaction
       to control the Linkbots. In order for the Linkbot to qualify as a
@@ -365,89 +378,110 @@
       Each program can be saved to a different file and different programs
       can be executed depending on what you want your robot to do. 
       Existing programs can also be modified to solve similar problems.
-    </p>
-    <section title="Getting Started with Ninja-IDE">
-      <p>
+    </para>
+    <section> <title>Getting Started with Ninja-IDE</title>
+      <para>
         Ninja-IDE is a type of program called an "Integrated Development
         Environment (IDE)". Typically, IDE's are capable of editing code,
         displaying code in a visually appealing manner, executing code, and
         debugging code all in one program. 
-      </p> <p>
+      </para> <para>
         You can start Ninja by double-clicking on the Ninja-IDE icon on your
         desktop, or by finding it in the Start menu under "Start -> All
         Programs -> Ninja".
-      </p>
+      </para>
     </section>
-    <section title="Your First Python Program">
-      <p>
+    <section> <title>Your First Python Program</title>
+      <para>
         Once you have opened Ninja, begin by creating a new program. You 
         can do this by clicking on the "New File" icon in the toolbar on
         the left hand side, or by clicking "File -> New" in the menu.
-      </p><p>
+      </para><para>
         Once you have opened a new file, try typing the following code
         into the window. Make sure you type the code in exactly as shown,
         including capitolization and punctuation.
-        <codefile name="hello.py" caption="A simple Python program">code/hello.py</codefile>
+        <example id="hello.py"><title>A simple Python program</title>
+          <programlisting>
+#!/usr/bin/env python
+
+# File: hello.py
+# Prints the text "Hello, world!" onto the screen
+
+print('Hello, world!')
+          </programlisting>
+        </example>
         After you have typed it in, save it to a file called "hello.py". 
         Python programs typically use the suffix ".py".
-      </p><p>
-        <figure 
-          name="fig_ninja_hello" 
-          caption="A Ninja-IDE Window after executing hello.py."
-          file="images/fig_ninja_hello.png"/>
+      </para><para>
+        <figure id="fig_ninja_hello">
+          <title> A Ninja-IDE Window after executing hello.py. </title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/fig_ninja_hello.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
         Once you have saved your new program to a file, click on the "Run File"
-        icon <img src="images/ninja_runfile.png"/> on the toolbar an the left-hand
+        icon 
+        <guiicon>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/ninja_runfile.png"/>
+            </imageobject>
+          </inlinemediaobject>
+        </guiicon>
+        on the toolbar an the left-hand
         side to run your program. Ninja should pop up an output window pane
         with the results of your program, which should appear as shown in Figure
-        <figref name="fig_ninja_hello"/>. As shown in the figure, the output of
+        <xref linkend="fig_ninja_hello"/>. As shown in the figure, the output of
         this program is
-        <output>Hello, world!</output>
+        <computeroutput>Hello, world!</computeroutput>
         Congratulations! You have just written and executed your first Python program!
-      </p> <p>
+      </para> <para>
         Now, lets talk about the program you just wrote. The file, "hello.py",
         is called "Source Code". Source code for most major programming languages
         is in a format called "plain text", which is the same format in ".txt"
         files, which you may already be familiar with. This bare-bones format
         cannot support any word-processor features which you may be used to, such as
         different fonts, font sizes, embedded images, etc. 
-      </p> <p>
+      </para> <para>
         Python is capable of running program directly from source code using a 
         process called "interpretation". Some other languages like C, C++, and
         Java require the source code to be first "compiled" before it can be 
         executed. The process of compilation is basically when another program,
         called a "compiler", interprets human-readable source code into a
         machine-native program (ones and zeros). 
-      </p>
-      <section title="Dissecting Your First Python Program">
-        <p>
+      </para>
+      <section> <title>Dissecting Your First Python Program</title>
+        <para>
           Lets take a closer look at your first Python program. The first line
           looks like this:
-          <snippet> #!/usr/bin/env python </snippet>
+          <programlisting> #!/usr/bin/env python </programlisting>
           This line tells the computer that the program is a Python program.
           You should remember to put this line at the top of all of your 
           Python programs. This type of code which goes into all of your programs
           is known as "Boilerplate" code. Many different languages have some sort
           of boilerplate code; some more complex than others. The next two lines
           look like this:
-          <snippet>
+          <programlisting>
 # File: hello.py
 # Prints the text "Hello, world!" onto the screen
-          </snippet>
+          </programlisting>
           Note that both this code and the first line of code begin with the '#'
           character. In programmer-speak, this character is usually referred to
           as the "pound" character or a "hash" character. This character has
           special meaning in Python. It tells the Python interpreter to ignore
           anything else that comes after it in the line. This is known as a 
-          <b> comment </b>. Comments are text that are meant tell a human reader
+          <emphasis> comment </emphasis>. Comments are text that are meant tell a human reader
           some information but are ignored by the computer.
-        </p> <p>
+        </para> <para>
           Finally, the last line of code in the program is
-          <snippet>
+          <programlisting>
 print('Hello, world!')
-          </snippet>
+          </programlisting>
           This is where the real stuff happens: printing text onto the screen.
-          The word <code>print</code> is a special command in python that is
-          used to print text onto the screen. It is known as a <b>function</b>. Python
+          The word <function>print</function> is a special command in python that is
+          used to print text onto the screen. It is known as a <emphasis>function</emphasis>. Python
           comes with hundreds of built-in functions you can use to do a variety
           of stuff. The simplest functions are fairly straight-forward to use:
           Type the name of the function, followed by an open-parentheses '(', 
@@ -456,10 +490,10 @@ print('Hello, world!')
           to print. In our example, we gave it the string 'Hello, world!' to print.
           We will introduce more functions as you become familiar
           with the language. 
-        </p>
+        </para>
       </section>
-      <section title="Debugging Python Programs">
-        <p>
+      <section> <title>Debugging Python Programs</title>
+        <para>
           Eventually, you will accidentally try to run Python programs
           with typos in them. This is totally normal and completely unavoidable.
           Depending on where you make your typos, you may damage your Python
@@ -468,37 +502,38 @@ print('Hello, world!')
           missing parentheses, missing quotation marks, and improperly indented
           code. When Python encounters
           a syntax error, it will give you an error message.
-        </p> <p>
+        </para> <para>
           Consider the following program:
-          <codefile name="hello_bad.py" caption="A Python program with a syntax error.">code/hello_bad.py</codefile>
+          <example id="hello_bad.py">
+            <title>A Python program with a syntax error.</title>
+            <programlisting>
+#!/usr/bin/env python
+
+# File: hello_bad.py
+# This program is supposed to print 'Hello, world!' onto the screen, but there
+# is a syntax error in it.
+
+print('Hello, world!)
+            </programlisting>
+          </example>
           When we try to run the program, we get the following output:
-          <output>
+          <screen>
   File "./hello_bad.py", line 7
     print('Hello, world!)
                         ^
 SyntaxError: EOL while scanning string literal
-          </output>
+          </screen>
           Errors like this may seem daunting at first. Sometimes, the error 
           messages can be cryptic. However, the first two lines indicate that
           the error is possibly at line 7, and even points to a possible location
           with a little tick mark. Can you spot the error there? Generally, syntax 
           errors are on the reported line or sometimes a few lines before.
-        </p>
+        </para>
       </section>
-      <section title="Exercises">
-        <question>
-          Write a program that displays the following text:
-          <output>
-The quick brown fox
-jumps over the lazy dog.
-            <answer>
-              <code>
-              </code>
-            </answer>
-          </output>
-        </question>
+      <section> <title>Exercises</title>
       </section>
     </section>
   </section>
 </chapter>
+
 </book>

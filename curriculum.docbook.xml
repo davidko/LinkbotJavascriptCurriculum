@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 
-<book>
+<book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude">
 <info>
   <title>Programming the Barobo Linkbot with Python</title>
   <author>
@@ -76,6 +76,7 @@
     wizards. 
   </para>
   <section> <title>Exercises</title>
+    <?dbhtml-include href="html/ex1.html"?>
     <qandaset>
       <qandaentry>
         <question>
@@ -367,7 +368,7 @@
 </chapter>
 
 <chapter> <title>Introduction to Programming Linkbots with Python</title>
-  <section> <title>Getting Started with Python for Computer Programming</title>
+  <section> <title>Introduction to Python for Computer Programming</title>
     <para>
       In the previous chapter, we learned how to control a Linkbot using the
       Control Panel. However, the Control panel requires human interaction
@@ -402,12 +403,7 @@
         including capitolization and punctuation.
         <example id="hello.py"><title>A simple Python program</title>
           <programlisting>
-#!/usr/bin/env python
-
-# File: hello.py
-# Prints the text "Hello, world!" onto the screen
-
-print('Hello, world!')
+<xi:include href="code/hello.py" parse="text"/>
           </programlisting>
         </example>
         After you have typed it in, save it to a file called "hello.py". 
@@ -451,6 +447,15 @@ print('Hello, world!')
         executed. The process of compilation is basically when another program,
         called a "compiler", interprets human-readable source code into a
         machine-native program (ones and zeros). 
+      </para> <para>
+        Python programs contain multiple lines of code. Typically, when a computer
+        executes code, it will start at the top of the file and execute statements,
+        line by line, going down the file. As we write more complex programs, there
+        are various ways for us to control how Python reads our program, but
+        for simple programs like our <filename>hello.py</filename>, we can imagine
+        Python starting at the top of our file and executing each line in order.
+        Thus, multiple print statements in our program will print multiple
+        lines of text onto our screen.
       </para>
       <section> <title>Dissecting Your First Python Program</title>
         <para>
@@ -472,8 +477,8 @@ print('Hello, world!')
           as the "pound" character or a "hash" character. This character has
           special meaning in Python. It tells the Python interpreter to ignore
           anything else that comes after it in the line. This is known as a 
-          <emphasis> comment </emphasis>. Comments are text that are meant tell a human reader
-          some information but are ignored by the computer.
+          <emphasis> comment </emphasis>. Comments are text that are meant tell
+          a human reader some information but are ignored by the computer.
         </para> <para>
           Finally, the last line of code in the program is
           <programlisting>
@@ -485,7 +490,7 @@ print('Hello, world!')
           comes with hundreds of built-in functions you can use to do a variety
           of stuff. The simplest functions are fairly straight-forward to use:
           Type the name of the function, followed by an open-parentheses '(', 
-          followed by any arguments the function needs or expects, followed by a close
+          followed by any arguments the function needs or expects separated by commas, followed by a close
           paretheses ')'. In our case, the print function needs you to give it something
           to print. In our example, we gave it the string 'Hello, world!' to print.
           We will introduce more functions as you become familiar
@@ -496,9 +501,12 @@ print('Hello, world!')
         <para>
           Eventually, you will accidentally try to run Python programs
           with typos in them. This is totally normal and completely unavoidable.
+          Unintentional errors in computer programs are called <emphasis>bugs
+          </emphasis>. The process of finding and fixing bugs is called
+          <emphasis> debugging </emphasis>.
           Depending on where you make your typos, you may damage your Python
           program enough such that Python can no longer properly run your program.
-          This type of error is called a "Syntax Error". Common syntax errors are
+          This type of error is called a <emphasis>Syntax Error</emphasis>. Common syntax errors are
           missing parentheses, missing quotation marks, and improperly indented
           code. When Python encounters
           a syntax error, it will give you an error message.
@@ -507,21 +515,12 @@ print('Hello, world!')
           <example id="hello_bad.py">
             <title>A Python program with a syntax error.</title>
             <programlisting>
-#!/usr/bin/env python
-
-# File: hello_bad.py
-# This program is supposed to print 'Hello, world!' onto the screen, but there
-# is a syntax error in it.
-
-print('Hello, world!)
+<xi:include href="code/hello_bad.py" parse="text"/>
             </programlisting>
           </example>
           When we try to run the program, we get the following output:
           <screen>
-  File "./hello_bad.py", line 7
-    print('Hello, world!)
-                        ^
-SyntaxError: EOL while scanning string literal
+            <xi:include href="code/hello_bad.py.output" parse="text" />
           </screen>
           Errors like this may seem daunting at first. Sometimes, the error 
           messages can be cryptic. However, the first two lines indicate that
@@ -530,10 +529,125 @@ SyntaxError: EOL while scanning string literal
           errors are on the reported line or sometimes a few lines before.
         </para>
       </section>
+      <section> <title> Summary </title>
+        <itemizedlist>
+          <listitem>Python programs typically end in ".py". </listitem>
+          <listitem>Python comments begin with the character '#'. </listitem>
+          <listitem>Use the <function>print</function> function to print text onto the screen.</listitem>
+          <listitem>When you encounter error messages, scan the lines reported in the error
+                    as well as the lines around the reported error.</listitem>
+          <listitem>Use the <function>print</function> function to print text onto the screen.</listitem>
+        </itemizedlist>
+      </section>
+      <section> <title> Terminology </title>
+        <para>
+          bug, debug, function, comment, source code, <function>print</function>
+        </para>
+      </section>
       <section> <title>Exercises</title>
+        <orderedlist>
+          <listitem>
+            What is wrong with the following code example?
+            <example id="hello_bad2.py"><title>A Python Program with a Bug</title>
+              <programlisting>
+#!/usr/bin/env python
+
+# File: hello_bad2.py
+# This program is supposed to print 'Hello, world!' onto the screen, but there
+# is a syntax error in it.
+
+print 'Hello, world!')
+              </programlisting>
+            </example>
+          </listitem>
+          <listitem>
+            <para>
+              See if you can write a program to display the following text which contains
+              multiple lines.
+              <screen>
+The quick brown fox
+jumped over the lazy dog.
+              </screen>
+            </para>
+          </listitem>
+        </orderedlist>
       </section>
     </section>
+    <section>
+      <title> A slightly more complex example </title>
+      <para>
+        Lets take a look at a slightly more complex example which actually
+        involves a little calculation.
+        <example id="hello_variable.py"><title>A Python Program with Variables</title>
+          <programlisting>
+<xi:include href="code/hello_variable.py" parse="text"/>
+          </programlisting>
+        </example>
+        At the beginning of this example, we see the same type of boilerplate code
+        and comments that we saw in our previous example. Then, we see the lines
+        <programlisting>
+myvar = 10
+print(myvar)
+        </programlisting>
+        These two
+      </para>
+    </section>
   </section>
+
+<section>  
+  <title>
+    Connecting to the Robot and Moving Motors
+  </title>
+  <para>
+    Lets write a program to move a Linkbot. To do this, we must first
+    establish a way for our Python programs to connect to particular Linkbots
+    to control. The easiest way to do this is through BaroboLink. 
+  </para> <para>
+    To begin, open BaroboLink and connect to the robot you want to control.
+    When you write your Python program, the Python program you write will
+    automatically communicate with BaroboLink and run on the robot currently
+    connected to BaroboLink.
+  </para> <para>
+    Then, execute the following python program:
+    <example id="move.py"><title>A Python program that moves both joints an a Linkbot-I.</title>
+      <programlisting>
+#!/usr/bin/env python
+#Filename: move.py
+
+from barobo import Linkbot
+
+linkbot = Linkbot()
+linkbot.connect()
+
+print ("Moving both joints 90 degrees...")
+linkbot.move(90, 0, 90)
+      </programlisting>
+    </example>
+  </para>
+  <para>
+    Lets take a look at the previous program in detail. The first two lines,
+    <programlisting>
+#!/usr/bin/env python
+#Filename: move.py
+    </programlisting>
+    contain the same type of boilerplate code we saw in our previous example. The
+    next line reads:
+    <programlisting>
+from barobo import Linkbot
+    </programlisting>
+    This piece of code is necessary to begin controlling Linkbots. In Python,
+    you can use the "import" command to add additional functionality to your
+    python programs. There are many packages available to import into Python
+    provided by Python and also third-party organizations. Some packages
+    help you access system resources, some packages perform numerical analysis
+    and display graphical plots, etc. This line accesses the "barobo" package,
+    which is a package that helps control Barobo robots. Inside the barobo
+    package, there is a part called "Linkbot". Thus, the line above
+    "imports the Linkbot portion of the barobo package". This line
+    of code can be considered boilerplate code since most programs that control
+    Linkbots will have this line, or a line similar to this line of code.
+  </para>
+</section>  
 </chapter>
 
 </book>

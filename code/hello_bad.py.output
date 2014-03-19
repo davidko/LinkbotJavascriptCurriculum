@@ -1,0 +1,5 @@
+
+  File "./hello_bad.py", line 7
+    print('Hello, world!)
+                        ^
+SyntaxError: EOL while scanning string literal

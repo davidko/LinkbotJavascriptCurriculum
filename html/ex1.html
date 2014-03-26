@@ -1,11 +1,4 @@
-
-<html>
-<head>
-    <title>BaroboLab - Manager</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-
-<body>
+<div id="example_root">
     {{ Placeholder }}
     <form name="myform">
       Robot Serial ID: <input type="text" name="serialIdInput" value="S3S3" />
@@ -31,6 +24,11 @@
     <p id="accelText3">text</p>
 
 <script>
+
+if (typeof baroboBridge == "undefined") {
+  document.getElementById("example_root").innerHTML="Use LinkbotLabs for interactive demo!";
+}
+
 function connect(form)
 {
   robot = form.serialIdInput.value;
@@ -78,7 +76,5 @@ function onAccelEvent(id, x, y, z)
 }
 
 </script>
-
-</body>
-</html>
+</div>
 

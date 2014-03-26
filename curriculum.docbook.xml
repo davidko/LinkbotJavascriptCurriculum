@@ -1,6 +1,9 @@
 <?xml version='1.0'?>
-
-<book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<!DOCTYPE book [
+<!ENTITY ch2ex1 SYSTEM "code/ch2ex1.py">
+]>
+<book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns = "http://docbook.org/ns/docbook">
 <info>
   <title>Programming the Barobo Linkbot with Python</title>
   <author>
@@ -76,7 +79,7 @@
     wizards. 
   </para>
   <section> <title>Exercises</title>
-    <?dbhtml-include href="html/ex1.html"?>
+    <?dbhtml-include href="ex1.html"?>
     <qandaset>
       <qandaentry>
         <question>
@@ -300,8 +303,8 @@
       Once a robot is connected to BaroboLink, the joint angles and speeds of
       the robot are displayed on the Motion Control Panel as shown in Figure
       <xref linkend="fig_control_panel"/>. The Motion Control
-      Panel can be used to display information about the Linkbot’s joint
-      positions, and also control the speeds and positions of the Linkbot’s
+      Panel can be used to display information about the Linkbot's joint
+      positions, and also control the speeds and positions of the Linkbot's
       joints. The panel is divided into five sections; three on the top half of
       the panel, and two on the bottom half. The functions of these five
       sections will be discussed in the next section.
@@ -367,6 +370,24 @@
   </section>
 </chapter>
 
+<chapter> <title> Controlling A Barobo Linkbot with Python </title>
+  <section> <title> Making the Linkbot LED Blink </title>
+    <para>
+      All Linkbots come equipped with a controllable light called a "Light
+      Emitting Diode" or LED for short. The Linkbot's LED can change both
+      color and brightness. 
+    </para>
+    <para>
+      Lets take a look at the code example in <xref linkend="code:ch2ex1"/>.
+      <example id="code:ch2ex1"><title>A Simple Linkbot Program</title>
+        <programlisting language="python">
+&ch2ex1;
+        </programlisting>
+      </example>
+    </para>
+  </section>
+</chapter>
+
 <chapter> <title>Introduction to Programming Linkbots with Python</title>
   <section> <title>Introduction to Python for Computer Programming</title>
     <para>
@@ -380,27 +401,26 @@
       can be executed depending on what you want your robot to do. 
       Existing programs can also be modified to solve similar problems.
     </para>
-    <section> <title>Getting Started with Ninja-IDE</title>
+    <section> <title>Getting Started with PyScripter</title>
       <para>
-        Ninja-IDE is a type of program called an "Integrated Development
+        PyScripter is a type of program called an "Integrated Development
         Environment (IDE)". Typically, IDE's are capable of editing code,
         displaying code in a visually appealing manner, executing code, and
         debugging code all in one program. 
       </para> <para>
-        You can start Ninja by double-clicking on the Ninja-IDE icon on your
-        desktop, or by finding it in the Start menu under "Start -> All
-        Programs -> Ninja".
+        You can start PyScripter by double-clicking on the PyScripter in your
+        PortablePython installation folder.
       </para>
     </section>
     <section> <title>Your First Python Program</title>
       <para>
-        Once you have opened Ninja, begin by creating a new program. You 
+        Once you have opened PyScripter, begin by creating a new program. You 
         can do this by clicking on the "New File" icon in the toolbar on
         the left hand side, or by clicking "File -> New" in the menu.
       </para><para>
         Once you have opened a new file, try typing the following code
         into the window. Make sure you type the code in exactly as shown,
-        including capitolization and punctuation.
+        including capitalization and punctuation.
         <example id="hello.py"><title>A simple Python program</title>
           <programlisting>
 <xi:include href="code/hello.py" parse="text"/>
@@ -610,7 +630,7 @@ print(myvar)
   </para> <para>
     Then, execute the following python program:
     <example id="move.py"><title>A Python program that moves both joints an a Linkbot-I.</title>
-      <programlisting>
+      <programlisting language="java">
 #!/usr/bin/env python
 #Filename: move.py
 

@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <!DOCTYPE book [
-<!ENTITY ch2ex1 SYSTEM "code/ch2ex1.py">
+<!ENTITY ch3ex1 SYSTEM "code/ch3ex1.py">
 ]>
 <book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns = "http://docbook.org/ns/docbook">
@@ -125,31 +125,24 @@
               </imageobject>
             </mediaobject>
           </figure>
-          </para>
-          <para>
+        </para>
+        <para>
           At this point, you have several options for where to install PortablePython.
           The easiest place to install it is onto your Desktop. If that is where
           you would like to install it, simply click on "Desktop" and then click
           "OK".
-          </para>
-          <para>
+        </para>
+        <para>
           Another popular place to install it is in your home directory. On the 
           screenshot shown, the home directory is called "dko", because that is
-          the username of the current user using the computer. On your computer,
+          the username of the current user using the computer when these
+          screenshots were taken. On your computer,
           your home directory name will be your username. 
-          </para>
-
-          During the process, you will be asked where
-          to install PortablePython. You may choose to install it anywhere,
-          but keep a note of where you have installed it because the installer
-          does not automatically add entries to your Start menu or put icons
-          on your Desktop. Common locations to install the software might
-          be C:\Program Files, in your "Home" directory, or even your desktop.
         </para>
         <para>
           Once you have installed PortablePython, you can navigate to that 
           directory using your file browser. Inside the directory, you will
-          see several executable, as shown in Figure 
+          see several executables, as shown in Figure 
         </para>
       </section> 
     </section> 
@@ -460,10 +453,10 @@
       color and brightness. 
     </para>
     <para>
-      Lets take a look at the code example in <xref linkend="code:ch2ex1"/>.
-      <example id="code:ch2ex1"><title>A Simple Linkbot Program</title>
+      Lets take a look at the code example in <xref linkend="code:ch3ex1"/>.
+      <example id="code:ch3ex1"><title>A Simple Linkbot Program</title>
         <programlisting language="python">
-&ch2ex1;
+&ch3ex1;
         </programlisting>
       </example>
     </para>

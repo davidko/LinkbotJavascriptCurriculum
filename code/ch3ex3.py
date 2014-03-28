@@ -1,31 +1,20 @@
 #!/usr/bin/env python
 
 # File: ch3ex3.py
-# Use some functions to make the robot do some interesting things.
+# Beep the robot's buzzer a few times
 
 import barobo
 import time
-
-def moveForward(l, angle):
-    l.move(angle, 0, -angle)
-
-def turnLeft(l, angle):
-    l.move(-angle, 0, angle)
-
-def blink(l):
-    for i in range(3):
-        linkbot.setLEDColor(255, 0, 0)
-        time.sleep(0.5)
-        linkbot.setLEDColor(0, 0, 255)
-        time.sleep(0.5)
 
 ctx = barobo.BaroboCtx()
 ctx.autoConnect()
 linkbot = ctx.getLinkbot()
 
-blink(linkbot)
-moveForward(linkbot, 180)
-blink(linkbot)
-turnLeft(linkbot, 90)
-
-
+for i in range(5):
+    print(i)
+    linkbot.setBuzzerFrequency(440)
+    linkbot.setLEDColor(0, 255, 0)
+    time.sleep(1)
+    linkbot.setBuzzerFrequency(0)
+    linkbot.setLEDColor(0, 0, 0)
+    time.sleep(1)

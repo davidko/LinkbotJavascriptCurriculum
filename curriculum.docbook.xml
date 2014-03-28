@@ -78,8 +78,85 @@
     a large spectrum of programmers from absolute beginners to Google
     wizards. 
   </para>
+  <section> <title> Getting and Installing the Software </title>
+    <para>
+      This curriculum requires a fully functioning Python environment
+      and a copy of Linkbot Labs. It is very likely you are already viewing
+      this document using Linkbot Labs. If you are not, you may obtain
+      Linkbot Labs from http://www.barobo.com/downloads . 
+    </para> 
+    <section> <title> Python </title>
+      <section> <title> Windows </title>
+        <para>
+          To get Python up and running, we recommend downloading and installing
+          our PortablePython Barobo Edition all-in-one installer at 
+          http://my.barobo.com/download/windows_python_allinone_installer .
+        </para>
+        <para>
+          Once you have downloaded the file, double click on the installer to begin 
+          the installation process. You should see a screen similar to the follwing
+          screenshot:
+          <figure id="fig_installwindows1">
+            <title> Installing PortablePython - Barobo Edition, Step 1</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/windows_install1.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          Click the "Next" button to continue. You should see something similar
+          to the following screenshot:
+          <figure id="fig_installwindows2">
+            <title> Installing PortablePython - Barobo Edition, Step 2</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/windows_install2.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          At this point, you will need to click the "Browse" button to choose
+          a location to install PortablePython. After clicking on the "Browse"
+          button, you should see the following screen:
+          <figure id="fig_installwindows3">
+            <title> Installing PortablePython - Barobo Edition, Step 3</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/windows_install3.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          </para>
+          <para>
+          At this point, you have several options for where to install PortablePython.
+          The easiest place to install it is onto your Desktop. If that is where
+          you would like to install it, simply click on "Desktop" and then click
+          "OK".
+          </para>
+          <para>
+          Another popular place to install it is in your home directory. On the 
+          screenshot shown, the home directory is called "dko", because that is
+          the username of the current user using the computer. On your computer,
+          your home directory name will be your username. 
+          </para>
+
+          During the process, you will be asked where
+          to install PortablePython. You may choose to install it anywhere,
+          but keep a note of where you have installed it because the installer
+          does not automatically add entries to your Start menu or put icons
+          on your Desktop. Common locations to install the software might
+          be C:\Program Files, in your "Home" directory, or even your desktop.
+        </para>
+        <para>
+          Once you have installed PortablePython, you can navigate to that 
+          directory using your file browser. Inside the directory, you will
+          see several executable, as shown in Figure 
+        </para>
+      </section> 
+    </section> 
+  </section> 
+  <!--
   <section> <title>Exercises</title>
-    <?dbhtml-include href="ex1.html"?>
+    <?dbhtml-include href="/home/dko/Projects/ex1.html"?>
     <qandaset>
       <qandaentry>
         <question>
@@ -108,6 +185,7 @@
       </qandaentry>
     </qandaset>
   </section>
+  -->
 </chapter>
 
 <chapter> <title>Introduction to the Barobo Linkbot</title>
@@ -169,6 +247,7 @@
       </orderedlist>
     </section>
   </section>
+  <!--
   <section> <title>Controlling a Linkbot with another Linkbot</title>
     <para> Details in this section require you to have at least two Linkbots. 
     </para>
@@ -238,8 +317,10 @@
       </section>
     </section>
   </section>
+  -->
 </chapter>
 
+<!--
 <chapter> <title>Controlling Linkbots with BaroboLink</title>
   <para>
     BaroboLink is a computer program that allows you to connect to and 
@@ -369,6 +450,7 @@
     </section>
   </section>
 </chapter>
+-->
 
 <chapter> <title> Controlling A Barobo Linkbot with Python </title>
   <section> <title> Making the Linkbot LED Blink </title>

@@ -23,4 +23,5 @@ saxon-chunk:
 		-o chunkout \
 		curriculum.docbook.xml \
 		mychunkstylesheet.xml \
-		html.stylesheet=barobostyle.css
+		html.stylesheet=barobostyle.css \
+		chunk.section.depth=1

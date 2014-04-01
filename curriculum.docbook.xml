@@ -474,6 +474,76 @@
 </chapter>
 
 <chapter> <title>Introduction to Programming Linkbots with Python</title>
+  <section>
+    <title> Linkbot Driver's Ed
+    </title>
+    <section>
+      <para>
+        We can use the <function>move()</function> function to control a Linkbot's
+        motors.
+        <programlisting language="python">
+robot.move(360, 0, 0)
+        </programlisting>
+      </para>
+      <?dbhtml-include href="html/ch4ex1.html"?>
+      <para>
+        As you may have noticed, the previous code snippet moves Motor 1 one whole
+        rotation (360 degrees) counter-clockwise, while the other motor(s) did not
+        move at all.
+      </para>
+    </section>
+    <section>
+      <para>
+        Now, try this:
+        <programlisting language="python">
+robot.move(0, 0, -360)
+        </programlisting>
+      <?dbhtml-include href="html/ch4ex1.html"?>
+      </para>
+      <para>
+        Notice that the <function>move()</function> function has three arguments.
+        Each argument controls how many degrees to move a particular motor;
+        the first motor controls motor 1, the second controls motor 2, and
+        the third controls motor 3. Not all motors are available on all
+        models of Linkbot. If you have a Linkbot-I, only motors 1 and 3 are
+        available, so the second argument would be ignored. 
+      </para>
+      <para>
+        Also note that negative values make the robot's motor spin clockwise and
+        positive values make the motor spin counter-clockwise. The choice of 
+        negative values being clockwise and positive values being
+        counter-clockwise follows 
+        a concept known as the "right-hand rule" and is common in the fields of
+        math and engineering.
+      </para>
+    </section>
+    <section> <title> Explore </title>
+      <para>
+        Now that you are familiar with the <function>move()</function> function,
+        let's try using it to move the robot around. Attach wheels to your 
+        Linkbot-I if you haven't already and place it on a suitable surface for
+        driving around. Now, try modifying the code below and see what you can
+        make the robot do!
+        <?dbhtml-include href="html/ch4ex3.html"?>
+      </para>
+    </section>
+    <section> <title> Challenge </title>
+      <orderedlist>
+        <listitem>
+          <para>
+            Can you drive the Linkbot straight forward?
+            <?dbhtml-include href="html/ch4ex4.html"?>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            How about turning in place to the left?
+            <?dbhtml-include href="html/ch4ex5.html"?>
+          </para>
+        </listitem>
+      </orderedlist>
+    </section>
+  </section>
   <section> <title>Introduction to Python for Computer Programming</title>
     <para>
       In the previous chapter, we learned how to control a Linkbot using the

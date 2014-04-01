@@ -36,12 +36,13 @@
     Curriculum bundle. The bundle includes:
     <itemizedlist>
       <listitem> <para>Python and all required and suggested Python packages. </para></listitem>
-      <listitem> <para>Ninja-IDE : A powerful and pretty looking code editor. </para></listitem>
+      <listitem> <para>PyScripter : A powerful and pretty looking code editor. </para></listitem>
       <listitem> <para>Curriculum code example programs. </para></listitem>
+      <listitem> <para>Many other packages for numerical analysis, graphics, writing games, and much, much more. </para></listitem>
     </itemizedlist>
     Some users may not want to install our bundle. These include Python
     gurus who already have a version of Python installed, and other advanced
-    users. For everyone else, we highly recommend you use our bundled.
+    users. For everyone else, we highly recommend you use our bundled application.
   </para>
 </preface>
 
@@ -50,7 +51,7 @@
     You may already have an idea of what a robot is from a variety of TV shows 
     and movies. They vary from tiny wheeled vehicles that beep and boop to
     humanoid intellegent translators such as C-3PO to gigantic transforming
-    robots like Optimus Prime. Indeed, the definition of a robot is any
+    robots like Optimus Prime. To roboticists, the definition of a robot is any
     machine capable of performing a programmed task and interacting with
     its physical environment with motors, actuators, and sensors. You may
     be surprised to know that, by this definition, even your refrigerator 
@@ -77,6 +78,14 @@
     language to learn and use. It's unique design makes it popular among
     a large spectrum of programmers from absolute beginners to Google
     wizards. 
+  </para>
+  <para>
+    This curriculum is organized in such a way that it teaches how to make the
+    robots do interesting stuff first, and teaches computer science and
+    programming concepts as a side-effect of making the robot do cool things.
+    As such, the chapters and sections are organized primarily by robot
+    functionality rather than computer science topics, such as variables,
+    loops, etc. 
   </para>
   <section> <title> Getting and Installing the Software </title>
     <para>
@@ -460,6 +469,7 @@
         </programlisting>
       </example>
     </para>
+    <?dbhtml-include href="html/ex1.html"?>
   </section>
 </chapter>
 

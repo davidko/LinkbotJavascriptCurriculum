@@ -481,6 +481,9 @@
       This section will introduce the basics to get your Linkbot moving
       with simple pieces of Python code. 
     </para>
+    <para>
+      <?dbhtml-include href="html/ch4intro.html"?>
+    </para>
     <section>
       <para>
         We can use the <function>move()</function> function to control a Linkbot's
@@ -502,7 +505,7 @@ robot.move(360, 0, 0)
         <programlisting language="python">
 robot.move(0, 0, -360)
         </programlisting>
-      <?dbhtml-include href="html/ch4ex1.html"?>
+      <?dbhtml-include href="html/ch4ex2.html"?>
       </para>
       <para>
         Notice that the <function>move()</function> function has three arguments.

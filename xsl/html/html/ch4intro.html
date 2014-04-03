@@ -1,0 +1,23 @@
+<div class="reader-query">
+This section will use a Linkbot-I to demonstrate code snippets.
+Enter the ID of a Linkbot-I that would like to use for this chapter: 
+<input name="linkbotId" id="linkbotId" placeholder="ZRG5" type="text" size="4"/>
+<button id="setRobotId"> Connect to Robot </button>
+<br/>
+The ID is printed
+on the Linkbot and is four characters long. 
+
+<script>
+$('#setRobotId').click( function(obj) {
+		var bot = Linkbots.connect( $('#linkbotId').val() );
+		bot.color(0, 255, 0);
+		$('a').each(function(index, element) {
+				var href = $(this).attr('href');
+				href = href + "?robotID="+bot._id;
+				$(this).attr('href', href);
+			});
+	});
+</script>
+
+</div>
+

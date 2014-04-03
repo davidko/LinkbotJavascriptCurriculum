@@ -477,6 +477,10 @@
   <section>
     <title> Linkbot Driver's Ed
     </title>
+    <para>
+      This section will introduce the basics to get your Linkbot moving
+      with simple pieces of Python code. 
+    </para>
     <section>
       <para>
         We can use the <function>move()</function> function to control a Linkbot's

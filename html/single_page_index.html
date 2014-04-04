@@ -364,11 +364,6 @@ $( function() {
 
 $('.ch4ex1').find('.tryNow').click( function(obj) {
   robotID = GetRobotId();
-  $('a').each(function(index, element) {
-    var href = $(this).attr('href');
-    href = href + "?robotID="+robotID;
-    $(this).attr('href', href);
-    });
 
   var bot = Linkbots.connect(robotID);
   bot.move(360, 0, 0);
@@ -435,7 +430,7 @@ $('.ch4ex2').find('.tryNow').click( function(obj) {
         make the robot do!
         </p><div class="ch4ex3">
 <pre class="programlisting">
-robot.move( <input type="text" size="4" value="0" class="j1text">, <input type="text" size="4" value="0" class="j2text">, <input type="text" size="4" value="0" class="j3text">)
+robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
 </pre>
 <button type="button" class="tryNow"> Try Now </button> <button type="button" class="stop"> Stop </button>
 
@@ -446,10 +441,9 @@ $('.ch4ex3').find('.tryNow').click( function(obj) {
 	var robotID = GetRobotId();
 	var bot = Linkbots.connect(robotID);
   var j1text = $('.ch4ex3').find('.j1text').val();
-  var j2text = $('.ch4ex3').find('.j2text').val();
   var j3text = $('.ch4ex3').find('.j3text').val();
 	var j1 = parseFloat(j1text);
-	var j2 = parseFloat(j2text);
+	var j2 = 0;
 	var j3 = parseFloat(j3text);
 	bot.move(j1, j2, j3);
 });
@@ -472,7 +466,7 @@ AddRobotToGetParams(GetRobotId());
             Can you drive the Linkbot straight forward?
             </p><div class="ch4ex4">
 <pre class="programlisting">
-robot.move(<input type="text" size="4" value="0" class="j1">, <input type="text" size="4" value="0" class="j2">, <input type="text" size="4" value="0" class="j3">)
+robot.move(<input type="text" size="4" value="0" class="j1">, 0, <input type="text" size="4" value="0" class="j3">)
 
 </pre>
 <button type="button" class="tryNow"> Try Now </button> <button type="button" class="stop"> Stop </button>
@@ -489,7 +483,7 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
             How about turning in place to the left?
             </p><div class="ch4ex5">
 <pre class="programlisting">
-robot.move(<input type="text" size="4" value="0" class="j1">, <input type="text" size="4" value="0" class="j2">, <input type="text" size="4" value="0" class="j3">)
+robot.move(<input type="text" size="4" value="0" class="j1">, 0, <input type="text" size="4" value="0" class="j3">)
 
 </pre>
 <button type="button" class="tryNow"> Try Now </button> <button type="button" class="stop"> Stop </button>

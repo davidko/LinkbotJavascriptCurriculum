@@ -6,11 +6,6 @@ $( function() {
 
 $('.ch4ex1').find('.tryNow').click( function(obj) {
   robotID = GetRobotId();
-  $('a').each(function(index, element) {
-    var href = $(this).attr('href');
-    href = href + "?robotID="+robotID;
-    $(this).attr('href', href);
-    });
 
   var bot = Linkbots.connect(robotID);
   bot.move(360, 0, 0);

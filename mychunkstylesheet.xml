@@ -7,8 +7,8 @@
 <xsl:param name="html.stylesheet">barobostyle.css</xsl:param>
 <xsl:param name="chunker.output.encoding">UTF-8</xsl:param>
 <xsl:template name="user.head.content">
-	<script src="xsl/html/html/js/vendor/linkbot.js"/>
-	<script src="xsl/html/html/js/vendor/jquery-2.1.0.min.js"/>
-	<script src="xsl/html/html/js/pythonLabHack.js"/>
+	<script src="js/vendor/linkbot.js"/>
+	<script src="js/vendor/jquery-2.1.0.min.js"/>
+	<script src="js/pythonLabHack.js"/>
 </xsl:template>
 </xsl:stylesheet>

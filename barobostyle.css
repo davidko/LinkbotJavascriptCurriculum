@@ -1,0 +1,61 @@
+body {
+	background-color:#e8e8f8;
+	max-width:8in;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+div.book {
+	background-color:#ffffff;
+  padding:20px;
+}
+
+div.chapter{
+	background-color:#ffffff;
+  padding:20px;
+}
+
+div.section{
+	background-color:#ffffff;
+  padding:20px;
+}
+
+div.figure-float{
+	float:right;
+border:groove;
+border-color:#d0FFd0;
+border-width:5px;
+}
+
+.figure .title{
+	font-size:80%;
+}
+
+div.section:after{
+content:" ";
+clear:both;
+display:block;
+}
+
+div.example-contents {
+	background-color:#e0fefe;
+	max-width:800px;
+	box-shadow:10px 10px 5px #888888;
+	padding-left:5px;
+}
+
+div.reader-query {
+	background-color:#E6E68A;
+	max-width:800px;
+	box-shadow:5px 5px 5px #888888;
+	margin-left:20px;
+	margin-right:20px;
+	padding-left:5px;
+}
+
+pre.programlisting{
+	background-color:#e0fefe;
+	max-width:800px;
+	box-shadow:10px 10px 5px #888888;
+	padding-left:5px;
+}

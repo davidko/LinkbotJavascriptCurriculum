@@ -1,22 +1,14 @@
-<div>
-<button type="button" id="tryNow"> Try Now </button>
+<div class="ch4ex2">
+<button type="button" class="tryNow"> Try Now </button>
 
-<script src="js/getURLParam.js"/>
 <script>
 $( function() {
-
-$('a').each(function(index, element) {
-		var robotID = GetURLParameter('robotID');
-		var href = $(this).attr('href');
-		href = href + "?robotID="+robotID;
-		$(this).attr('href', href);
-});
-
-$('#tryNow').click( function(obj) {
-			var robotID = GetURLParameter('robotID');
+$('.ch4ex2').find('.tryNow').click( function(obj) {
+			var robotID = GetRobotId();
 			var bot = Linkbots.connect(robotID);
 			bot.move(0, 0, -360);
 		});
+  AddRobotToGetParams(GetRobotId());
 });
 </script>
 </div>

@@ -1,5 +1,5 @@
 STYLESHEETS=/usr/share/xml/docbook/stylesheet/docbook-xsl/highlighting/xslthl-config.xml
-all: saxon
+all: saxon-chunk saxon
 
 xsltproc: 
 	xsltproc -xinclude -o test.html mystylesheet.xml curriculum.docbook.xml  
@@ -11,7 +11,7 @@ saxon:
 	/usr/bin/java -cp "/usr/share/java/saxon.jar:/usr/share/java/xslthl.jar" \
 		-Dxslthl.config="file:///usr/share/xml/docbook/stylesheet/docbook-xsl/highlighting/xslthl-config.xml" \
 		com.icl.saxon.StyleSheet \
-		-o index.html \
+		-o html/single_page_index.html \
 		curriculum.docbook.xml \
 		mystylesheet.xml \
 		html.stylesheet=barobostyle.css 

@@ -3,4 +3,10 @@
 <xsl:import href="xsl/html/docbook.xsl"/>
 <xsl:import href="xsl/html/highlight.xsl"/>
 <xsl:param name="highlight.source" select="1"/>
+<xsl:template name="user.head.content">
+	<script src="js/vendor/linkbot.js"/>
+	<script src="js/vendor/jquery-2.1.0.min.js"/>
+  <script src="js/util.js"/>
+  <script src="js/getURLParam.js"/>
+</xsl:template>
 </xsl:stylesheet>

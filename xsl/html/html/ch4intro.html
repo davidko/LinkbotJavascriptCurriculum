@@ -4,12 +4,22 @@ Enter the ID of a Linkbot-I that you would like to use for this chapter:
 <input name="linkbotId" id="linkbotId" placeholder="ZRG5" type="text" size="4"/>
 <button id="setRobotId"> Connect to Robot </button>
 <br/>
+<span id="connectStatus"> </span>
+<br/>
 The ID is printed
 on the Linkbot and is four characters long. 
 
 <script>
 $('#setRobotId').click( function(obj) {
-		var bot = Linkbots.connect( $('#linkbotId').val() );
+		try {
+			var bot = Linkbots.connect( $('#linkbotId').val() );
+		} catch (err) {
+			$('#connectStatus').text('Connection Failed').attr("style", "color:red;font-weight:bold");
+			return;
+		}
+		bot.angularSpeed(90);
+		$('#connectStatus').text('').attr("style", "color:red;font-weight:bold");
+		$('#setRobotId').text('Connected!').attr("style", "background-color:lightgreen");
 		bot.color(0, 255, 0);
 		$('a').each(function(index, element) {
 				var href = $(this).attr('href');

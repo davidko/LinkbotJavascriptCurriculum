@@ -1,0 +1,36 @@
+<div>
+<pre class="programlisting">
+robot.move( <input type="text" size="4" value="0" id="j1text" />, <input type="text" size="4" value="0" id="j2text" />, <input type="text" size="4" value="0" id="j3text" />)
+</pre>
+<button type="button" id="tryNow" > Try Now </button> <button type="button" id="stop"> Stop </button>
+
+<script src="xsl/html/html/js/getURLParam.js"/>
+<script>
+$( function() {
+
+$('a').each(function(index, element) {
+		var robotID = GetURLParameter('robotID');
+		var href = $(this).attr('href');
+		href = href + "?robotID="+robotID;
+		$(this).attr('href', href);
+});
+
+$('#tryNow').click( function(obj) {
+	var robotID = GetURLParameter('robotID');
+	var bot = Linkbots.connect(robotID);
+	var j1 = parseFloat($('#j1text').val());
+	var j2 = parseFloat($('#j2text').val());
+	var j3 = parseFloat($('#j3text').val());
+	bot.move(j1, j2, j3);
+});
+
+$('#stop').click( function(obj) {
+	var robotID = GetURLParameter('robotID');
+	var bot = Linkbots.connect(robotID);
+	bot.stop();
+});
+
+});
+</script>
+</div>
+

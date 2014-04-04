@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+<xsl:import href="xsl/html/chunk.xsl"/>
+<xsl:import href="xsl/html/highlight.xsl"/>
+<xsl:output method="html" encoding="UTF-8" indent="no"/>
+<xsl:param name="highlight.source" select="1"/>
+<xsl:param name="html.stylesheet">barobostyle.css</xsl:param>
+<xsl:param name="chunker.output.encoding">UTF-8</xsl:param>
+<xsl:template name="user.head.content">
+	<script src="xsl/html/html/js/vendor/linkbot.js"/>
+	<script src="xsl/html/html/js/vendor/jquery-2.1.0.min.js"/>
+	<script src="xsl/html/html/js/pythonLabHack.js"/>
+</xsl:template>
+</xsl:stylesheet>

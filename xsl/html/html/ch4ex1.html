@@ -1,0 +1,23 @@
+<div>
+<button type="button" id="tryNow"> Try Now </button>
+
+<script src="xsl/html/html/js/getURLParam.js"/>
+<script>
+$( function() {
+
+$('a').each(function(index, element) {
+		var robotID = GetURLParameter('robotID');
+		var href = $(this).attr('href');
+		href = href + "?robotID="+robotID;
+		$(this).attr('href', href);
+});
+
+$('#tryNow').click( function(obj) {
+			var robotID = GetURLParameter('robotID');
+			var bot = Linkbots.connect(robotID);
+			bot.move(360, 0, 0);
+		});
+});
+</script>
+</div>
+

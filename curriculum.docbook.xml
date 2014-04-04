@@ -1,5 +1,7 @@
 <?xml version='1.0'?>
 <!DOCTYPE book [
+<!ENTITY LinkbotI "Linkbot&#x2011;I">
+<!ENTITY LinkbotL "Linkbot&#x2011;L">
 <!ENTITY ch3ex1 SYSTEM "code/ch3ex1.py">
 ]>
 <book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -409,7 +411,7 @@
     </section>
     <section> <title>Drive Control</title>
       <para>
-        This portion of the Control Panel is designed to be used with a Linkbot-I with
+        This portion of the Control Panel is designed to be used with a &LinkbotI; with
         two wheels attached. The buttons in this portion of the Control Panel
         make the robot drive forward, turn left and right, and drive backward.
       </para>
@@ -477,6 +479,13 @@
   <section>
     <title> Linkbot Driver's Ed
     </title>
+    <para>
+      This section will introduce the basics to get your Linkbot moving
+      with simple pieces of Python code. 
+    </para>
+    <para>
+      <?dbhtml-include href="html/ch4intro.html"?>
+    </para>
     <section>
       <para>
         We can use the <function>move()</function> function to control a Linkbot's
@@ -487,7 +496,7 @@ robot.move(360, 0, 0)
       </para>
       <?dbhtml-include href="html/ch4ex1.html"?>
       <para>
-        As you may have noticed, the previous code snippet moves Motor 1 one whole
+        As you may have noticed, the previous code snippet moves motor 1 one whole
         rotation (360 degrees) counter-clockwise, while the other motor(s) did not
         move at all.
       </para>
@@ -498,17 +507,25 @@ robot.move(360, 0, 0)
         <programlisting language="python">
 robot.move(0, 0, -360)
         </programlisting>
-      <?dbhtml-include href="html/ch4ex1.html"?>
+      <?dbhtml-include href="html/ch4ex2.html"?>
       </para>
       <para>
         Notice that the <function>move()</function> function has three arguments.
-        Each argument controls how many degrees to move a particular motor;
+        Each argument controls how many degrees to move a particular motor:
         the first motor controls motor 1, the second controls motor 2, and
         the third controls motor 3. Not all motors are available on all
-        models of Linkbot. If you have a Linkbot-I, only motors 1 and 3 are
+        models of Linkbot. If you have a &LinkbotI;, only motors 1 and 3 are
         available, so the second argument would be ignored. 
       </para>
       <para>
+        <figure id="fig_right_hand_rule" float="1" floatstyle="right">
+          <title> The right-hand rule. </title>
+          <mediaobject>
+            <imageobject>
+              <imagedata width="1in" align="center" fileref="images/right_hand_rule.svg"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
         Also note that negative values make the robot's motor spin clockwise and
         positive values make the motor spin counter-clockwise. The choice of 
         negative values being clockwise and positive values being
@@ -521,7 +538,7 @@ robot.move(0, 0, -360)
       <para>
         Now that you are familiar with the <function>move()</function> function,
         let's try using it to move the robot around. Attach wheels to your 
-        Linkbot-I if you haven't already and place it on a suitable surface for
+        &LinkbotI; if you haven't already and place it on a suitable surface for
         driving around. Now, try modifying the code below and see what you can
         make the robot do!
         <?dbhtml-include href="html/ch4ex3.html"?>
@@ -784,7 +801,7 @@ print(myvar)
     connected to BaroboLink.
   </para> <para>
     Then, execute the following python program:
-    <example id="move.py"><title>A Python program that moves both joints an a Linkbot-I.</title>
+    <example id="move.py"><title>A Python program that moves both joints an a &LinkbotI;.</title>
       <programlisting language="java">
 #!/usr/bin/env python
 #Filename: move.py

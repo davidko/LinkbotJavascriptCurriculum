@@ -12,9 +12,9 @@ $('#tryNowa').click( function(obj) {
 	var j2 = parseFloat($('#j2a').val());
 	var j3 = parseFloat($('#j3a').val());
 	if ( (j1 > 0) && (j3 < 0) && (j1 == (j3*-1)) ) {
-		$('#checkMarkA').text( " ☑ " ).attr("style", "font-size:30pt; color:green; font-weight:bold");
+		$('#checkBoxA').attr("src", "images/check.svg");
 	} else {
-		$('#checkMarkA').text( " ☒ " ).attr("style", "font-size:30pt; color:red; font-weight:bold");
+		$('#checkBoxA').attr("src", "images/cross.svg");
 	}
 	var robotID = GetURLParameter('robotID');
 	var bot = Linkbots.connect(robotID);
@@ -32,9 +32,9 @@ $('#tryNowb').click( function(obj) {
 	var j2 = parseFloat($('#j2b').val());
 	var j3 = parseFloat($('#j3b').val());
 	if ( (j1 < 0) && (j3 < 0) && (j1 == j3) ) {
-		$('#checkMarkB').text( " ☑ " ).attr("style", "font-size:30pt; color:green; font-weight:bold");
+		$('#checkBoxB').attr("src", "images/check.svg");
 	} else {
-		$('#checkMarkB').text( " ☒ " ).attr("style", "font-size:30pt; color:red; font-weight:bold");
+		$('#checkBoxB').attr("src", "images/cross.svg");
 	}
 	var robotID = GetURLParameter('robotID');
 	var bot = Linkbots.connect(robotID);

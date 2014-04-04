@@ -9,6 +9,7 @@
 <xsl:template name="user.head.content">
 	<script src="js/vendor/linkbot.js"/>
 	<script src="js/vendor/jquery-2.1.0.min.js"/>
-	<script src="js/pythonLabHack.js"/>
+  <script src="js/util.js"/>
+  <script src="js/getURLParam.js"/>
 </xsl:template>
 </xsl:stylesheet>

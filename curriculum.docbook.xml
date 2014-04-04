@@ -507,7 +507,7 @@ robot.move(360, 0, 0)
         <programlisting language="python">
 robot.move(0, 0, -360)
         </programlisting>
-      <?dbhtml-include href="html/ch4ex2.html"?>
+      <?dbhtml-include href="html/ch4ex2.html"?> 
       </para>
       <para>
         Notice that the <function>move()</function> function has three arguments.
@@ -541,7 +541,7 @@ robot.move(0, 0, -360)
         &LinkbotI; if you haven't already and place it on a suitable surface for
         driving around. Now, try modifying the code below and see what you can
         make the robot do!
-        <?dbhtml-include href="html/ch4ex3.html"?>
+        <?dbhtml-include href="html/ch4ex3.html"?> 
       </para>
     </section>
     <section> <title> Challenge </title>
@@ -549,7 +549,7 @@ robot.move(0, 0, -360)
         <listitem>
           <para>
             Can you drive the Linkbot straight forward?
-            <?dbhtml-include href="html/ch4ex4.html"?>
+            <?dbhtml-include href="html/ch4ex4.html"?> 
           </para>
         </listitem>
         <listitem>

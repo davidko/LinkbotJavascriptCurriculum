@@ -1,0 +1,58 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Connecting to the Robot and Moving Motors</title><link rel="stylesheet" type="text/css" href="barobostyle.css"><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><link rel="home" href="index.html" title="Programming the Barobo Linkbot with Python"><link rel="up" href="ch04.html" title="Chapter&nbsp;4.&nbsp;Introduction to Programming Linkbots with Python"><link rel="prev" href="ch04s02s03.html" title="A slightly more complex example"><script src="xsl/html/html/js/vendor/linkbot.js"></script><script src="xsl/html/html/js/vendor/jquery-2.1.0.min.js"></script><script src="xsl/html/html/js/pythonLabHack.js"></script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">
+    Connecting to the Robot and Moving Motors
+  </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04s02s03.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;4.&nbsp;Introduction to Programming Linkbots with Python</th><td width="20%" align="right">&nbsp;</td></tr></table><hr></div><div class="section" title="Connecting to the Robot and Moving Motors"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e213"></a>
+    Connecting to the Robot and Moving Motors
+  </h2></div></div></div>  
+  
+  <p>
+    Lets write a program to move a Linkbot. To do this, we must first
+    establish a way for our Python programs to connect to particular Linkbots
+    to control. The easiest way to do this is through BaroboLink. 
+  </p> <p>
+    To begin, open BaroboLink and connect to the robot you want to control.
+    When you write your Python program, the Python program you write will
+    automatically communicate with BaroboLink and run on the robot currently
+    connected to BaroboLink.
+  </p> <p>
+    Then, execute the following python program:
+    </p><div class="example"><a name="move.py"></a><p class="title"><b>Example&nbsp;4.5.&nbsp;A Python program that moves both joints an a Linkbot&#8209;I.</b></p><div class="example-contents">
+      <pre class="programlisting">
+#!/usr/bin/env python
+#Filename: move.py
+
+from barobo <strong class="hl-keyword">import</strong> Linkbot
+
+linkbot = Linkbot()
+linkbot.connect()
+
+print (<strong class="hl-string"><em style="color:red">"Moving both joints 90 degrees..."</em></strong>)
+linkbot.move(<span class="hl-number">90</span>, <span class="hl-number">0</span>, <span class="hl-number">90</span>)
+      </pre>
+    </div></div><p><br class="example-break">
+  </p>
+  <p>
+    Lets take a look at the previous program in detail. The first two lines,
+    </p><pre class="programlisting">
+#!/usr/bin/env python
+#Filename: move.py
+    </pre><p>
+    contain the same type of boilerplate code we saw in our previous example. The
+    next line reads:
+    </p><pre class="programlisting">
+from barobo import Linkbot
+    </pre><p>
+    This piece of code is necessary to begin controlling Linkbots. In Python,
+    you can use the "import" command to add additional functionality to your
+    python programs. There are many packages available to import into Python
+    provided by Python and also third-party organizations. Some packages
+    help you access system resources, some packages perform numerical analysis
+    and display graphical plots, etc. This line accesses the "barobo" package,
+    which is a package that helps control Barobo robots. Inside the barobo
+    package, there is a part called "Linkbot". Thus, the line above
+    "imports the Linkbot portion of the barobo package". This line
+    of code can be considered boilerplate code since most programs that control
+    Linkbots will have this line, or a line similar to this line of code.
+  </p>
+</div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04s02s03.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right">&nbsp;</td></tr><tr><td width="40%" align="left" valign="top"> A slightly more complex example &nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;</td></tr></table></div></body></html>

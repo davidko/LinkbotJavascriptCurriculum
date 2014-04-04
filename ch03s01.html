@@ -1,0 +1,108 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Making the Linkbot LED Blink</title><link rel="stylesheet" type="text/css" href="barobostyle.css"><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><link rel="home" href="index.html" title="Programming the Barobo Linkbot with Python"><link rel="up" href="ch03.html" title="Chapter&nbsp;3.&nbsp; Controlling A Barobo Linkbot with Python"><link rel="prev" href="ch03.html" title="Chapter&nbsp;3.&nbsp; Controlling A Barobo Linkbot with Python"><link rel="next" href="ch04.html" title="Chapter&nbsp;4.&nbsp;Introduction to Programming Linkbots with Python"><script src="xsl/html/html/js/vendor/linkbot.js"></script><script src="xsl/html/html/js/vendor/jquery-2.1.0.min.js"></script><script src="xsl/html/html/js/pythonLabHack.js"></script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center"> Making the Linkbot LED Blink </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch03.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;3.&nbsp; Controlling A Barobo Linkbot with Python </th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04.html">Next</a></td></tr></table><hr></div><div class="section" title="Making the Linkbot LED Blink"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e86"></a> Making the Linkbot LED Blink </h2></div></div></div> 
+    <p>
+      All Linkbots come equipped with a controllable light called a "Light
+      Emitting Diode" or LED for short. The Linkbot's LED can change both
+      color and brightness. 
+    </p>
+    <p>
+      Lets take a look at the code example in <a class="xref" href="ch03s01.html#code:ch3ex1" title="Example&nbsp;3.1.&nbsp;A Simple Linkbot Program">Example&nbsp;3.1, &#8220;A Simple Linkbot Program&#8221;</a>.
+      </p><div class="example"><a name="code:ch3ex1"></a><p class="title"><b>Example&nbsp;3.1.&nbsp;A Simple Linkbot Program</b></p><div class="example-contents">
+        <pre class="programlisting">
+<em class="hl-comment" style="color: silver">#!/usr/bin/env python</em>
+
+<em class="hl-comment" style="color: silver"># File: ch3ex1.py</em>
+<em class="hl-comment" style="color: silver"># Modify the LED color on the Linkbot</em>
+
+<strong class="hl-keyword">import</strong> barobo
+
+ctx = barobo.BaroboCtx()
+ctx.autoConnect()
+linkbot = ctx.getLinkbot()
+
+linkbot.setLEDColor(<span class="hl-number">255</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>)
+
+        </pre>
+      </div></div><p><br class="example-break">
+    </p>
+    <div id="example_root">
+    {{ Placeholder }}
+    <form name="myform">
+      Robot Serial ID: <input type="text" name="serialIdInput" value="S3S3">
+      <input type="button" name="button" Value="Connect" onClick="connect(this.form)">
+      <input type="button" name="disconnect_button" Value="Disonnect" onClick="disconnect(this.form)">
+    </form>
+    <!-- <button type="button" onclick="connect( this.form )">Activate</button> -->
+    <h1>Joint Movement Tests:</h1>
+    <p id="serialID">text</p>
+    <p id="jointText1">text</p>
+    <p id="jointText2">text</p>
+    <p id="jointText3">text</p>
+
+    <h1> Button Tests: </h1>
+    <p id="serialID_button">text</p>
+    <p id="buttonText1">text</p>
+    <p id="buttonText2">text</p>
+
+    <h1> Accel Event Tests: </h1>
+    <p id="serialID_accel">text</p>
+    <p id="accelText1">text</p>
+    <p id="accelText2">text</p>
+    <p id="accelText3">text</p>
+
+<script>
+
+if (typeof baroboBridge == "undefined") {
+  document.getElementById("example_root").innerHTML="Use LinkbotLabs for interactive demo of this example!";
+}
+
+function connect(form)
+{
+  robot = form.serialIdInput.value;
+  baroboBridge.connectRobot(robot);
+  //baroboBridge.move("S3S3", 90, 90, 90);
+  baroboBridge.motorChanged.connect(onJointMoved);
+  baroboBridge.buttonChanged.connect(onButtonEvent);
+  baroboBridge.accelChanged.connect(onAccelEvent);
+  baroboBridge.enableButtonSignals(robot);
+  baroboBridge.enableMotorSignals(robot);
+  baroboBridge.enableAccelSignals(robot);
+}
+
+function disconnect(form)
+{
+  alert("Disconnecting...");
+  robot = form.serialIdInput.value;
+  baroboBridge.disableButtonSignals(robot);
+  baroboBridge.disableMotorSignals(robot);
+  baroboBridge.disableAccelSignals(robot);
+  baroboBridge.disconnectRobot(robot);
+}
+
+function onJointMoved(id, j1, j2, j3)
+{
+  document.getElementById("serialID").innerHTML = id;
+  document.getElementById("jointText1").innerHTML = j1.toString();
+  document.getElementById("jointText2").innerHTML = j2.toString();
+  document.getElementById("jointText3").innerHTML = j3.toString();
+}
+
+function onButtonEvent(id, mask, e)
+{
+  document.getElementById("serialID_button").innerHTML = id;
+  document.getElementById("buttonText1").innerHTML = mask.toString();
+  document.getElementById("buttonText2").innerHTML = e.toString();
+}
+
+function onAccelEvent(id, x, y, z)
+{
+  document.getElementById("serialID_accel").innerHTML = id;
+  document.getElementById("accelText1").innerHTML = x.toString();
+  document.getElementById("accelText2").innerHTML = y.toString();
+  document.getElementById("accelText3").innerHTML = z.toString();
+}
+
+</script>
+</div>
+  </div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch03.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="ch03.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="ch04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter&nbsp;3.&nbsp; Controlling A Barobo Linkbot with Python &nbsp;</td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;Chapter&nbsp;4.&nbsp;Introduction to Programming Linkbots with Python</td></tr></table></div></body></html>

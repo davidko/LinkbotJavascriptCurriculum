@@ -26,3 +26,6 @@ saxon-chunk:
 		html.stylesheet=barobostyle.css \
 		chunk.section.depth=2 \
 		chunk.first.sections=1
+
+saxon9:
+	/usr/bin/java -jar ~/.local/share/java/saxon9he.jar curriculum.docbook.xml mychunkstylesheet.xml

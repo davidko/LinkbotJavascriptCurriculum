@@ -13,12 +13,12 @@ function GetRobotId()
 function AddRobotToGetParams(robotId)
 {
 		$('.navheader').find('a').each(function(index, element) {
-				var href = $(this).attr('href');
+				var href = $(this).attr('href').split('?')[0];
 				href = href + "?robotID="+robotId;
 				$(this).attr('href', href);
 			});
 		$('.navfooter').find('a').each(function(index, element) {
-				var href = $(this).attr('href');
+				var href = $(this).attr('href').split('?')[0];
 				href = href + "?robotID="+robotId;
 				$(this).attr('href', href);
 			});

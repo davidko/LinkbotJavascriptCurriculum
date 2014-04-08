@@ -1,31 +1,33 @@
 <div class="ch4ex3">
+
+<div class="abridgedCode">
 <pre class="programlisting">
 robot.move( <input type="text" size="4" value="0" class="j1text" />, 0, <input type="text" size="4" value="0" class="j3text" />)
 </pre>
+</div>
+
+<div class="unabridgedCode" style="display:none;">
+<pre class="programlisting">
+#!/usr/bin/env python
+# File: ch4ex3.py
+
+import barobo
+ctx = barobo.BaroboCtx()
+ctx.autoConnect()
+robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot.setJointSpeeds(90, 90, 90)
+
+robot.move( <input type="text" size="4" value="0" class="j1text" />, 0, <input type="text" size="4" value="0" class="j3text" />)
+</pre>
+</div>
+
+<a class="expandProgram" href="#"><img src="images/eye.svg" width="20px"/>
+<span class="expandProgramText">Show Unabridged Program</span>
+</a><br/>
+
 <button type="button" class="tryNow" > Try Now </button> <button type="button" class="stop"> Stop </button>
 
-<script>
-$( function() {
-
-$('.ch4ex3').find('.tryNow').click( function(obj) {
-	var robotID = GetRobotId();
-	var bot = Linkbots.connect(robotID);
-  var j1text = $('.ch4ex3').find('.j1text').val();
-  var j3text = $('.ch4ex3').find('.j3text').val();
-	var j1 = parseFloat(j1text);
-	var j2 = 0;
-	var j3 = parseFloat(j3text);
-	bot.move(j1, j2, j3);
-});
-
-$('.ch4ex3').find('.stop').click( function(obj) {
-	var robotID = GetRobotId();
-	var bot = Linkbots.connect(robotID);
-	bot.stop();
-});
-
-AddRobotToGetParams(GetRobotId());
-});
+<script src="js/ch4ex3.js">
 </script>
 </div>
 

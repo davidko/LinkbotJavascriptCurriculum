@@ -4,21 +4,34 @@
     </th><td width="20%" align="right">&nbsp;<a accesskey="n" href="ch04s01s03.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"></div>
       <p>
         Now, try this:
-        </p><pre class="programlisting">
-robot.move(<span class="hl-number">0</span>, <span class="hl-number">0</span>, -<span class="hl-number">360</span>)
-        </pre><p>
       </p><div class="ch4ex2">
+
+<div class="abridgedCode">
+<pre class="programlisting">
+robot.move(<span class="hl-number">0</span>, <span class="hl-number">0</span>, <span class="hl-number">-360</span>)
+</pre>
+</div>
+<div class="unabridgedCode" style="display: none;">
+  <pre class="programlisting">
+#!/usr/bin/env python
+# File: ch4ex2.py
+
+import barobo
+ctx = barobo.BaroboCtx()
+ctx.autoConnect()
+robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+
+robot.move(0, 0, -360)
+  </pre>
+</div>
+
+<a class="expandProgram" href="#"><img src="images/eye.svg" width="20px">
+<span class="expandProgramText">Show Unabridged Program</span>
+</a><br>
+
 <button type="button" class="tryNow"> Try Now </button>
 
-<script>
-$( function() {
-$('.ch4ex2').find('.tryNow').click( function(obj) {
-			var robotID = GetRobotId();
-			var bot = Linkbots.connect(robotID);
-			bot.move(0, 0, -360);
-		});
-  AddRobotToGetParams(GetRobotId());
-});
+<script src="js/ch4ex2.js">
 </script>
 </div><p> 
       </p>

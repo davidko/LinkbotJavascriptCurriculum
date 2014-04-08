@@ -501,9 +501,6 @@
     <section>
       <para>
         Now, try this:
-        <programlisting language="python">
-robot.move(0, 0, -360)
-        </programlisting>
       <?dbhtml-include href="html/ch4ex2.html"?> 
       </para>
       <para>

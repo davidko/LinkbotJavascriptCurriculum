@@ -1,7 +1,7 @@
 <html><head>
       <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
    <title>Programming the Barobo Linkbot with Python</title><link rel="stylesheet" type="text/css" href="barobostyle.css"><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><script src="js/vendor/linkbot.js"></script><script src="js/vendor/jquery-2.1.0.min.js"></script><script src="js/util.js"></script><script src="js/getURLParam.js"></script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="Programming the Barobo Linkbot with Python"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Programming the Barobo Linkbot with Python</h1></div><div><div class="author"><h3 class="author"><span class="firstname">David</span> <span class="surname">Ko</span></h3></div></div><div><p class="copyright">Copyright &copy; 2014 Barobo, Inc. </p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#d5e11">Preface</a></span></dt><dt><span class="chapter"><a href="#d5e25">1.  Introduction </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e31"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e34"> Python </a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e58">2. Introduction to the Barobo Linkbot</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e66">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e71">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e73">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e78">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e84">3.  Controlling A Barobo Linkbot with Python </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e86"> Making the Linkbot LED Blink </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d5e94">4. Introduction to Programming Linkbots with Python</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e96"> Linkbot Driver's Ed
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e100"></a></span></dt><dt><span class="section"><a href="#d5e104"></a></span></dt><dt><span class="section"><a href="#d5e115"> Explore </a></span></dt><dt><span class="section"><a href="#d5e119"> Challenge </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e126">Introduction to Python for Computer Programming</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e129">Getting Started with PyScripter</a></span></dt><dt><span class="section"><a href="#d5e133">Your First Python Program</a></span></dt><dt><span class="section"><a href="#d5e204"> A slightly more complex example </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e212">
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e100"></a></span></dt><dt><span class="section"><a href="#d5e104"></a></span></dt><dt><span class="section"><a href="#d5e114"> Explore </a></span></dt><dt><span class="section"><a href="#d5e118"> Challenge </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e125">Introduction to Python for Computer Programming</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e128">Getting Started with PyScripter</a></span></dt><dt><span class="section"><a href="#d5e132">Your First Python Program</a></span></dt><dt><span class="section"><a href="#d5e203"> A slightly more complex example </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e211">
     Connecting to the Robot and Moving Motors
   </a></span></dt></dl></dd></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>1.1. <a href="#fig_installwindows1"> Installing PortablePython - Barobo Edition, Step 1</a></dt><dt>1.2. <a href="#fig_installwindows2"> Installing PortablePython - Barobo Edition, Step 2</a></dt><dt>1.3. <a href="#fig_installwindows3"> Installing PortablePython - Barobo Edition, Step 3</a></dt><dt>2.1. <a href="#fig_schematic">Linkbot Diagram and Features</a></dt><dt>4.1. <a href="#fig_right_hand_rule"> The right-hand rule. </a></dt><dt>4.2. <a href="#fig_ninja_hello"> A Ninja-IDE Window after executing hello.py. </a></dt></dl></div><div class="list-of-examples"><p><b>List of Examples</b></p><dl><dt>3.1. <a href="#code:ch3ex1">A Simple Linkbot Program</a></dt><dt>4.1. <a href="#hello.py">A simple Python program</a></dt><dt>4.2. <a href="#hello_bad.py">A Python program with a syntax error.</a></dt><dt>4.3. <a href="#hello_bad2.py">A Python Program with a Bug</a></dt><dt>4.4. <a href="#hello_variable.py">A Python Program with Variables</a></dt><dt>4.5. <a href="#move.py">A Python program that moves both joints an a Linkbot&#8209;I.</a></dt></dl></div>
 
@@ -303,7 +303,7 @@ function onAccelEvent(id, x, y, z)
 </div>
 
 <div class="chapter" title="Chapter&nbsp;4.&nbsp;Introduction to Programming Linkbots with Python"><div class="titlepage"><div><div><h2 class="title"><a name="d5e94"></a>Chapter&nbsp;4.&nbsp;Introduction to Programming Linkbots with Python</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e96"> Linkbot Driver's Ed
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e100"></a></span></dt><dt><span class="section"><a href="#d5e104"></a></span></dt><dt><span class="section"><a href="#d5e115"> Explore </a></span></dt><dt><span class="section"><a href="#d5e119"> Challenge </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e126">Introduction to Python for Computer Programming</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e129">Getting Started with PyScripter</a></span></dt><dt><span class="section"><a href="#d5e133">Your First Python Program</a></span></dt><dt><span class="section"><a href="#d5e204"> A slightly more complex example </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e212">
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e100"></a></span></dt><dt><span class="section"><a href="#d5e104"></a></span></dt><dt><span class="section"><a href="#d5e114"> Explore </a></span></dt><dt><span class="section"><a href="#d5e118"> Challenge </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e125">Introduction to Python for Computer Programming</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e128">Getting Started with PyScripter</a></span></dt><dt><span class="section"><a href="#d5e132">Your First Python Program</a></span></dt><dt><span class="section"><a href="#d5e203"> A slightly more complex example </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e211">
     Connecting to the Robot and Moving Motors
   </a></span></dt></dl></div> 
   <div class="section" title="Linkbot Driver's Ed"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e96"></a> Linkbot Driver's Ed
@@ -373,9 +373,11 @@ robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
 robot.move(360, 0, 0)
   </pre>
 </div>
+
 <a class="expandProgram" href="#"><img src="images/eye.svg" width="20px">
 <span class="expandProgramText">Show Unabridged Program</span>
 </a><br>
+
 <button type="button" class="tryNow"> Try Now </button>
 
 <script src="js/ch4ex1.js">
@@ -390,21 +392,34 @@ robot.move(360, 0, 0)
     <div class="section"><div class="titlepage"></div>
       <p>
         Now, try this:
-        </p><pre class="programlisting">
-robot.move(<span class="hl-number">0</span>, <span class="hl-number">0</span>, -<span class="hl-number">360</span>)
-        </pre><p>
       </p><div class="ch4ex2">
+
+<div class="abridgedCode">
+<pre class="programlisting">
+robot.move(<span class="hl-number">0</span>, <span class="hl-number">0</span>, <span class="hl-number">-360</span>)
+</pre>
+</div>
+<div class="unabridgedCode" style="display: none;">
+  <pre class="programlisting">
+#!/usr/bin/env python
+# File: ch4ex2.py
+
+import barobo
+ctx = barobo.BaroboCtx()
+ctx.autoConnect()
+robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+
+robot.move(0, 0, -360)
+  </pre>
+</div>
+
+<a class="expandProgram" href="#"><img src="images/eye.svg" width="20px">
+<span class="expandProgramText">Show Unabridged Program</span>
+</a><br>
+
 <button type="button" class="tryNow"> Try Now </button>
 
-<script>
-$( function() {
-$('.ch4ex2').find('.tryNow').click( function(obj) {
-			var robotID = GetRobotId();
-			var bot = Linkbots.connect(robotID);
-			bot.move(0, 0, -360);
-		});
-  AddRobotToGetParams(GetRobotId());
-});
+<script src="js/ch4ex2.js">
 </script>
 </div><p> 
       </p>
@@ -429,7 +444,7 @@ $('.ch4ex2').find('.tryNow').click( function(obj) {
         math and engineering.
       </p>
     </div>
-    <div class="section" title="Explore"><div class="titlepage"><div><div><h3 class="title"><a name="d5e115"></a> Explore </h3></div></div></div> 
+    <div class="section" title="Explore"><div class="titlepage"><div><div><h3 class="title"><a name="d5e114"></a> Explore </h3></div></div></div> 
       <p>
         Now that you are familiar with the <code class="function">move()</code> function,
         let's try using it to move the robot around. Attach wheels to your 
@@ -437,38 +452,38 @@ $('.ch4ex2').find('.tryNow').click( function(obj) {
         driving around. Now, try modifying the code below and see what you can
         make the robot do!
         </p><div class="ch4ex3">
+
+<div class="abridgedCode">
 <pre class="programlisting">
 robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
 </pre>
+</div>
+
+<div class="unabridgedCode" style="display:none;">
+<pre class="programlisting">
+#!/usr/bin/env python
+# File: ch4ex3.py
+
+import barobo
+ctx = barobo.BaroboCtx()
+ctx.autoConnect()
+robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
+</pre>
+</div>
+
+<a class="expandProgram" href="#"><img src="images/eye.svg" width="20px">
+<span class="expandProgramText">Show Unabridged Program</span>
+</a><br>
+
 <button type="button" class="tryNow"> Try Now </button> <button type="button" class="stop"> Stop </button>
 
-<script>
-$( function() {
-
-$('.ch4ex3').find('.tryNow').click( function(obj) {
-	var robotID = GetRobotId();
-	var bot = Linkbots.connect(robotID);
-  var j1text = $('.ch4ex3').find('.j1text').val();
-  var j3text = $('.ch4ex3').find('.j3text').val();
-	var j1 = parseFloat(j1text);
-	var j2 = 0;
-	var j3 = parseFloat(j3text);
-	bot.move(j1, j2, j3);
-});
-
-$('.ch4ex3').find('.stop').click( function(obj) {
-	var robotID = GetRobotId();
-	var bot = Linkbots.connect(robotID);
-	bot.stop();
-});
-
-AddRobotToGetParams(GetRobotId());
-});
+<script src="js/ch4ex3.js">
 </script>
 </div><p> 
       </p>
     </div>
-    <div class="section" title="Challenge"><div class="titlepage"><div><div><h3 class="title"><a name="d5e119"></a> Challenge </h3></div></div></div> 
+    <div class="section" title="Challenge"><div class="titlepage"><div><div><h3 class="title"><a name="d5e118"></a> Challenge </h3></div></div></div> 
       <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
           <p>
             Can you drive the Linkbot straight forward?
@@ -504,7 +519,7 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
         </li></ol></div>
     </div>
   </div>
-  <div class="section" title="Introduction to Python for Computer Programming"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e126"></a>Introduction to Python for Computer Programming</h2></div></div></div> 
+  <div class="section" title="Introduction to Python for Computer Programming"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e125"></a>Introduction to Python for Computer Programming</h2></div></div></div> 
     <p>
       In the previous chapter, we learned how to control a Linkbot using the
       Control Panel. However, the Control panel requires human interaction
@@ -516,7 +531,7 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
       can be executed depending on what you want your robot to do. 
       Existing programs can also be modified to solve similar problems.
     </p>
-    <div class="section" title="Getting Started with PyScripter"><div class="titlepage"><div><div><h3 class="title"><a name="d5e129"></a>Getting Started with PyScripter</h3></div></div></div> 
+    <div class="section" title="Getting Started with PyScripter"><div class="titlepage"><div><div><h3 class="title"><a name="d5e128"></a>Getting Started with PyScripter</h3></div></div></div> 
       <p>
         PyScripter is a type of program called an "Integrated Development
         Environment (IDE)". Typically, IDE's are capable of editing code,
@@ -527,7 +542,7 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
         PortablePython installation folder.
       </p>
     </div>
-    <div class="section" title="Your First Python Program"><div class="titlepage"><div><div><h3 class="title"><a name="d5e133"></a>Your First Python Program</h3></div></div></div> 
+    <div class="section" title="Your First Python Program"><div class="titlepage"><div><div><h3 class="title"><a name="d5e132"></a>Your First Python Program</h3></div></div></div> 
       <p>
         Once you have opened PyScripter, begin by creating a new program. You 
         can do this by clicking on the "New File" icon in the toolbar on
@@ -584,7 +599,7 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
         Thus, multiple print statements in our program will print multiple
         lines of text onto our screen.
       </p>
-      <div class="section" title="Dissecting Your First Python Program"><div class="titlepage"><div><div><h4 class="title"><a name="d5e157"></a>Dissecting Your First Python Program</h4></div></div></div> 
+      <div class="section" title="Dissecting Your First Python Program"><div class="titlepage"><div><div><h4 class="title"><a name="d5e156"></a>Dissecting Your First Python Program</h4></div></div></div> 
         <p>
           Lets take a closer look at your first Python program. The first line
           looks like this:
@@ -624,7 +639,7 @@ print('Hello, world!')
           with the language. 
         </p>
       </div>
-      <div class="section" title="Debugging Python Programs"><div class="titlepage"><div><div><h4 class="title"><a name="d5e167"></a>Debugging Python Programs</h4></div></div></div> 
+      <div class="section" title="Debugging Python Programs"><div class="titlepage"><div><div><h4 class="title"><a name="d5e166"></a>Debugging Python Programs</h4></div></div></div> 
         <p>
           Eventually, you will accidentally try to run Python programs
           with typos in them. This is totally normal and completely unavoidable.
@@ -656,16 +671,16 @@ print('Hello, world!')
           errors are on the reported line or sometimes a few lines before.
         </p>
       </div>
-      <div class="section" title="Summary"><div class="titlepage"><div><div><h4 class="title"><a name="d5e180"></a> Summary </h4></div></div></div> 
+      <div class="section" title="Summary"><div class="titlepage"><div><div><h4 class="title"><a name="d5e179"></a> Summary </h4></div></div></div> 
         <div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">Python programs typically end in ".py". </li><li class="listitem">Python comments begin with the character '#'. </li><li class="listitem">Use the <code class="function">print</code> function to print text onto the screen.</li><li class="listitem">When you encounter error messages, scan the lines reported in the error
                     as well as the lines around the reported error.</li><li class="listitem">Use the <code class="function">print</code> function to print text onto the screen.</li></ul></div>
       </div>
-      <div class="section" title="Terminology"><div class="titlepage"><div><div><h4 class="title"><a name="d5e190"></a> Terminology </h4></div></div></div> 
+      <div class="section" title="Terminology"><div class="titlepage"><div><div><h4 class="title"><a name="d5e189"></a> Terminology </h4></div></div></div> 
         <p>
           bug, debug, function, comment, source code, <code class="function">print</code>
         </p>
       </div>
-      <div class="section" title="Exercises"><div class="titlepage"><div><div><h4 class="title"><a name="d5e194"></a>Exercises</h4></div></div></div> 
+      <div class="section" title="Exercises"><div class="titlepage"><div><div><h4 class="title"><a name="d5e193"></a>Exercises</h4></div></div></div> 
         <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
             What is wrong with the following code example?
             <div class="example"><a name="hello_bad2.py"></a><p class="title"><b>Example&nbsp;4.3.&nbsp;A Python Program with a Bug</b></p><div class="example-contents">
@@ -691,7 +706,7 @@ jumped over the lazy dog.
           </li></ol></div>
       </div>
     </div>
-    <div class="section" title="A slightly more complex example"><div class="titlepage"><div><div><h3 class="title"><a name="d5e204"></a> A slightly more complex example </h3></div></div></div>
+    <div class="section" title="A slightly more complex example"><div class="titlepage"><div><div><h3 class="title"><a name="d5e203"></a> A slightly more complex example </h3></div></div></div>
       
       <p>
         Lets take a look at a slightly more complex example which actually
@@ -712,7 +727,7 @@ print(myvar)
     </div>
   </div>
 
-<div class="section" title="Connecting to the Robot and Moving Motors"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e212"></a>
+<div class="section" title="Connecting to the Robot and Moving Motors"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e211"></a>
     Connecting to the Robot and Moving Motors
   </h2></div></div></div>  
   

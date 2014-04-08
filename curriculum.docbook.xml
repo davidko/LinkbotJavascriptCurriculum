@@ -490,9 +490,6 @@
       <para>
         We can use the <function>move()</function> function to control a Linkbot's
         motors.
-        <programlisting language="python">
-robot.move(360, 0, 0)
-        </programlisting>
       </para>
       <?dbhtml-include href="html/ch4ex1.html"?>
       <para>

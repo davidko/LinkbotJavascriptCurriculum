@@ -5,25 +5,33 @@
       <p>
         We can use the <code class="function">move()</code> function to control a Linkbot's
         motors.
-        </p><pre class="programlisting">
-robot.move(<span class="hl-number">360</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>)
-        </pre><p>
       </p>
       <div class="ch4ex1">
+
+<div class="abridgedCode">
+<pre class="programlisting">
+robot.move(<span class="hl-number">360</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>)
+</pre>
+</div>
+<div class="unabridgedCode" style="display: none;">
+  <pre class="programlisting">
+#!/usr/bin/env python
+# File: ch4ex1.py
+
+import barobo
+ctx = barobo.BaroboCtx()
+ctx.autoConnect()
+robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+
+robot.move(360, 0, 0)
+  </pre>
+</div>
+<a class="expandProgram" href="#"><img src="images/eye.svg" width="20px">
+<span class="expandProgramText">Show Unabridged Program</span>
+</a><br>
 <button type="button" class="tryNow"> Try Now </button>
 
-<script>
-$( function() {
-
-$('.ch4ex1').find('.tryNow').click( function(obj) {
-  robotID = GetRobotId();
-
-  var bot = Linkbots.connect(robotID);
-  bot.move(360, 0, 0);
-  });
-
-  AddRobotToGetParams(GetRobotId());
-});
+<script src="js/ch4ex1.js">
 </script>
 </div>
       <p>

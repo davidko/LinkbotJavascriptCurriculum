@@ -13,6 +13,7 @@ import barobo
 ctx = barobo.BaroboCtx()
 ctx.autoConnect()
 robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot.setJointSpeeds(90, 90, 90)
 
 robot.move(<input type="text" size="4" value="0" class="j1text"/>, 0, <input type="text" size="4" value="0" class="j3text"/>)
 </pre>

@@ -1,14 +1,33 @@
 <div class="ch4ex4">
-<pre class="programlisting">
-robot.move(<input type="text" size="4" value="0" class="j1" />, 0, <input type="text" size="4" value="0" class="j3"/>)
 
+<div class="abridgedCode">
+<pre class="programlisting">
+robot.move(<input type="text" size="4" value="0" class="j1text" />, 0, <input type="text" size="4" value="0" class="j3text"/>)
 </pre>
+</div>
+
+<div class="unabridgedCode" style="display:none;">
+<pre class="programlisting">
+#!/usr/bin/env python
+import barobo
+ctx = barobo.BaroboCtx()
+ctx.autoConnect()
+robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+
+robot.move(<input type="text" size="4" value="0" class="j1text" />, 0, <input type="text" size="4" value="0" class="j3text"/>)
+</pre>
+</div>
+
+<a class="expandProgram" href="#"><img src="images/eye.svg" width="20px"/>
+<span class="expandProgramText">Show Unabridged Program</span>
+</a><br/>
+
 <button type="button" class="tryNow" > Try Now </button> <button type="button" class="stop" > Stop </button>
 <br/>
 Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px" /> 
 <!-- ☐ ☑ ☒ -->
 
 <!-- Script data in ch4ex5.html -->
-<script src="ch4ex4.js" />
+<script src="js/ch4ex4.js" />
 </div>
 

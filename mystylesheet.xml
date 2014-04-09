@@ -3,6 +3,7 @@
 <xsl:import href="xsl/html/docbook.xsl"/>
 <xsl:import href="xsl/html/highlight.xsl"/>
 <xsl:param name="highlight.source" select="1"/>
+<xsl:param name="html.stylesheet">barobostyle.css</xsl:param>
 <xsl:template name="user.head.content">
 	<script src="js/vendor/linkbot.js"/>
 	<script src="js/vendor/jquery-2.1.0.min.js"/>

@@ -6,8 +6,9 @@ $('.ch4ex2').find('.tryNow').click( function(obj) {
 			var robotID = GetRobotId();
 			var bot = Linkbots.connect(robotID);
 			bot.move(0, 0, -360);
-		});
-  AddRobotToGetParams(GetRobotId());
+});
+
+AddRobotToGetParams(GetRobotId());
 
 $(chapterClassName).find('.expandProgram').click( function(obj) {
   if(showWholeCode) {

@@ -1,5 +1,8 @@
 html {
 	background-color:#e8e8f8;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -31,7 +34,8 @@ div.figure-float{
 	float:right;
 border:groove;
 border-color:#d0FFd0;
-border-width:5px;
+border-width:3px;
+border-radius:6px;
 }
 
 .figure .title{
@@ -57,12 +61,28 @@ div.reader-query {
 	box-shadow:5px 5px 5px #888888;
 	margin-left:20px;
 	margin-right:20px;
-	padding-left:5px;
+	padding:5px;
+  border-radius: 6px;
+  border:solid;
+  border-width:1px;
+  border-color:#888;
 }
 
 pre.programlisting{
 	background-color:#e0fefe;
 	max-width:800px;
 	box-shadow:5px 5px 5px #888888;
-	padding-left:5px;
+	padding:5px;
+  border-radius: 6px;
+  border:solid;
+  border-width:1px;
+  border-color:#888;
+}
+
+a {
+  background: transparent;
+}
+a:active,
+a:hover {
+  outline: 0;
 }

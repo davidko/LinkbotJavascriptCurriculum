@@ -1,28 +1,30 @@
 <div class="ch4ex1">
 
-<div class="abridgedCode">
-<pre class="programlisting">
-robot.move(<span class="hl-number">360</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>)
-</pre>
-</div>
-<div class="unabridgedCode" style="display: none;">
-  <pre class="programlisting">
+<div class="code-snippet">
+    <pre class="hidden">
 #!/usr/bin/env python
 # File: ch4ex1.py
 
 import barobo
 ctx = barobo.BaroboCtx()
 ctx.autoConnect()
+<span class="unknown-robot-id-comment"><br/># Change the robot ID shown below to the ID of your Linkbot.</span>
 robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
 robot.setJointSpeeds(90, 90, 90)
+    </pre>
 
-robot.move(360, 0, 0)
-  </pre>
+    <pre>
+robot.move(<span class="hl-number">360</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>)
+    </pre>
+
+    <div class="hider-tab">
+        <a class="expand-program" href="#">
+            <img src="images/double-chevron-down.svg" width="20px" height="20px" alt="Show/hide unabridged code" title="Show/hide unabridged code"/>
+        </a>
+    </div>
 </div>
 
-<a class="expandProgram" href="#"><img src="images/eye.svg" width="20px"/>
-<span class="expandProgramText">Show Unabridged Program</span>
-</a><br/>
+<br/>
 
 <button type="button" class="tryNow"> Try Now </button>
 

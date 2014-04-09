@@ -11,6 +11,15 @@
   <author>
     <personname><firstname>David</firstname><surname>Ko</surname></personname>
   </author>
+  <author>
+    <personname><firstname>Bryan</firstname><surname>Richter</surname></personname>
+  </author>
+  <author>
+    <personname><firstname>Harris</firstname><surname>Hancock</surname></personname>
+  </author>
+  <author>
+    <personname><firstname>Mike</firstname><surname>Challender</surname></personname>
+  </author>
   <copyright><year>2014</year><holder>Barobo, Inc. </holder></copyright>
 </info>
 
@@ -18,7 +27,16 @@
   <para>
     Welcome to "Programming the Barobo Linkbot with Python". The goals of
     this book are to familiarize you with the Python programming language
-    and essential concepts of programming robots.
+    and essential concepts of programming robots. The book accomplishes 
+    this in a "Robot-centric" manner: It teaches you how to do cool things
+    with your Linkbot, and you learn computer science principles 
+    along the way as a side effect of making the robot do cool things.
+    This breaks the old paradigm of teaching programming, which typically
+    focuses on one particular core concept, such as loops or functions,
+    per chapter. At the same time, we make sure to include all of the
+    important computer science concepts in this book, as well as 
+    a good amount of real computer science jargon to prepare you for 
+    real-world programming.
   </para> <para>
     The intended audience for this book are people with some computer
     experience and some basic math (Pre-Algebra) experience. The user
@@ -71,24 +89,29 @@
     physics, and even music! One such robot is the Linkbot modular robot.
     The Linkbot has been designed to be low-cost, fully-featured, tough, and
     easily programmable for day-to-day use by students and hobbyists of all 
-    ages. 
+    ages, and that is the robot that the following chapters will teach you
+    how to use.
   </para>
   <para>
     This curriculum is designed to bring someone with limited programming
     experience up to speed with programming a Linkbot using the Python
     programming language. Python is a free, fully featured, and easy 
     language to learn and use. It's unique design makes it popular among
-    a large spectrum of programmers from absolute beginners to Google
-    wizards. 
+    a large spectrum of programmers from absolute beginners to code 
+    wizards. It is commonly used as both an introductory language at
+    universities as well as an 
+    all-purpose in-house language by many major software and technology companies.
   </para>
-  <para>
-    This curriculum is organized in such a way that it teaches how to make the
-    robots do interesting stuff first, and teaches computer science and
-    programming concepts as a side-effect of making the robot do cool things.
-    As such, the chapters and sections are organized primarily by robot
-    functionality rather than computer science topics, such as variables,
-    loops, etc. 
-  </para>
+  <!--
+    <para>
+      This curriculum is organized in such a way that it teaches how to make the
+      robots do interesting stuff first, and teaches computer science and
+      programming concepts as a side-effect of making the robot do cool things.
+      As such, the chapters and sections are organized primarily by robot
+      functionality rather than computer science topics, such as variables,
+      loops, etc. 
+    </para>
+  -->
   <section> <title> Getting and Installing the Software </title>
     <para>
       This curriculum requires a fully functioning Python environment
@@ -138,7 +161,7 @@
           </figure>
         </para>
         <para>
-          At this point, you have several options for where to install PortablePython.
+          On this screen, you have several options for where to install PortablePython.
           The easiest place to install it is onto your Desktop. If that is where
           you would like to install it, simply click on "Desktop" and then click
           "OK".
@@ -153,7 +176,24 @@
         <para>
           Once you have installed PortablePython, you can navigate to that 
           directory using your file browser. Inside the directory, you will
-          see several executables, as shown in Figure 
+          see several executables, as shown in <xref linkend="fig_install_contents"/>.
+          <figure id="fig_install_contents">
+            <title> PortablePython Install Contents</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/windows_install_contents.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          The installed contents are:
+          <itemizedlist>
+            <listitem> IDLE : A Python development environment. </listitem>
+            <listitem> IPython : An interactive Python console. </listitem>
+            <listitem> PyScripter : A Python development environment. </listitem>
+            <listitem> Python : A Python console. </listitem>
+            <listitem> QtDesigner : A graphical user interface designer, for designing window based 
+              applications. </listitem>
+          </itemizedlist>
         </para>
       </section> 
     </section> 
@@ -220,6 +260,9 @@
     </para>
   </section>
   <section> <title>Linkbot Motor Zero Positions</title>
+    The Linkbot comes with a preset "Zero Position" for each of its motors.
+    The following sections will show you how to check and set the zero
+    position for each motor.
     <section> <title>Moving the Motors to Zero Positions</title>
       <para>
       While the robot is on, you may make the robot move its joints to its
@@ -229,7 +272,7 @@
       buttons together again. This can be used to check the calibration of 
       the motors. When the joints are in their zero positions, the large
       notch on the black joint face should line up with the notch on the
-      white plastic, as shown in Figure <xref linkend="fig_wheelnotch"/>.
+      white plastic <!--, as shown in Figure <xref linkend="fig_wheelnotch"/>-->.
       </para>
       <para>
       If the notches do not line up after the robot moves to its zero positions,
@@ -242,7 +285,7 @@
       <orderedlist>
         <listitem> Manually move the motors to their zero positions by aligning
              the notch on the motors with the notch on the while plastic
-             body, as shown in Figure <xref linkend="fig_wheelnotch"/>. If
+             body. <!--, as shown in Figure <xref linkend="fig_wheelnotch"/>.--> If
              the motors are locked, press and release buttons 'A' and 'B' 
              simultaneously, or power-cycle the robot to release the motors.</listitem>
         <listitem> Hold down both buttons 'A' and 'B'. After about three seconds,
@@ -456,6 +499,7 @@
 </chapter>
 -->
 
+<!--
 <chapter> <title> Controlling A Barobo Linkbot with Python </title>
   <section> <title> Making the Linkbot LED Blink </title>
     <para>
@@ -474,8 +518,25 @@
     <?dbhtml-include href="html/ex1.html"?>
   </section>
 </chapter>
+-->
 
 <chapter> <title>Introduction to Programming Linkbots with Python</title>
+  This chapter will help you start moving your Linkbot around. As you
+  go through this section, you will see small snippets of code that
+  moves the robot. If you choose, there is a link below each snippet
+  that allows you to see the whole piece of Python code being used to
+  control the robot. If you choose to see the unabridged code, you may see
+  some code that you do not yet understand. Don't worry about that yet;
+  We'll explain the details for that "boilerplate" code later.
+  <footnote>
+    <para>
+    "boilerplate" code refers to code that appears at the beginning of
+    many programs used for setup and configuration. Typically, boilerplate
+    does not change or changes only a little bit from program to program,
+    though it is required for the program to run properly.
+    </para>
+  </footnote>
+
   <section>
     <title> Linkbot Driver's Ed
     </title>
@@ -486,7 +547,8 @@
     <para>
       <?dbhtml-include href="html/ch4intro.html"?>
     </para>
-    <section>
+    <section> 
+      <title> Linkbot Driver's Ed: Part 1 </title>
       <para>
         We can use the <function>move()</function> function to control a Linkbot's
         motors.
@@ -499,6 +561,7 @@
       </para>
     </section>
     <section>
+      <title> Linkbot Driver's Ed: Part 2 </title>
       <para>
         Now, try this:
       <?dbhtml-include href="html/ch4ex2.html"?> 
@@ -555,6 +618,7 @@
       </orderedlist>
     </section>
   </section>
+  <!--
   <section> <title>Introduction to Python for Computer Programming</title>
     <para>
       In the previous chapter, we learned how to control a Linkbot using the
@@ -779,61 +843,8 @@ print(myvar)
       </para>
     </section>
   </section>
+  -->
 
-<section>  
-  <title>
-    Connecting to the Robot and Moving Motors
-  </title>
-  <para>
-    Lets write a program to move a Linkbot. To do this, we must first
-    establish a way for our Python programs to connect to particular Linkbots
-    to control. The easiest way to do this is through BaroboLink. 
-  </para> <para>
-    To begin, open BaroboLink and connect to the robot you want to control.
-    When you write your Python program, the Python program you write will
-    automatically communicate with BaroboLink and run on the robot currently
-    connected to BaroboLink.
-  </para> <para>
-    Then, execute the following python program:
-    <example id="move.py"><title>A Python program that moves both joints an a &LinkbotI;.</title>
-      <programlisting language="java">
-#!/usr/bin/env python
-#Filename: move.py
-
-from barobo import Linkbot
-
-linkbot = Linkbot()
-linkbot.connect()
-
-print ("Moving both joints 90 degrees...")
-linkbot.move(90, 0, 90)
-      </programlisting>
-    </example>
-  </para>
-  <para>
-    Lets take a look at the previous program in detail. The first two lines,
-    <programlisting>
-#!/usr/bin/env python
-#Filename: move.py
-    </programlisting>
-    contain the same type of boilerplate code we saw in our previous example. The
-    next line reads:
-    <programlisting>
-from barobo import Linkbot
-    </programlisting>
-    This piece of code is necessary to begin controlling Linkbots. In Python,
-    you can use the "import" command to add additional functionality to your
-    python programs. There are many packages available to import into Python
-    provided by Python and also third-party organizations. Some packages
-    help you access system resources, some packages perform numerical analysis
-    and display graphical plots, etc. This line accesses the "barobo" package,
-    which is a package that helps control Barobo robots. Inside the barobo
-    package, there is a part called "Linkbot". Thus, the line above
-    "imports the Linkbot portion of the barobo package". This line
-    of code can be considered boilerplate code since most programs that control
-    Linkbots will have this line, or a line similar to this line of code.
-  </para>
-</section>  
 </chapter>
 
 </book>

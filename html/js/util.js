@@ -24,3 +24,6 @@ function AddRobotToGetParams(robotId)
 			});
 }
 
+$( function() {
+    $('.book').attr('title', '');
+    });

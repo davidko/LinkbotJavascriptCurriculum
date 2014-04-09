@@ -1,16 +1,23 @@
 <html><head>
       <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   <title>Programming the Barobo Linkbot with Python</title><link rel="stylesheet" type="text/css" href="barobostyle.css"><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><script src="js/vendor/linkbot.js"></script><script src="js/vendor/jquery-2.1.0.min.js"></script><script src="js/util.js"></script><script src="js/getURLParam.js"></script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="Programming the Barobo Linkbot with Python"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Programming the Barobo Linkbot with Python</h1></div><div><div class="author"><h3 class="author"><span class="firstname">David</span> <span class="surname">Ko</span></h3></div></div><div><p class="copyright">Copyright &copy; 2014 Barobo, Inc. </p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#d5e11">Preface</a></span></dt><dt><span class="chapter"><a href="#d5e25">1.  Introduction </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e31"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e34"> Python </a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e58">2. Introduction to the Barobo Linkbot</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e66">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e71">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e73">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e78">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e84">3.  Controlling A Barobo Linkbot with Python </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e86"> Making the Linkbot LED Blink </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d5e94">4. Introduction to Programming Linkbots with Python</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e96"> Linkbot Driver's Ed
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e100"></a></span></dt><dt><span class="section"><a href="#d5e104"></a></span></dt><dt><span class="section"><a href="#d5e114"> Explore </a></span></dt><dt><span class="section"><a href="#d5e118"> Challenge </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e125">Introduction to Python for Computer Programming</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e128">Getting Started with PyScripter</a></span></dt><dt><span class="section"><a href="#d5e132">Your First Python Program</a></span></dt><dt><span class="section"><a href="#d5e203"> A slightly more complex example </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e211">
-    Connecting to the Robot and Moving Motors
-  </a></span></dt></dl></dd></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>1.1. <a href="#fig_installwindows1"> Installing PortablePython - Barobo Edition, Step 1</a></dt><dt>1.2. <a href="#fig_installwindows2"> Installing PortablePython - Barobo Edition, Step 2</a></dt><dt>1.3. <a href="#fig_installwindows3"> Installing PortablePython - Barobo Edition, Step 3</a></dt><dt>2.1. <a href="#fig_schematic">Linkbot Diagram and Features</a></dt><dt>4.1. <a href="#fig_right_hand_rule"> The right-hand rule. </a></dt><dt>4.2. <a href="#fig_ninja_hello"> A Ninja-IDE Window after executing hello.py. </a></dt></dl></div><div class="list-of-examples"><p><b>List of Examples</b></p><dl><dt>3.1. <a href="#code:ch3ex1">A Simple Linkbot Program</a></dt><dt>4.1. <a href="#hello.py">A simple Python program</a></dt><dt>4.2. <a href="#hello_bad.py">A Python program with a syntax error.</a></dt><dt>4.3. <a href="#hello_bad2.py">A Python Program with a Bug</a></dt><dt>4.4. <a href="#hello_variable.py">A Python Program with Variables</a></dt><dt>4.5. <a href="#move.py">A Python program that moves both joints an a Linkbot&#8209;I.</a></dt></dl></div>
+   <title>Programming the Barobo Linkbot with Python</title><link rel="stylesheet" type="text/css" href="barobostyle.css"><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><script src="js/vendor/linkbot.js"></script><script src="js/vendor/jquery-2.1.0.min.js"></script><script src="js/util.js"></script><script src="js/getURLParam.js"></script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="Programming the Barobo Linkbot with Python"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Programming the Barobo Linkbot with Python</h1></div><div><div class="author"><h3 class="author"><span class="firstname">David</span> <span class="surname">Ko</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Bryan</span> <span class="surname">Richter</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Harris</span> <span class="surname">Hancock</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Challender</span></h3></div></div><div><p class="copyright">Copyright &copy; 2014 Barobo, Inc. </p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#d5e23">Preface</a></span></dt><dt><span class="chapter"><a href="#d5e37">1.  Introduction </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e42"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e45"> Python </a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e81">2. Introduction to the Barobo Linkbot</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e89">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e94">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e96">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e100">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e105">3. Introduction to Programming Linkbots with Python</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e109"> Linkbot Driver's Ed
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e113"> Linkbot Driver's Ed: Part 1 </a></span></dt><dt><span class="section"><a href="#d5e118"> Linkbot Driver's Ed: Part 2 </a></span></dt><dt><span class="section"><a href="#d5e129"> Explore </a></span></dt><dt><span class="section"><a href="#d5e133"> Challenge </a></span></dt></dl></dd></dl></dd></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>1.1. <a href="#fig_installwindows1"> Installing PortablePython - Barobo Edition, Step 1</a></dt><dt>1.2. <a href="#fig_installwindows2"> Installing PortablePython - Barobo Edition, Step 2</a></dt><dt>1.3. <a href="#fig_installwindows3"> Installing PortablePython - Barobo Edition, Step 3</a></dt><dt>1.4. <a href="#fig_install_contents"> PortablePython Install Contents</a></dt><dt>2.1. <a href="#fig_schematic">Linkbot Diagram and Features</a></dt><dt>3.1. <a href="#fig_right_hand_rule"> The right-hand rule. </a></dt></dl></div>
 
 
-<div class="preface" title="Preface"><div class="titlepage"><div><div><h2 class="title"><a name="d5e11"></a>Preface</h2></div></div></div>
+<div class="preface" title="Preface"><div class="titlepage"><div><div><h2 class="title"><a name="d5e23"></a>Preface</h2></div></div></div>
   <p>
     Welcome to "Programming the Barobo Linkbot with Python". The goals of
     this book are to familiarize you with the Python programming language
-    and essential concepts of programming robots.
+    and essential concepts of programming robots. The book accomplishes 
+    this in a "Robot-centric" manner: It teaches you how to do cool things
+    with your Linkbot, and you learn computer science principles 
+    along the way as a side effect of making the robot do cool things.
+    This breaks the old paradigm of teaching programming, which typically
+    focuses on one particular core concept, such as loops or functions,
+    per chapter. At the same time, we make sure to include all of the
+    important computer science concepts in this book, as well as 
+    a good amount of real computer science jargon to prepare you for 
+    real-world programming.
   </p> <p>
     The intended audience for this book are people with some computer
     experience and some basic math (Pre-Algebra) experience. The user
@@ -35,7 +42,7 @@
   </p>
 </div>
 
-<div class="chapter" title="Chapter&nbsp;1.&nbsp; Introduction"><div class="titlepage"><div><div><h2 class="title"><a name="d5e25"></a>Chapter&nbsp;1.&nbsp; Introduction </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e31"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e34"> Python </a></span></dt></dl></dd></dl></div> 
+<div class="chapter" title="Chapter&nbsp;1.&nbsp; Introduction"><div class="titlepage"><div><div><h2 class="title"><a name="d5e37"></a>Chapter&nbsp;1.&nbsp; Introduction </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e42"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e45"> Python </a></span></dt></dl></dd></dl></div> 
   <p>
     You may already have an idea of what a robot is from a variety of TV shows 
     and movies. They vary from tiny wheeled vehicles that beep and boop to
@@ -58,33 +65,29 @@
     physics, and even music! One such robot is the Linkbot modular robot.
     The Linkbot has been designed to be low-cost, fully-featured, tough, and
     easily programmable for day-to-day use by students and hobbyists of all 
-    ages. 
+    ages, and that is the robot that the following chapters will teach you
+    how to use.
   </p>
   <p>
     This curriculum is designed to bring someone with limited programming
     experience up to speed with programming a Linkbot using the Python
     programming language. Python is a free, fully featured, and easy 
     language to learn and use. It's unique design makes it popular among
-    a large spectrum of programmers from absolute beginners to Google
-    wizards. 
+    a large spectrum of programmers from absolute beginners to code 
+    wizards. It is commonly used as both an introductory language at
+    universities as well as an 
+    all-purpose in-house language by many major software and technology companies.
   </p>
-  <p>
-    This curriculum is organized in such a way that it teaches how to make the
-    robots do interesting stuff first, and teaches computer science and
-    programming concepts as a side-effect of making the robot do cool things.
-    As such, the chapters and sections are organized primarily by robot
-    functionality rather than computer science topics, such as variables,
-    loops, etc. 
-  </p>
-  <div class="section" title="Getting and Installing the Software"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e31"></a> Getting and Installing the Software </h2></div></div></div> 
+  
+  <div class="section" title="Getting and Installing the Software"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e42"></a> Getting and Installing the Software </h2></div></div></div> 
     <p>
       This curriculum requires a fully functioning Python environment
       and a copy of Linkbot Labs. It is very likely you are already viewing
       this document using Linkbot Labs. If you are not, you may obtain
       Linkbot Labs from http://www.barobo.com/downloads . 
     </p> 
-    <div class="section" title="Python"><div class="titlepage"><div><div><h3 class="title"><a name="d5e34"></a> Python </h3></div></div></div> 
-      <div class="section" title="Windows"><div class="titlepage"><div><div><h4 class="title"><a name="d5e36"></a> Windows </h4></div></div></div> 
+    <div class="section" title="Python"><div class="titlepage"><div><div><h3 class="title"><a name="d5e45"></a> Python </h3></div></div></div> 
+      <div class="section" title="Windows"><div class="titlepage"><div><div><h4 class="title"><a name="d5e47"></a> Windows </h4></div></div></div> 
         <p>
           To get Python up and running, we recommend downloading and installing
           our PortablePython Barobo Edition all-in-one installer at 
@@ -113,7 +116,7 @@
           </div></div><p><br class="figure-break">
         </p>
         <p>
-          At this point, you have several options for where to install PortablePython.
+          On this screen, you have several options for where to install PortablePython.
           The easiest place to install it is onto your Desktop. If that is where
           you would like to install it, simply click on "Desktop" and then click
           "OK".
@@ -128,7 +131,14 @@
         <p>
           Once you have installed PortablePython, you can navigate to that 
           directory using your file browser. Inside the directory, you will
-          see several executables, as shown in Figure 
+          see several executables, as shown in <a class="xref" href="#fig_install_contents" title="Figure&nbsp;1.4.&nbsp; PortablePython Install Contents">Figure&nbsp;1.4, &#8220; PortablePython Install Contents&#8221;</a>.
+          </p><div class="figure"><a name="fig_install_contents"></a><p class="title"><b>Figure&nbsp;1.4.&nbsp; PortablePython Install Contents</b></p><div class="figure-contents">
+            
+            <div class="mediaobject"><img src="images/windows_install_contents.png" alt="PortablePython Install Contents"></div>
+          </div></div><p><br class="figure-break">
+          The installed contents are:
+          </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"> IDLE : A Python development environment. </li><li class="listitem"> IPython : An interactive Python console. </li><li class="listitem"> PyScripter : A Python development environment. </li><li class="listitem"> Python : A Python console. </li><li class="listitem"> QtDesigner : A graphical user interface designer, for designing window based 
+              applications. </li></ul></div><p>
         </p>
       </div> 
     </div> 
@@ -136,7 +146,7 @@
   
 </div>
 
-<div class="chapter" title="Chapter&nbsp;2.&nbsp;Introduction to the Barobo Linkbot"><div class="titlepage"><div><div><h2 class="title"><a name="d5e58"></a>Chapter&nbsp;2.&nbsp;Introduction to the Barobo Linkbot</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e66">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e71">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e73">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e78">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></div> 
+<div class="chapter" title="Chapter&nbsp;2.&nbsp;Introduction to the Barobo Linkbot"><div class="titlepage"><div><div><h2 class="title"><a name="d5e81"></a>Chapter&nbsp;2.&nbsp;Introduction to the Barobo Linkbot</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e89">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e94">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e96">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e100">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></div> 
   <p>
   This chapter will discuss how to operate your Linkbots, including 
   tasks such as turning your Linkbot on and off and recalibrating
@@ -145,7 +155,7 @@
     
     <div class="mediaobject"><img src="images/linkbot_diagram.png" alt="Linkbot Diagram and Features"></div>
   </div></div><br class="figure-break">
-  <div class="section" title="Turning your Linkbot On and Off"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e66"></a>Turning your Linkbot On and Off</h2></div></div></div> 
+  <div class="section" title="Turning your Linkbot On and Off"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e89"></a>Turning your Linkbot On and Off</h2></div></div></div> 
     <p>
     To turn your Linkbot on and off, press and hold the power button as shown
     in <a class="xref" href="#fig_schematic" title="Figure&nbsp;2.1.&nbsp;Linkbot Diagram and Features">Figure&nbsp;2.1, &#8220;Linkbot Diagram and Features&#8221;</a> . When turning the robot on, 
@@ -159,8 +169,11 @@
     holding the power button until the robot turns off all LEDs and shuts off.
     </p>
   </div>
-  <div class="section" title="Linkbot Motor Zero Positions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e71"></a>Linkbot Motor Zero Positions</h2></div></div></div> 
-    <div class="section" title="Moving the Motors to Zero Positions"><div class="titlepage"><div><div><h3 class="title"><a name="d5e73"></a>Moving the Motors to Zero Positions</h3></div></div></div> 
+  <div class="section" title="Linkbot Motor Zero Positions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e94"></a>Linkbot Motor Zero Positions</h2></div></div></div> 
+    The Linkbot comes with a preset "Zero Position" for each of its motors.
+    The following sections will show you how to check and set the zero
+    position for each motor.
+    <div class="section" title="Moving the Motors to Zero Positions"><div class="titlepage"><div><div><h3 class="title"><a name="d5e96"></a>Moving the Motors to Zero Positions</h3></div></div></div> 
       <p>
       While the robot is on, you may make the robot move its joints to its
       zero positions by pressing and releasing the 'A' and 'B' buttons
@@ -169,7 +182,7 @@
       buttons together again. This can be used to check the calibration of 
       the motors. When the joints are in their zero positions, the large
       notch on the black joint face should line up with the notch on the
-      white plastic, as shown in Figure <a class="xref" href="#">???</a>.
+      white plastic .
       </p>
       <p>
       If the notches do not line up after the robot moves to its zero positions,
@@ -177,11 +190,11 @@
       process is described in the next section.
       </p>
     </div>
-    <div class="section" title="Recalibrating the Linkbot Zero Positions"><div class="titlepage"><div><div><h3 class="title"><a name="d5e78"></a>Recalibrating the Linkbot Zero Positions</h3></div></div></div> 
+    <div class="section" title="Recalibrating the Linkbot Zero Positions"><div class="titlepage"><div><div><h3 class="title"><a name="d5e100"></a>Recalibrating the Linkbot Zero Positions</h3></div></div></div> 
       To recalibrate the Linkbot zero positions, follow the following steps:
       <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"> Manually move the motors to their zero positions by aligning
              the notch on the motors with the notch on the while plastic
-             body, as shown in Figure <a class="xref" href="#">???</a>. If
+             body.  If
              the motors are locked, press and release buttons 'A' and 'B' 
              simultaneously, or power-cycle the robot to release the motors.</li><li class="listitem"> Hold down both buttons 'A' and 'B'. After about three seconds,
              the robot will flash its LED. It has now remembered its
@@ -193,120 +206,20 @@
 
 
 
-<div class="chapter" title="Chapter&nbsp;3.&nbsp; Controlling A Barobo Linkbot with Python"><div class="titlepage"><div><div><h2 class="title"><a name="d5e84"></a>Chapter&nbsp;3.&nbsp; Controlling A Barobo Linkbot with Python </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e86"> Making the Linkbot LED Blink </a></span></dt></dl></div> 
-  <div class="section" title="Making the Linkbot LED Blink"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e86"></a> Making the Linkbot LED Blink </h2></div></div></div> 
-    <p>
-      All Linkbots come equipped with a controllable light called a "Light
-      Emitting Diode" or LED for short. The Linkbot's LED can change both
-      color and brightness. 
-    </p>
-    <p>
-      Lets take a look at the code example in <a class="xref" href="#code:ch3ex1" title="Example&nbsp;3.1.&nbsp;A Simple Linkbot Program">Example&nbsp;3.1, &#8220;A Simple Linkbot Program&#8221;</a>.
-      </p><div class="example"><a name="code:ch3ex1"></a><p class="title"><b>Example&nbsp;3.1.&nbsp;A Simple Linkbot Program</b></p><div class="example-contents">
-        <pre class="programlisting">
-<em class="hl-comment" style="color: silver">#!/usr/bin/env python</em>
 
-<em class="hl-comment" style="color: silver"># File: ch3ex1.py</em>
-<em class="hl-comment" style="color: silver"># Modify the LED color on the Linkbot</em>
 
-<strong class="hl-keyword">import</strong> barobo
+<div class="chapter" title="Chapter&nbsp;3.&nbsp;Introduction to Programming Linkbots with Python"><div class="titlepage"><div><div><h2 class="title"><a name="d5e105"></a>Chapter&nbsp;3.&nbsp;Introduction to Programming Linkbots with Python</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e109"> Linkbot Driver's Ed
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e113"> Linkbot Driver's Ed: Part 1 </a></span></dt><dt><span class="section"><a href="#d5e118"> Linkbot Driver's Ed: Part 2 </a></span></dt><dt><span class="section"><a href="#d5e129"> Explore </a></span></dt><dt><span class="section"><a href="#d5e133"> Challenge </a></span></dt></dl></dd></dl></div> 
+  This chapter will help you start moving your Linkbot around. As you
+  go through this section, you will see small snippets of code that
+  moves the robot. If you choose, there is a link below each snippet
+  that allows you to see the whole piece of Python code being used to
+  control the robot. If you choose to see the unabridged code, you may see
+  some code that you do not yet understand. Don't worry about that yet;
+  We'll explain the details for that "boilerplate" code later.
+  <sup>[<a name="d5e107" href="#ftn.d5e107" class="footnote">1</a>]</sup>
 
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-linkbot = ctx.getLinkbot()
-
-linkbot.setLEDColor(<span class="hl-number">255</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>)
-
-        </pre>
-      </div></div><p><br class="example-break">
-    </p>
-    <div id="example_root">
-    {{ Placeholder }}
-    <form name="myform">
-      Robot Serial ID: <input type="text" name="serialIdInput" value="S3S3">
-      <input type="button" name="button" Value="Connect" onClick="connect(this.form)">
-      <input type="button" name="disconnect_button" Value="Disonnect" onClick="disconnect(this.form)">
-    </form>
-    <!-- <button type="button" onclick="connect( this.form )">Activate</button> -->
-    <h1>Joint Movement Tests:</h1>
-    <p id="serialID">text</p>
-    <p id="jointText1">text</p>
-    <p id="jointText2">text</p>
-    <p id="jointText3">text</p>
-
-    <h1> Button Tests: </h1>
-    <p id="serialID_button">text</p>
-    <p id="buttonText1">text</p>
-    <p id="buttonText2">text</p>
-
-    <h1> Accel Event Tests: </h1>
-    <p id="serialID_accel">text</p>
-    <p id="accelText1">text</p>
-    <p id="accelText2">text</p>
-    <p id="accelText3">text</p>
-
-<script>
-
-if (typeof baroboBridge == "undefined") {
-  document.getElementById("example_root").innerHTML="Use LinkbotLabs for interactive demo of this example!";
-}
-
-function connect(form)
-{
-  robot = form.serialIdInput.value;
-  baroboBridge.connectRobot(robot);
-  //baroboBridge.move("S3S3", 90, 90, 90);
-  baroboBridge.motorChanged.connect(onJointMoved);
-  baroboBridge.buttonChanged.connect(onButtonEvent);
-  baroboBridge.accelChanged.connect(onAccelEvent);
-  baroboBridge.enableButtonSignals(robot);
-  baroboBridge.enableMotorSignals(robot);
-  baroboBridge.enableAccelSignals(robot);
-}
-
-function disconnect(form)
-{
-  alert("Disconnecting...");
-  robot = form.serialIdInput.value;
-  baroboBridge.disableButtonSignals(robot);
-  baroboBridge.disableMotorSignals(robot);
-  baroboBridge.disableAccelSignals(robot);
-  baroboBridge.disconnectRobot(robot);
-}
-
-function onJointMoved(id, j1, j2, j3)
-{
-  document.getElementById("serialID").innerHTML = id;
-  document.getElementById("jointText1").innerHTML = j1.toString();
-  document.getElementById("jointText2").innerHTML = j2.toString();
-  document.getElementById("jointText3").innerHTML = j3.toString();
-}
-
-function onButtonEvent(id, mask, e)
-{
-  document.getElementById("serialID_button").innerHTML = id;
-  document.getElementById("buttonText1").innerHTML = mask.toString();
-  document.getElementById("buttonText2").innerHTML = e.toString();
-}
-
-function onAccelEvent(id, x, y, z)
-{
-  document.getElementById("serialID_accel").innerHTML = id;
-  document.getElementById("accelText1").innerHTML = x.toString();
-  document.getElementById("accelText2").innerHTML = y.toString();
-  document.getElementById("accelText3").innerHTML = z.toString();
-}
-
-</script>
-</div>
-  </div>
-</div>
-
-<div class="chapter" title="Chapter&nbsp;4.&nbsp;Introduction to Programming Linkbots with Python"><div class="titlepage"><div><div><h2 class="title"><a name="d5e94"></a>Chapter&nbsp;4.&nbsp;Introduction to Programming Linkbots with Python</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e96"> Linkbot Driver's Ed
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e100"></a></span></dt><dt><span class="section"><a href="#d5e104"></a></span></dt><dt><span class="section"><a href="#d5e114"> Explore </a></span></dt><dt><span class="section"><a href="#d5e118"> Challenge </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e125">Introduction to Python for Computer Programming</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e128">Getting Started with PyScripter</a></span></dt><dt><span class="section"><a href="#d5e132">Your First Python Program</a></span></dt><dt><span class="section"><a href="#d5e203"> A slightly more complex example </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e211">
-    Connecting to the Robot and Moving Motors
-  </a></span></dt></dl></div> 
-  <div class="section" title="Linkbot Driver's Ed"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e96"></a> Linkbot Driver's Ed
+  <div class="section" title="Linkbot Driver's Ed"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e109"></a> Linkbot Driver's Ed
     </h2></div></div></div>
     
     <p>
@@ -318,7 +231,7 @@ function onAccelEvent(id, x, y, z)
 <div class="reader-query">
 This section will use a Linkbot-I to demonstrate code snippets.
 Enter the ID of a Linkbot-I that you would like to use for this chapter: 
-<input name="linkbotId" class="linkbotId" placeholder="ZRG5" type="text" size="4">
+<input name="linkbotId" class="linkbotId" placeholder="ABCD" type="text" size="4">
 <button id="setRobotID"> Connect to Robot </button>
 <br>
 <span id="connectStatus"> </span>
@@ -348,7 +261,8 @@ $('#setRobotID').click( function(obj) {
 </div>
 </div><p>
     </p>
-    <div class="section"><div class="titlepage"></div>
+    <div class="section" title="Linkbot Driver's Ed: Part 1"><div class="titlepage"><div><div><h3 class="title"><a name="d5e113"></a> Linkbot Driver's Ed: Part 1 </h3></div></div></div> 
+      
       <p>
         We can use the <code class="function">move()</code> function to control a Linkbot's
         motors.
@@ -369,6 +283,7 @@ import barobo
 ctx = barobo.BaroboCtx()
 ctx.autoConnect()
 robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot.setJointSpeeds(90, 90, 90)
 
 robot.move(360, 0, 0)
   </pre>
@@ -389,7 +304,8 @@ robot.move(360, 0, 0)
         move at all.
       </p>
     </div>
-    <div class="section"><div class="titlepage"></div>
+    <div class="section" title="Linkbot Driver's Ed: Part 2"><div class="titlepage"><div><div><h3 class="title"><a name="d5e118"></a> Linkbot Driver's Ed: Part 2 </h3></div></div></div>
+      
       <p>
         Now, try this:
       </p><div class="ch4ex2">
@@ -408,6 +324,7 @@ import barobo
 ctx = barobo.BaroboCtx()
 ctx.autoConnect()
 robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot.setJointSpeeds(90, 90, 90)
 
 robot.move(0, 0, -360)
   </pre>
@@ -432,7 +349,7 @@ robot.move(0, 0, -360)
         available, so the second argument would be ignored. 
       </p>
       <p>
-        </p><div class="figure-float" style="float: right;"><div class="figure"><a name="fig_right_hand_rule"></a><p class="title"><b>Figure&nbsp;4.1.&nbsp; The right-hand rule. </b></p><div class="figure-contents">
+        </p><div class="figure-float" style="float: right;"><div class="figure"><a name="fig_right_hand_rule"></a><p class="title"><b>Figure&nbsp;3.1.&nbsp; The right-hand rule. </b></p><div class="figure-contents">
           
           <div class="mediaobject" align="center"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="90"><tr><td align="center"><img src="images/right_hand_rule.svg" align="middle" width="90" alt="The right-hand rule."></td></tr></table></div>
         </div></div><br class="figure-break"></div><p>
@@ -444,7 +361,7 @@ robot.move(0, 0, -360)
         math and engineering.
       </p>
     </div>
-    <div class="section" title="Explore"><div class="titlepage"><div><div><h3 class="title"><a name="d5e114"></a> Explore </h3></div></div></div> 
+    <div class="section" title="Explore"><div class="titlepage"><div><div><h3 class="title"><a name="d5e129"></a> Explore </h3></div></div></div> 
       <p>
         Now that you are familiar with the <code class="function">move()</code> function,
         let's try using it to move the robot around. Attach wheels to your 
@@ -468,6 +385,8 @@ import barobo
 ctx = barobo.BaroboCtx()
 ctx.autoConnect()
 robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot.setJointSpeeds(90, 90, 90)
+
 robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
 </pre>
 </div>
@@ -483,7 +402,7 @@ robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input typ
 </div><p> 
       </p>
     </div>
-    <div class="section" title="Challenge"><div class="titlepage"><div><div><h3 class="title"><a name="d5e118"></a> Challenge </h3></div></div></div> 
+    <div class="section" title="Challenge"><div class="titlepage"><div><div><h3 class="title"><a name="d5e133"></a> Challenge </h3></div></div></div> 
       <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
           <p>
             Can you drive the Linkbot straight forward?
@@ -502,6 +421,7 @@ import barobo
 ctx = barobo.BaroboCtx()
 ctx.autoConnect()
 robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot.setJointSpeeds(90, 90, 90)
 
 robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
 </pre>
@@ -538,6 +458,7 @@ import barobo
 ctx = barobo.BaroboCtx()
 ctx.autoConnect()
 robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot.setJointSpeeds(90, 90, 90)
 
 robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
 </pre>
@@ -557,268 +478,15 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
         </li></ol></div>
     </div>
   </div>
-  <div class="section" title="Introduction to Python for Computer Programming"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e125"></a>Introduction to Python for Computer Programming</h2></div></div></div> 
-    <p>
-      In the previous chapter, we learned how to control a Linkbot using the
-      Control Panel. However, the Control panel requires human interaction
-      to control the Linkbots. In order for the Linkbot to qualify as a
-      real robot, it must be able to perform automated tasks using computer
-      programs. By using computer programs to control the Linkbot, we can
-      make the Linkbot solve complicated tasks or perform tasks automatically.
-      Each program can be saved to a different file and different programs
-      can be executed depending on what you want your robot to do. 
-      Existing programs can also be modified to solve similar problems.
-    </p>
-    <div class="section" title="Getting Started with PyScripter"><div class="titlepage"><div><div><h3 class="title"><a name="d5e128"></a>Getting Started with PyScripter</h3></div></div></div> 
-      <p>
-        PyScripter is a type of program called an "Integrated Development
-        Environment (IDE)". Typically, IDE's are capable of editing code,
-        displaying code in a visually appealing manner, executing code, and
-        debugging code all in one program. 
-      </p> <p>
-        You can start PyScripter by double-clicking on the PyScripter in your
-        PortablePython installation folder.
-      </p>
-    </div>
-    <div class="section" title="Your First Python Program"><div class="titlepage"><div><div><h3 class="title"><a name="d5e132"></a>Your First Python Program</h3></div></div></div> 
-      <p>
-        Once you have opened PyScripter, begin by creating a new program. You 
-        can do this by clicking on the "New File" icon in the toolbar on
-        the left hand side, or by clicking "File -&gt; New" in the menu.
-      </p><p>
-        Once you have opened a new file, try typing the following code
-        into the window. Make sure you type the code in exactly as shown,
-        including capitalization and punctuation.
-        </p><div class="example"><a name="hello.py"></a><p class="title"><b>Example&nbsp;4.1.&nbsp;A simple Python program</b></p><div class="example-contents">
-          <pre class="programlisting">
-<span style="color: red">&lt;xi:include&gt;&lt;/xi:include&gt;</span>
-          </pre>
-        </div></div><p><br class="example-break">
-        After you have typed it in, save it to a file called "hello.py". 
-        Python programs typically use the suffix ".py".
-      </p><p>
-        </p><div class="figure"><a name="fig_ninja_hello"></a><p class="title"><b>Figure&nbsp;4.2.&nbsp; A Ninja-IDE Window after executing hello.py. </b></p><div class="figure-contents">
-          
-          <div class="mediaobject"><img src="images/fig_ninja_hello.png" alt="A Ninja-IDE Window after executing hello.py."></div>
-        </div></div><p><br class="figure-break">
-        Once you have saved your new program to a file, click on the "Run File"
-        icon 
-        <span class="guiicon">
-          <span class="inlinemediaobject"><img src="images/ninja_runfile.png"></span>
-        </span>
-        on the toolbar an the left-hand
-        side to run your program. Ninja should pop up an output window pane
-        with the results of your program, which should appear as shown in Figure
-        <a class="xref" href="#fig_ninja_hello" title="Figure&nbsp;4.2.&nbsp; A Ninja-IDE Window after executing hello.py.">Figure&nbsp;4.2, &#8220; A Ninja-IDE Window after executing hello.py. &#8221;</a>. As shown in the figure, the output of
-        this program is
-        <code class="computeroutput">Hello, world!</code>
-        Congratulations! You have just written and executed your first Python program!
-      </p> <p>
-        Now, lets talk about the program you just wrote. The file, "hello.py",
-        is called "Source Code". Source code for most major programming languages
-        is in a format called "plain text", which is the same format in ".txt"
-        files, which you may already be familiar with. This bare-bones format
-        cannot support any word-processor features which you may be used to, such as
-        different fonts, font sizes, embedded images, etc. 
-      </p> <p>
-        Python is capable of running program directly from source code using a 
-        process called "interpretation". Some other languages like C, C++, and
-        Java require the source code to be first "compiled" before it can be 
-        executed. The process of compilation is basically when another program,
-        called a "compiler", interprets human-readable source code into a
-        machine-native program (ones and zeros). 
-      </p> <p>
-        Python programs contain multiple lines of code. Typically, when a computer
-        executes code, it will start at the top of the file and execute statements,
-        line by line, going down the file. As we write more complex programs, there
-        are various ways for us to control how Python reads our program, but
-        for simple programs like our <code class="filename">hello.py</code>, we can imagine
-        Python starting at the top of our file and executing each line in order.
-        Thus, multiple print statements in our program will print multiple
-        lines of text onto our screen.
-      </p>
-      <div class="section" title="Dissecting Your First Python Program"><div class="titlepage"><div><div><h4 class="title"><a name="d5e156"></a>Dissecting Your First Python Program</h4></div></div></div> 
-        <p>
-          Lets take a closer look at your first Python program. The first line
-          looks like this:
-          </p><pre class="programlisting"> #!/usr/bin/env python </pre><p>
-          This line tells the computer that the program is a Python program.
-          You should remember to put this line at the top of all of your 
-          Python programs. This type of code which goes into all of your programs
-          is known as "Boilerplate" code. Many different languages have some sort
-          of boilerplate code; some more complex than others. The next two lines
-          look like this:
-          </p><pre class="programlisting">
-# File: hello.py
-# Prints the text "Hello, world!" onto the screen
-          </pre><p>
-          Note that both this code and the first line of code begin with the '#'
-          character. In programmer-speak, this character is usually referred to
-          as the "pound" character or a "hash" character. This character has
-          special meaning in Python. It tells the Python interpreter to ignore
-          anything else that comes after it in the line. This is known as a 
-          <span class="emphasis"><em> comment </em></span>. Comments are text that are meant tell
-          a human reader some information but are ignored by the computer.
-        </p> <p>
-          Finally, the last line of code in the program is
-          </p><pre class="programlisting">
-print('Hello, world!')
-          </pre><p>
-          This is where the real stuff happens: printing text onto the screen.
-          The word <code class="function">print</code> is a special command in python that is
-          used to print text onto the screen. It is known as a <span class="emphasis"><em>function</em></span>. Python
-          comes with hundreds of built-in functions you can use to do a variety
-          of stuff. The simplest functions are fairly straight-forward to use:
-          Type the name of the function, followed by an open-parentheses '(', 
-          followed by any arguments the function needs or expects separated by commas, followed by a close
-          paretheses ')'. In our case, the print function needs you to give it something
-          to print. In our example, we gave it the string 'Hello, world!' to print.
-          We will introduce more functions as you become familiar
-          with the language. 
-        </p>
-      </div>
-      <div class="section" title="Debugging Python Programs"><div class="titlepage"><div><div><h4 class="title"><a name="d5e166"></a>Debugging Python Programs</h4></div></div></div> 
-        <p>
-          Eventually, you will accidentally try to run Python programs
-          with typos in them. This is totally normal and completely unavoidable.
-          Unintentional errors in computer programs are called <span class="emphasis"><em>bugs
-          </em></span>. The process of finding and fixing bugs is called
-          <span class="emphasis"><em> debugging </em></span>.
-          Depending on where you make your typos, you may damage your Python
-          program enough such that Python can no longer properly run your program.
-          This type of error is called a <span class="emphasis"><em>Syntax Error</em></span>. Common syntax errors are
-          missing parentheses, missing quotation marks, and improperly indented
-          code. When Python encounters
-          a syntax error, it will give you an error message.
-        </p> <p>
-          Consider the following program:
-          </p><div class="example"><a name="hello_bad.py"></a><p class="title"><b>Example&nbsp;4.2.&nbsp;A Python program with a syntax error.</b></p><div class="example-contents">
-            
-            <pre class="programlisting">
-<span style="color: red">&lt;xi:include&gt;&lt;/xi:include&gt;</span>
-            </pre>
-          </div></div><p><br class="example-break">
-          When we try to run the program, we get the following output:
-          </p><pre class="screen">
-            <span style="color: red">&lt;xi:include&gt;&lt;/xi:include&gt;</span>
-          </pre><p>
-          Errors like this may seem daunting at first. Sometimes, the error 
-          messages can be cryptic. However, the first two lines indicate that
-          the error is possibly at line 7, and even points to a possible location
-          with a little tick mark. Can you spot the error there? Generally, syntax 
-          errors are on the reported line or sometimes a few lines before.
-        </p>
-      </div>
-      <div class="section" title="Summary"><div class="titlepage"><div><div><h4 class="title"><a name="d5e179"></a> Summary </h4></div></div></div> 
-        <div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">Python programs typically end in ".py". </li><li class="listitem">Python comments begin with the character '#'. </li><li class="listitem">Use the <code class="function">print</code> function to print text onto the screen.</li><li class="listitem">When you encounter error messages, scan the lines reported in the error
-                    as well as the lines around the reported error.</li><li class="listitem">Use the <code class="function">print</code> function to print text onto the screen.</li></ul></div>
-      </div>
-      <div class="section" title="Terminology"><div class="titlepage"><div><div><h4 class="title"><a name="d5e189"></a> Terminology </h4></div></div></div> 
-        <p>
-          bug, debug, function, comment, source code, <code class="function">print</code>
-        </p>
-      </div>
-      <div class="section" title="Exercises"><div class="titlepage"><div><div><h4 class="title"><a name="d5e193"></a>Exercises</h4></div></div></div> 
-        <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
-            What is wrong with the following code example?
-            <div class="example"><a name="hello_bad2.py"></a><p class="title"><b>Example&nbsp;4.3.&nbsp;A Python Program with a Bug</b></p><div class="example-contents">
-              <pre class="programlisting">
-#!/usr/bin/env python
-
-# File: hello_bad2.py
-# This program is supposed to print 'Hello, world!' onto the screen, but there
-# is a syntax error in it.
-
-print 'Hello, world!')
-              </pre>
-            </div></div><br class="example-break">
-          </li><li class="listitem">
-            <p>
-              See if you can write a program to display the following text which contains
-              multiple lines.
-              </p><pre class="screen">
-The quick brown fox
-jumped over the lazy dog.
-              </pre><p>
-            </p>
-          </li></ol></div>
-      </div>
-    </div>
-    <div class="section" title="A slightly more complex example"><div class="titlepage"><div><div><h3 class="title"><a name="d5e203"></a> A slightly more complex example </h3></div></div></div>
-      
-      <p>
-        Lets take a look at a slightly more complex example which actually
-        involves a little calculation.
-        </p><div class="example"><a name="hello_variable.py"></a><p class="title"><b>Example&nbsp;4.4.&nbsp;A Python Program with Variables</b></p><div class="example-contents">
-          <pre class="programlisting">
-<span style="color: red">&lt;xi:include&gt;&lt;/xi:include&gt;</span>
-          </pre>
-        </div></div><p><br class="example-break">
-        At the beginning of this example, we see the same type of boilerplate code
-        and comments that we saw in our previous example. Then, we see the lines
-        </p><pre class="programlisting">
-myvar = 10
-print(myvar)
-        </pre><p>
-        These two
-      </p>
-    </div>
-  </div>
-
-<div class="section" title="Connecting to the Robot and Moving Motors"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e211"></a>
-    Connecting to the Robot and Moving Motors
-  </h2></div></div></div>  
   
-  <p>
-    Lets write a program to move a Linkbot. To do this, we must first
-    establish a way for our Python programs to connect to particular Linkbots
-    to control. The easiest way to do this is through BaroboLink. 
-  </p> <p>
-    To begin, open BaroboLink and connect to the robot you want to control.
-    When you write your Python program, the Python program you write will
-    automatically communicate with BaroboLink and run on the robot currently
-    connected to BaroboLink.
-  </p> <p>
-    Then, execute the following python program:
-    </p><div class="example"><a name="move.py"></a><p class="title"><b>Example&nbsp;4.5.&nbsp;A Python program that moves both joints an a Linkbot&#8209;I.</b></p><div class="example-contents">
-      <pre class="programlisting">
-#!/usr/bin/env python
-#Filename: move.py
 
-from barobo <strong class="hl-keyword">import</strong> Linkbot
-
-linkbot = Linkbot()
-linkbot.connect()
-
-print (<strong class="hl-string"><em style="color:red">"Moving both joints 90 degrees..."</em></strong>)
-linkbot.move(<span class="hl-number">90</span>, <span class="hl-number">0</span>, <span class="hl-number">90</span>)
-      </pre>
-    </div></div><p><br class="example-break">
-  </p>
-  <p>
-    Lets take a look at the previous program in detail. The first two lines,
-    </p><pre class="programlisting">
-#!/usr/bin/env python
-#Filename: move.py
-    </pre><p>
-    contain the same type of boilerplate code we saw in our previous example. The
-    next line reads:
-    </p><pre class="programlisting">
-from barobo import Linkbot
-    </pre><p>
-    This piece of code is necessary to begin controlling Linkbots. In Python,
-    you can use the "import" command to add additional functionality to your
-    python programs. There are many packages available to import into Python
-    provided by Python and also third-party organizations. Some packages
-    help you access system resources, some packages perform numerical analysis
-    and display graphical plots, etc. This line accesses the "barobo" package,
-    which is a package that helps control Barobo robots. Inside the barobo
-    package, there is a part called "Linkbot". Thus, the line above
-    "imports the Linkbot portion of the barobo package". This line
-    of code can be considered boilerplate code since most programs that control
-    Linkbots will have this line, or a line similar to this line of code.
-  </p>
-</div>  
-</div>
+<div class="footnotes"><br><hr width="100" align="left"><div class="footnote">
+    <p><sup>[<a id="ftn.d5e107" href="#d5e107" class="para">1</a>] </sup>
+    "boilerplate" code refers to code that appears at the beginning of
+    many programs used for setup and configuration. Typically, boilerplate
+    does not change or changes only a little bit from program to program,
+    though it is required for the program to run properly.
+    </p>
+  </div></div></div>
 
 </div></body></html>

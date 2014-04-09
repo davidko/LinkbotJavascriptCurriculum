@@ -1,8 +1,15 @@
-body {
+html {
 	background-color:#e8e8f8;
+}
+
+body {
+	background-color:#ffffff;
 	max-width:8in;
 	margin-left:auto;
 	margin-right:auto;
+  padding:20px;
+  border:groove;
+  border-width:2px;
 }
 
 div.book {

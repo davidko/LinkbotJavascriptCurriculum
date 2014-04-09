@@ -7,7 +7,7 @@
 <book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns = "http://docbook.org/ns/docbook">
 <info>
-  <title>Programming the Barobo Linkbot with Python</title>
+  <title>Programming the Barobo Linkbot with Javascript</title>
   <author>
     <personname><firstname>David</firstname><surname>Ko</surname></personname>
   </author>
@@ -25,8 +25,8 @@
 
 <preface><title>Preface</title>
   <para>
-    Welcome to "Programming the Barobo Linkbot with Python". The goals of
-    this book are to familiarize you with the Python programming language
+    Welcome to "Programming the Barobo Linkbot with Javascript". The goals of
+    this book are to familiarize you with the Javascript programming language
     and essential concepts of programming robots. The book accomplishes 
     this in a "Robot-centric" manner: It teaches you how to do cool things
     with your Linkbot, and you learn computer science principles 
@@ -47,23 +47,7 @@
     file to file.
     No prior 
     programming or robotics experience is required to follow this curriculum.
-  </para> <para>
-    Some additional software is required for you to follow along with the
-    lessons in this book. The required software includes Python, several
-    third-party Python packages including our own Linkbot Control package,
-    and a good code editor. The easiest way to obtain, install, and setup
-    all of the software is to download and install our all-in-one Python
-    Curriculum bundle. The bundle includes:
-    <itemizedlist>
-      <listitem> <para>Python and all required and suggested Python packages. </para></listitem>
-      <listitem> <para>PyScripter : A powerful and pretty looking code editor. </para></listitem>
-      <listitem> <para>Curriculum code example programs. </para></listitem>
-      <listitem> <para>Many other packages for numerical analysis, graphics, writing games, and much, much more. </para></listitem>
-    </itemizedlist>
-    Some users may not want to install our bundle. These include Python
-    gurus who already have a version of Python installed, and other advanced
-    users. For everyone else, we highly recommend you use our bundled application.
-  </para>
+  </para> 
 </preface>
 
 <chapter> <title> Introduction </title>
@@ -94,8 +78,8 @@
   </para>
   <para>
     This curriculum is designed to bring someone with limited programming
-    experience up to speed with programming a Linkbot using the Python
-    programming language. Python is a free, fully featured, and easy 
+    experience up to speed with programming a Linkbot using the Javascript
+    programming language. Javascript is a free, fully featured, and easy 
     language to learn and use. It's unique design makes it popular among
     a large spectrum of programmers from absolute beginners to code 
     wizards. It is commonly used as both an introductory language at
@@ -114,15 +98,15 @@
   -->
   <section> <title> Getting and Installing the Software </title>
     <para>
-      This curriculum requires a fully functioning Python environment
+      This curriculum requires a fully functioning Javascript environment
       and a copy of Linkbot Labs. It is very likely you are already viewing
       this document using Linkbot Labs. If you are not, you may obtain
       Linkbot Labs from http://www.barobo.com/downloads . 
     </para> 
-    <section> <title> Python </title>
+    <section> <title> Javascript </title>
       <section> <title> Windows </title>
         <para>
-          To get Python up and running, we recommend downloading and installing
+          To get Javascript up and running, we recommend downloading and installing
           our PortablePython Barobo Edition all-in-one installer at 
           http://my.barobo.com/download/windows_python_allinone_installer .
         </para>
@@ -187,10 +171,10 @@
           </figure>
           The installed contents are:
           <itemizedlist>
-            <listitem> IDLE : A Python development environment. </listitem>
-            <listitem> IPython : An interactive Python console. </listitem>
-            <listitem> PyScripter : A Python development environment. </listitem>
-            <listitem> Python : A Python console. </listitem>
+            <listitem> IDLE : A Javascript development environment. </listitem>
+            <listitem> IPython : An interactive Javascript console. </listitem>
+            <listitem> PyScripter : A Javascript development environment. </listitem>
+            <listitem> Javascript : A Javascript console. </listitem>
             <listitem> QtDesigner : A graphical user interface designer, for designing window based 
               applications. </listitem>
           </itemizedlist>
@@ -372,7 +356,7 @@
   <para>
     BaroboLink is a computer program that allows you to connect to and 
     directly control your robots with an intuitive user-interface. It
-    can also be used to locate and organize robots so that your Python
+    can also be used to locate and organize robots so that your Javascript
     programs can easily find and control robots. This chapter will familiarize
     you with BaroboLink and concepts such as connecting to robots, motor 
     positions, moving motors, and reading sensor values.
@@ -500,7 +484,7 @@
 -->
 
 <!--
-<chapter> <title> Controlling A Barobo Linkbot with Python </title>
+<chapter> <title> Controlling A Barobo Linkbot with Javascript </title>
   <section> <title> Making the Linkbot LED Blink </title>
     <para>
       All Linkbots come equipped with a controllable light called a "Light
@@ -520,11 +504,11 @@
 </chapter>
 -->
 
-<chapter> <title>Introduction to Programming Linkbots with Python</title>
+<chapter> <title>Introduction to Programming Linkbots with Javascript</title>
   This chapter will help you start moving your Linkbot around. As you
   go through this section, you will see small snippets of code that
   moves the robot. If you choose, there is a link below each snippet
-  that allows you to see the whole piece of Python code being used to
+  that allows you to see the whole piece of Javascript code being used to
   control the robot. If you choose to see the unabridged code, you may see
   some code that you do not yet understand. Don't worry about that yet;
   We'll explain the details for that "boilerplate" code later.
@@ -542,7 +526,7 @@
     </title>
     <para>
       This section will introduce the basics to get your Linkbot moving
-      with simple pieces of Python code. 
+      with simple pieces of Javascript code. 
     </para>
     <para>
       <?dbhtml-include href="html/ch4intro.html"?>
@@ -619,7 +603,7 @@
     </section>
   </section>
   <!--
-  <section> <title>Introduction to Python for Computer Programming</title>
+  <section> <title>Introduction to Javascript for Computer Programming</title>
     <para>
       In the previous chapter, we learned how to control a Linkbot using the
       Control Panel. However, the Control panel requires human interaction
@@ -642,7 +626,7 @@
         PortablePython installation folder.
       </para>
     </section>
-    <section> <title>Your First Python Program</title>
+    <section> <title>Your First Javascript Program</title>
       <para>
         Once you have opened PyScripter, begin by creating a new program. You 
         can do this by clicking on the "New File" icon in the toolbar on
@@ -651,13 +635,13 @@
         Once you have opened a new file, try typing the following code
         into the window. Make sure you type the code in exactly as shown,
         including capitalization and punctuation.
-        <example id="hello.py"><title>A simple Python program</title>
+        <example id="hello.py"><title>A simple Javascript program</title>
           <programlisting>
 <xi:include href="code/hello.py" parse="text"/>
           </programlisting>
         </example>
         After you have typed it in, save it to a file called "hello.py". 
-        Python programs typically use the suffix ".py".
+        Javascript programs typically use the suffix ".py".
       </para><para>
         <figure id="fig_ninja_hello">
           <title> A Ninja-IDE Window after executing hello.py. </title>
@@ -682,7 +666,7 @@
         <xref linkend="fig_ninja_hello"/>. As shown in the figure, the output of
         this program is
         <computeroutput>Hello, world!</computeroutput>
-        Congratulations! You have just written and executed your first Python program!
+        Congratulations! You have just written and executed your first Javascript program!
       </para> <para>
         Now, lets talk about the program you just wrote. The file, "hello.py",
         is called "Source Code". Source code for most major programming languages
@@ -691,30 +675,30 @@
         cannot support any word-processor features which you may be used to, such as
         different fonts, font sizes, embedded images, etc. 
       </para> <para>
-        Python is capable of running program directly from source code using a 
+        Javascript is capable of running program directly from source code using a 
         process called "interpretation". Some other languages like C, C++, and
         Java require the source code to be first "compiled" before it can be 
         executed. The process of compilation is basically when another program,
         called a "compiler", interprets human-readable source code into a
         machine-native program (ones and zeros). 
       </para> <para>
-        Python programs contain multiple lines of code. Typically, when a computer
+        Javascript programs contain multiple lines of code. Typically, when a computer
         executes code, it will start at the top of the file and execute statements,
         line by line, going down the file. As we write more complex programs, there
-        are various ways for us to control how Python reads our program, but
+        are various ways for us to control how Javascript reads our program, but
         for simple programs like our <filename>hello.py</filename>, we can imagine
-        Python starting at the top of our file and executing each line in order.
+        Javascript starting at the top of our file and executing each line in order.
         Thus, multiple print statements in our program will print multiple
         lines of text onto our screen.
       </para>
-      <section> <title>Dissecting Your First Python Program</title>
+      <section> <title>Dissecting Your First Javascript Program</title>
         <para>
-          Lets take a closer look at your first Python program. The first line
+          Lets take a closer look at your first Javascript program. The first line
           looks like this:
           <programlisting> #!/usr/bin/env python </programlisting>
-          This line tells the computer that the program is a Python program.
+          This line tells the computer that the program is a Javascript program.
           You should remember to put this line at the top of all of your 
-          Python programs. This type of code which goes into all of your programs
+          Javascript programs. This type of code which goes into all of your programs
           is known as "Boilerplate" code. Many different languages have some sort
           of boilerplate code; some more complex than others. The next two lines
           look like this:
@@ -725,7 +709,7 @@
           Note that both this code and the first line of code begin with the '#'
           character. In programmer-speak, this character is usually referred to
           as the "pound" character or a "hash" character. This character has
-          special meaning in Python. It tells the Python interpreter to ignore
+          special meaning in Javascript. It tells the Javascript interpreter to ignore
           anything else that comes after it in the line. This is known as a 
           <emphasis> comment </emphasis>. Comments are text that are meant tell
           a human reader some information but are ignored by the computer.
@@ -736,7 +720,7 @@ print('Hello, world!')
           </programlisting>
           This is where the real stuff happens: printing text onto the screen.
           The word <function>print</function> is a special command in python that is
-          used to print text onto the screen. It is known as a <emphasis>function</emphasis>. Python
+          used to print text onto the screen. It is known as a <emphasis>function</emphasis>. Javascript
           comes with hundreds of built-in functions you can use to do a variety
           of stuff. The simplest functions are fairly straight-forward to use:
           Type the name of the function, followed by an open-parentheses '(', 
@@ -747,23 +731,23 @@ print('Hello, world!')
           with the language. 
         </para>
       </section>
-      <section> <title>Debugging Python Programs</title>
+      <section> <title>Debugging Javascript Programs</title>
         <para>
-          Eventually, you will accidentally try to run Python programs
+          Eventually, you will accidentally try to run Javascript programs
           with typos in them. This is totally normal and completely unavoidable.
           Unintentional errors in computer programs are called <emphasis>bugs
           </emphasis>. The process of finding and fixing bugs is called
           <emphasis> debugging </emphasis>.
-          Depending on where you make your typos, you may damage your Python
-          program enough such that Python can no longer properly run your program.
+          Depending on where you make your typos, you may damage your Javascript
+          program enough such that Javascript can no longer properly run your program.
           This type of error is called a <emphasis>Syntax Error</emphasis>. Common syntax errors are
           missing parentheses, missing quotation marks, and improperly indented
-          code. When Python encounters
+          code. When Javascript encounters
           a syntax error, it will give you an error message.
         </para> <para>
           Consider the following program:
           <example id="hello_bad.py">
-            <title>A Python program with a syntax error.</title>
+            <title>A Javascript program with a syntax error.</title>
             <programlisting>
 <xi:include href="code/hello_bad.py" parse="text"/>
             </programlisting>
@@ -781,8 +765,8 @@ print('Hello, world!')
       </section>
       <section> <title> Summary </title>
         <itemizedlist>
-          <listitem>Python programs typically end in ".py". </listitem>
-          <listitem>Python comments begin with the character '#'. </listitem>
+          <listitem>Javascript programs typically end in ".py". </listitem>
+          <listitem>Javascript comments begin with the character '#'. </listitem>
           <listitem>Use the <function>print</function> function to print text onto the screen.</listitem>
           <listitem>When you encounter error messages, scan the lines reported in the error
                     as well as the lines around the reported error.</listitem>
@@ -798,7 +782,7 @@ print('Hello, world!')
         <orderedlist>
           <listitem>
             What is wrong with the following code example?
-            <example id="hello_bad2.py"><title>A Python Program with a Bug</title>
+            <example id="hello_bad2.py"><title>A Javascript Program with a Bug</title>
               <programlisting>
 #!/usr/bin/env python
 
@@ -828,7 +812,7 @@ jumped over the lazy dog.
       <para>
         Lets take a look at a slightly more complex example which actually
         involves a little calculation.
-        <example id="hello_variable.py"><title>A Python Program with Variables</title>
+        <example id="hello_variable.py"><title>A Javascript Program with Variables</title>
           <programlisting>
 <xi:include href="code/hello_variable.py" parse="text"/>
           </programlisting>

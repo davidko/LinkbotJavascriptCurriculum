@@ -1,13 +1,13 @@
 <html><head>
       <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-   <title>Programming the Barobo Linkbot with Python</title><link rel="stylesheet" type="text/css" href="barobostyle.css"><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><script src="js/vendor/linkbot.js"></script><script src="js/vendor/jquery-2.1.0.min.js"></script><script src="js/util.js"></script><script src="js/getURLParam.js"></script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="Programming the Barobo Linkbot with Python"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Programming the Barobo Linkbot with Python</h1></div><div><div class="author"><h3 class="author"><span class="firstname">David</span> <span class="surname">Ko</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Bryan</span> <span class="surname">Richter</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Harris</span> <span class="surname">Hancock</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Challender</span></h3></div></div><div><p class="copyright">Copyright &copy; 2014 Barobo, Inc. </p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#d5e23">Preface</a></span></dt><dt><span class="chapter"><a href="#d5e37">1.  Introduction </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e42"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e45"> Python </a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e81">2. Introduction to the Barobo Linkbot</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e89">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e94">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e96">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e100">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e105">3. Introduction to Programming Linkbots with Python</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e109"> Linkbot Driver's Ed
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e113"> Linkbot Driver's Ed: Part 1 </a></span></dt><dt><span class="section"><a href="#d5e118"> Linkbot Driver's Ed: Part 2 </a></span></dt><dt><span class="section"><a href="#d5e129"> Explore </a></span></dt><dt><span class="section"><a href="#d5e133"> Challenge </a></span></dt></dl></dd></dl></dd></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>1.1. <a href="#fig_installwindows1"> Installing PortablePython - Barobo Edition, Step 1</a></dt><dt>1.2. <a href="#fig_installwindows2"> Installing PortablePython - Barobo Edition, Step 2</a></dt><dt>1.3. <a href="#fig_installwindows3"> Installing PortablePython - Barobo Edition, Step 3</a></dt><dt>1.4. <a href="#fig_install_contents"> PortablePython Install Contents</a></dt><dt>2.1. <a href="#fig_schematic">Linkbot Diagram and Features</a></dt><dt>3.1. <a href="#fig_right_hand_rule"> The right-hand rule. </a></dt></dl></div>
+   <title>Programming the Barobo Linkbot with Javascript</title><link rel="stylesheet" type="text/css" href="barobostyle.css"><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><script src="js/vendor/linkbot.js"></script><script src="js/vendor/jquery-2.1.0.min.js"></script><script src="js/util.js"></script><script src="js/getURLParam.js"></script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="Programming the Barobo Linkbot with Javascript"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Programming the Barobo Linkbot with Javascript</h1></div><div><div class="author"><h3 class="author"><span class="firstname">David</span> <span class="surname">Ko</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Bryan</span> <span class="surname">Richter</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Harris</span> <span class="surname">Hancock</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Challender</span></h3></div></div><div><p class="copyright">Copyright &copy; 2014 Barobo, Inc. </p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#d5e23">Preface</a></span></dt><dt><span class="chapter"><a href="#d5e27">1.  Introduction </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e32"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e35"> Javascript </a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e71">2. Introduction to the Barobo Linkbot</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e79">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e84">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e86">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e90">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e95">3. Introduction to Programming Linkbots with Javascript</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e99"> Linkbot Driver's Ed
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e103"> Linkbot Driver's Ed: Part 1 </a></span></dt><dt><span class="section"><a href="#d5e108"> Linkbot Driver's Ed: Part 2 </a></span></dt><dt><span class="section"><a href="#d5e119"> Explore </a></span></dt><dt><span class="section"><a href="#d5e123"> Challenge </a></span></dt></dl></dd></dl></dd></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>1.1. <a href="#fig_installwindows1"> Installing PortablePython - Barobo Edition, Step 1</a></dt><dt>1.2. <a href="#fig_installwindows2"> Installing PortablePython - Barobo Edition, Step 2</a></dt><dt>1.3. <a href="#fig_installwindows3"> Installing PortablePython - Barobo Edition, Step 3</a></dt><dt>1.4. <a href="#fig_install_contents"> PortablePython Install Contents</a></dt><dt>2.1. <a href="#fig_schematic">Linkbot Diagram and Features</a></dt><dt>3.1. <a href="#fig_right_hand_rule"> The right-hand rule. </a></dt></dl></div>
 
 
 <div class="preface" title="Preface"><div class="titlepage"><div><div><h2 class="title"><a name="d5e23"></a>Preface</h2></div></div></div>
   <p>
-    Welcome to "Programming the Barobo Linkbot with Python". The goals of
-    this book are to familiarize you with the Python programming language
+    Welcome to "Programming the Barobo Linkbot with Javascript". The goals of
+    this book are to familiarize you with the Javascript programming language
     and essential concepts of programming robots. The book accomplishes 
     this in a "Robot-centric" manner: It teaches you how to do cool things
     with your Linkbot, and you learn computer science principles 
@@ -28,21 +28,10 @@
     file to file.
     No prior 
     programming or robotics experience is required to follow this curriculum.
-  </p> <p>
-    Some additional software is required for you to follow along with the
-    lessons in this book. The required software includes Python, several
-    third-party Python packages including our own Linkbot Control package,
-    and a good code editor. The easiest way to obtain, install, and setup
-    all of the software is to download and install our all-in-one Python
-    Curriculum bundle. The bundle includes:
-    </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"> <p>Python and all required and suggested Python packages. </p></li><li class="listitem"> <p>PyScripter : A powerful and pretty looking code editor. </p></li><li class="listitem"> <p>Curriculum code example programs. </p></li><li class="listitem"> <p>Many other packages for numerical analysis, graphics, writing games, and much, much more. </p></li></ul></div><p>
-    Some users may not want to install our bundle. These include Python
-    gurus who already have a version of Python installed, and other advanced
-    users. For everyone else, we highly recommend you use our bundled application.
-  </p>
+  </p> 
 </div>
 
-<div class="chapter" title="Chapter&nbsp;1.&nbsp; Introduction"><div class="titlepage"><div><div><h2 class="title"><a name="d5e37"></a>Chapter&nbsp;1.&nbsp; Introduction </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e42"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e45"> Python </a></span></dt></dl></dd></dl></div> 
+<div class="chapter" title="Chapter&nbsp;1.&nbsp; Introduction"><div class="titlepage"><div><div><h2 class="title"><a name="d5e27"></a>Chapter&nbsp;1.&nbsp; Introduction </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e32"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e35"> Javascript </a></span></dt></dl></dd></dl></div> 
   <p>
     You may already have an idea of what a robot is from a variety of TV shows 
     and movies. They vary from tiny wheeled vehicles that beep and boop to
@@ -70,8 +59,8 @@
   </p>
   <p>
     This curriculum is designed to bring someone with limited programming
-    experience up to speed with programming a Linkbot using the Python
-    programming language. Python is a free, fully featured, and easy 
+    experience up to speed with programming a Linkbot using the Javascript
+    programming language. Javascript is a free, fully featured, and easy 
     language to learn and use. It's unique design makes it popular among
     a large spectrum of programmers from absolute beginners to code 
     wizards. It is commonly used as both an introductory language at
@@ -79,17 +68,17 @@
     all-purpose in-house language by many major software and technology companies.
   </p>
   
-  <div class="section" title="Getting and Installing the Software"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e42"></a> Getting and Installing the Software </h2></div></div></div> 
+  <div class="section" title="Getting and Installing the Software"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e32"></a> Getting and Installing the Software </h2></div></div></div> 
     <p>
-      This curriculum requires a fully functioning Python environment
+      This curriculum requires a fully functioning Javascript environment
       and a copy of Linkbot Labs. It is very likely you are already viewing
       this document using Linkbot Labs. If you are not, you may obtain
       Linkbot Labs from http://www.barobo.com/downloads . 
     </p> 
-    <div class="section" title="Python"><div class="titlepage"><div><div><h3 class="title"><a name="d5e45"></a> Python </h3></div></div></div> 
-      <div class="section" title="Windows"><div class="titlepage"><div><div><h4 class="title"><a name="d5e47"></a> Windows </h4></div></div></div> 
+    <div class="section" title="Javascript"><div class="titlepage"><div><div><h3 class="title"><a name="d5e35"></a> Javascript </h3></div></div></div> 
+      <div class="section" title="Windows"><div class="titlepage"><div><div><h4 class="title"><a name="d5e37"></a> Windows </h4></div></div></div> 
         <p>
-          To get Python up and running, we recommend downloading and installing
+          To get Javascript up and running, we recommend downloading and installing
           our PortablePython Barobo Edition all-in-one installer at 
           http://my.barobo.com/download/windows_python_allinone_installer .
         </p>
@@ -137,7 +126,7 @@
             <div class="mediaobject"><img src="images/windows_install_contents.png" alt="PortablePython Install Contents"></div>
           </div></div><p><br class="figure-break">
           The installed contents are:
-          </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"> IDLE : A Python development environment. </li><li class="listitem"> IPython : An interactive Python console. </li><li class="listitem"> PyScripter : A Python development environment. </li><li class="listitem"> Python : A Python console. </li><li class="listitem"> QtDesigner : A graphical user interface designer, for designing window based 
+          </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"> IDLE : A Javascript development environment. </li><li class="listitem"> IPython : An interactive Javascript console. </li><li class="listitem"> PyScripter : A Javascript development environment. </li><li class="listitem"> Javascript : A Javascript console. </li><li class="listitem"> QtDesigner : A graphical user interface designer, for designing window based 
               applications. </li></ul></div><p>
         </p>
       </div> 
@@ -146,7 +135,7 @@
   
 </div>
 
-<div class="chapter" title="Chapter&nbsp;2.&nbsp;Introduction to the Barobo Linkbot"><div class="titlepage"><div><div><h2 class="title"><a name="d5e81"></a>Chapter&nbsp;2.&nbsp;Introduction to the Barobo Linkbot</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e89">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e94">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e96">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e100">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></div> 
+<div class="chapter" title="Chapter&nbsp;2.&nbsp;Introduction to the Barobo Linkbot"><div class="titlepage"><div><div><h2 class="title"><a name="d5e71"></a>Chapter&nbsp;2.&nbsp;Introduction to the Barobo Linkbot</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e79">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e84">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e86">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e90">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></div> 
   <p>
   This chapter will discuss how to operate your Linkbots, including 
   tasks such as turning your Linkbot on and off and recalibrating
@@ -155,7 +144,7 @@
     
     <div class="mediaobject"><img src="images/linkbot_diagram.png" alt="Linkbot Diagram and Features"></div>
   </div></div><br class="figure-break">
-  <div class="section" title="Turning your Linkbot On and Off"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e89"></a>Turning your Linkbot On and Off</h2></div></div></div> 
+  <div class="section" title="Turning your Linkbot On and Off"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e79"></a>Turning your Linkbot On and Off</h2></div></div></div> 
     <p>
     To turn your Linkbot on and off, press and hold the power button as shown
     in <a class="xref" href="#fig_schematic" title="Figure&nbsp;2.1.&nbsp;Linkbot Diagram and Features">Figure&nbsp;2.1, &#8220;Linkbot Diagram and Features&#8221;</a> . When turning the robot on, 
@@ -169,11 +158,11 @@
     holding the power button until the robot turns off all LEDs and shuts off.
     </p>
   </div>
-  <div class="section" title="Linkbot Motor Zero Positions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e94"></a>Linkbot Motor Zero Positions</h2></div></div></div> 
+  <div class="section" title="Linkbot Motor Zero Positions"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e84"></a>Linkbot Motor Zero Positions</h2></div></div></div> 
     The Linkbot comes with a preset "Zero Position" for each of its motors.
     The following sections will show you how to check and set the zero
     position for each motor.
-    <div class="section" title="Moving the Motors to Zero Positions"><div class="titlepage"><div><div><h3 class="title"><a name="d5e96"></a>Moving the Motors to Zero Positions</h3></div></div></div> 
+    <div class="section" title="Moving the Motors to Zero Positions"><div class="titlepage"><div><div><h3 class="title"><a name="d5e86"></a>Moving the Motors to Zero Positions</h3></div></div></div> 
       <p>
       While the robot is on, you may make the robot move its joints to its
       zero positions by pressing and releasing the 'A' and 'B' buttons
@@ -190,7 +179,7 @@
       process is described in the next section.
       </p>
     </div>
-    <div class="section" title="Recalibrating the Linkbot Zero Positions"><div class="titlepage"><div><div><h3 class="title"><a name="d5e100"></a>Recalibrating the Linkbot Zero Positions</h3></div></div></div> 
+    <div class="section" title="Recalibrating the Linkbot Zero Positions"><div class="titlepage"><div><div><h3 class="title"><a name="d5e90"></a>Recalibrating the Linkbot Zero Positions</h3></div></div></div> 
       To recalibrate the Linkbot zero positions, follow the following steps:
       <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"> Manually move the motors to their zero positions by aligning
              the notch on the motors with the notch on the while plastic
@@ -208,23 +197,23 @@
 
 
 
-<div class="chapter" title="Chapter&nbsp;3.&nbsp;Introduction to Programming Linkbots with Python"><div class="titlepage"><div><div><h2 class="title"><a name="d5e105"></a>Chapter&nbsp;3.&nbsp;Introduction to Programming Linkbots with Python</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e109"> Linkbot Driver's Ed
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e113"> Linkbot Driver's Ed: Part 1 </a></span></dt><dt><span class="section"><a href="#d5e118"> Linkbot Driver's Ed: Part 2 </a></span></dt><dt><span class="section"><a href="#d5e129"> Explore </a></span></dt><dt><span class="section"><a href="#d5e133"> Challenge </a></span></dt></dl></dd></dl></div> 
+<div class="chapter" title="Chapter&nbsp;3.&nbsp;Introduction to Programming Linkbots with Javascript"><div class="titlepage"><div><div><h2 class="title"><a name="d5e95"></a>Chapter&nbsp;3.&nbsp;Introduction to Programming Linkbots with Javascript</h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e99"> Linkbot Driver's Ed
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e103"> Linkbot Driver's Ed: Part 1 </a></span></dt><dt><span class="section"><a href="#d5e108"> Linkbot Driver's Ed: Part 2 </a></span></dt><dt><span class="section"><a href="#d5e119"> Explore </a></span></dt><dt><span class="section"><a href="#d5e123"> Challenge </a></span></dt></dl></dd></dl></div> 
   This chapter will help you start moving your Linkbot around. As you
   go through this section, you will see small snippets of code that
   moves the robot. If you choose, there is a link below each snippet
-  that allows you to see the whole piece of Python code being used to
+  that allows you to see the whole piece of Javascript code being used to
   control the robot. If you choose to see the unabridged code, you may see
   some code that you do not yet understand. Don't worry about that yet;
   We'll explain the details for that "boilerplate" code later.
-  <sup>[<a name="d5e107" href="#ftn.d5e107" class="footnote">1</a>]</sup>
+  <sup>[<a name="d5e97" href="#ftn.d5e97" class="footnote">1</a>]</sup>
 
-  <div class="section" title="Linkbot Driver's Ed"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e109"></a> Linkbot Driver's Ed
+  <div class="section" title="Linkbot Driver's Ed"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e99"></a> Linkbot Driver's Ed
     </h2></div></div></div>
     
     <p>
       This section will introduce the basics to get your Linkbot moving
-      with simple pieces of Python code. 
+      with simple pieces of Javascript code. 
     </p>
     <p>
       </p><div class="ch4intro">
@@ -261,7 +250,7 @@ $('#setRobotID').click( function(obj) {
 </div>
 </div><p>
     </p>
-    <div class="section" title="Linkbot Driver's Ed: Part 1"><div class="titlepage"><div><div><h3 class="title"><a name="d5e113"></a> Linkbot Driver's Ed: Part 1 </h3></div></div></div> 
+    <div class="section" title="Linkbot Driver's Ed: Part 1"><div class="titlepage"><div><div><h3 class="title"><a name="d5e103"></a> Linkbot Driver's Ed: Part 1 </h3></div></div></div> 
       
       <p>
         We can use the <code class="function">move()</code> function to control a Linkbot's
@@ -271,21 +260,15 @@ $('#setRobotID').click( function(obj) {
 
 <div class="abridgedCode">
 <pre class="programlisting">
-robot.move(<span class="hl-number">360</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>)
+robot.move(<span class="hl-number">360</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>);
 </pre>
 </div>
 <div class="unabridgedCode" style="display: none;">
   <pre class="programlisting">
-#!/usr/bin/env python
-# File: ch4ex1.py
+var robot = Linkbots.connect('<span class="robotID">ABCD</span>');
+robot.angularSpeed(90);
 
-import barobo
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
-robot.setJointSpeeds(90, 90, 90)
-
-robot.move(360, 0, 0)
+robot.move(360, 0, 0);
   </pre>
 </div>
 
@@ -304,7 +287,7 @@ robot.move(360, 0, 0)
         move at all.
       </p>
     </div>
-    <div class="section" title="Linkbot Driver's Ed: Part 2"><div class="titlepage"><div><div><h3 class="title"><a name="d5e118"></a> Linkbot Driver's Ed: Part 2 </h3></div></div></div>
+    <div class="section" title="Linkbot Driver's Ed: Part 2"><div class="titlepage"><div><div><h3 class="title"><a name="d5e108"></a> Linkbot Driver's Ed: Part 2 </h3></div></div></div>
       
       <p>
         Now, try this:
@@ -312,21 +295,15 @@ robot.move(360, 0, 0)
 
 <div class="abridgedCode">
 <pre class="programlisting">
-robot.move(<span class="hl-number">0</span>, <span class="hl-number">0</span>, <span class="hl-number">-360</span>)
+robot.move(<span class="hl-number">0</span>, <span class="hl-number">0</span>, <span class="hl-number">-360</span>);
 </pre>
 </div>
 <div class="unabridgedCode" style="display: none;">
   <pre class="programlisting">
-#!/usr/bin/env python
-# File: ch4ex2.py
+var robot = Linkbots.connect('<span class="robotID">ABCD</span>');
+robot.angularSpeed(90);
 
-import barobo
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
-robot.setJointSpeeds(90, 90, 90)
-
-robot.move(0, 0, -360)
+robot.move(0, 0, -360);
   </pre>
 </div>
 
@@ -361,7 +338,7 @@ robot.move(0, 0, -360)
         math and engineering.
       </p>
     </div>
-    <div class="section" title="Explore"><div class="titlepage"><div><div><h3 class="title"><a name="d5e129"></a> Explore </h3></div></div></div> 
+    <div class="section" title="Explore"><div class="titlepage"><div><div><h3 class="title"><a name="d5e119"></a> Explore </h3></div></div></div> 
       <p>
         Now that you are familiar with the <code class="function">move()</code> function,
         let's try using it to move the robot around. Attach wheels to your 
@@ -372,22 +349,16 @@ robot.move(0, 0, -360)
 
 <div class="abridgedCode">
 <pre class="programlisting">
-robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
+robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">);
 </pre>
 </div>
 
 <div class="unabridgedCode" style="display:none;">
 <pre class="programlisting">
-#!/usr/bin/env python
-# File: ch4ex3.py
+var robot = Linkbots.connect('<span class="robotID">ABCD</span>');
+robot.angularSpeed(90);
 
-import barobo
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
-robot.setJointSpeeds(90, 90, 90)
-
-robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
+robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">);
 </pre>
 </div>
 
@@ -402,7 +373,7 @@ robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input typ
 </div><p> 
       </p>
     </div>
-    <div class="section" title="Challenge"><div class="titlepage"><div><div><h3 class="title"><a name="d5e133"></a> Challenge </h3></div></div></div> 
+    <div class="section" title="Challenge"><div class="titlepage"><div><div><h3 class="title"><a name="d5e123"></a> Challenge </h3></div></div></div> 
       <div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
           <p>
             Can you drive the Linkbot straight forward?
@@ -410,20 +381,16 @@ robot.move( <input type="text" size="4" value="0" class="j1text">, 0, <input typ
 
 <div class="abridgedCode">
 <pre class="programlisting">
-robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
+robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">);
 </pre>
 </div>
 
 <div class="unabridgedCode" style="display:none;">
 <pre class="programlisting">
-#!/usr/bin/env python
-import barobo
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
-robot.setJointSpeeds(90, 90, 90)
+var robot = Linkbots.connect('<span class="robotID">ABCD</span>');
+robot.angularSpeed(90);
 
-robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
+robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">);
 </pre>
 </div>
 
@@ -447,20 +414,16 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
 
 <div class="abridgedCode">
 <pre class="programlisting">
-robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
+robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">);
 </pre>
 </div>
 
 <div class="unabridgedCode" style="display:none;">
 <pre class="programlisting">
-#!/usr/bin/env python
-import barobo
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
-robot.setJointSpeeds(90, 90, 90)
+var robot = Linkbots.connect('<span class="robotID">ABCD</span>');
+robot.angularSpeed(90);
 
-robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">)
+robot.move(<input type="text" size="4" value="0" class="j1text">, 0, <input type="text" size="4" value="0" class="j3text">);
 </pre>
 </div>
 
@@ -481,7 +444,7 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
   
 
 <div class="footnotes"><br><hr width="100" align="left"><div class="footnote">
-    <p><sup>[<a id="ftn.d5e107" href="#d5e107" class="para">1</a>] </sup>
+    <p><sup>[<a id="ftn.d5e97" href="#d5e97" class="para">1</a>] </sup>
     "boilerplate" code refers to code that appears at the beginning of
     many programs used for setup and configuration. Typically, boilerplate
     does not change or changes only a little bit from program to program,

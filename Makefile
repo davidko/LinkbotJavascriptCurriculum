@@ -30,3 +30,17 @@ saxon-chunk:
 
 saxon9:
 	/usr/bin/java -jar ~/.local/share/java/saxon9he.jar curriculum.docbook.xml mychunkstylesheet.xml
+
+saxon-chunk-hlh:
+	/usr/bin/java -cp "/usr/share/saxon-6.5/lib/saxon.jar:./xslthl.jar" \
+		-Dxslthl.config="file:///usr/share/xml/docbook/stylesheet/docbook-xsl/highlighting/xslthl-config.xml" \
+		-Dxslthl.config="file:///usr/share/sgml/docbook/xsl-stylesheets/highlighting/xslthl-config.xml" \
+		com.icl.saxon.StyleSheet \
+		-o chunkout \
+		curriculum.docbook.xml \
+		mychunkstylesheet.xml \
+		html.stylesheet=barobostyle.css \
+		chunk.section.depth=2 \
+		chunk.first.sections=1
+	mv *.html html
+

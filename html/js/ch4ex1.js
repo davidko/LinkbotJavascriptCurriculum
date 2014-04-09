@@ -1,15 +1,18 @@
 $( function() {
 var showWholeCode = false;
 var chapterClassName = '.ch4ex1';
+var robotID = GetRobotId();
+if(robotID == undefined) {
+  robotID = 'ABCD';
+}
 
 $(chapterClassName).find('.tryNow').click( function(obj) {
-  robotID = GetRobotId();
 
   var bot = Linkbots.connect(robotID);
   bot.move(360, 0, 0);
-  });
+});
 
-  AddRobotToGetParams(GetRobotId());
+AddRobotToGetParams(robotID);
 
 $(chapterClassName).find('.expandProgram').click( function(obj) {
   if(showWholeCode) {

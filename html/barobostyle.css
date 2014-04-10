@@ -70,26 +70,24 @@ div.reader-query {
 
 div.code-snippet {
 	max-width:800px;
-        /*
-	box-shadow:5px 5px 5px #888888;
+        border-radius: 6px;
+        border:solid;
+        border-width:1px;
+        border-color:#888;
 	padding:5px;
-  border-radius: 6px;
-  border:solid;
-  border-width:1px;
-  border-color:#888;
+	padding-left:5px;
+        position: relative;
+	box-shadow:5px 5px 5px #888888;
+	background-color:#e0fefe;
 }
 
 a {
   background: transparent;
 }
+
 a:active,
 a:hover {
   outline: 0;
-  */
-	padding-left:5px;
-        position: relative;
-	box-shadow:5px 5px 5px #888888;
-	background-color:#e0fefe;
 }
 
 .hidden {
@@ -97,10 +95,15 @@ a:hover {
 }
 
 .hider-tab {
+        border: inherit;
+        border-radius: inherit;
+        border-top: none;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
         box-shadow: inherit;
         position: absolute;
         right: 20%;
-        bottom: -20px; /* -(height of image specified in html) */
+        bottom: -21px; /* -(height of image specified in html + border of parent) */
         text-align: center;
 	background-color: inherit;
         margin-left: auto;

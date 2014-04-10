@@ -1,30 +1,31 @@
 $( function() {
-var showWholeCode = false;
-var chapterClassName = '.ch4ex1';
+
+var thisExercise = $('.ch4ex1');
+
 var robotID = GetRobotId();
 if(robotID == undefined) {
   robotID = 'ABCD';
 }
 else {
-  $('.unknown-robot-id-comment', chapterClassName).text('');
+  $('.unknown-robot-id-comment', thisExercise).text('');
 }
 
-$(chapterClassName).find('.tryNow').click( function(obj) {
+AddRobotToGetParams(robotID);
+$('.robotID', thisExercise).text(robotID);
+
+$('.tryNow', thisExercise).click( function(obj) {
   var bot = Linkbots.connect(robotID);
   bot.move(360, 0, 0);
 });
 
-AddRobotToGetParams(robotID);
-$('.robotID', chapterClassName).text(GetRobotId());
-
 var nextRotateAngle = 180;
 
-$('.expand-program', chapterClassName).click(function (event) {
+$('.expand-program', thisExercise).click(function (event) {
     // Suppress addition of this navigation event to the browser's history, so
     // the Back button isn't screwed up.
     event.preventDefault();
 
-    $('pre.hidden', chapterClassName).slideToggle();
+    $('pre.hidden', thisExercise).slideToggle();
 
     // Flip the hider tab image
     $('img', this).css('transform', 'rotate(' + nextRotateAngle + 'deg)');

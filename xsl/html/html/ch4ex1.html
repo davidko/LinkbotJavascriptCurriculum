@@ -2,19 +2,15 @@
 
 <div class="code-snippet">
     <pre class="hidden">
-#!/usr/bin/env python
-# File: ch4ex1.py
+// File: ch4ex1.js
 
-import barobo
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-<span class="unknown-robot-id-comment"><br/># Change the robot ID shown below to the ID of your Linkbot.</span>
-robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
-robot.setJointSpeeds(90, 90, 90)
+<span class="unknown-robot-id-comment"><br/>// Change the robot ID shown below to the ID of your Linkbot.</span>
+var robot = Linkbots.connect('<span class="robotID">ABCD</span>');
+robot.angularSpeed(90);
     </pre>
 
     <pre>
-robot.move(<span class="hl-number">360</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>)
+robot.move(<span class="hl-number">360</span>, <span class="hl-number">0</span>, <span class="hl-number">0</span>);
     </pre>
 
     <div class="hider-tab">

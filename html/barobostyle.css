@@ -8,7 +8,7 @@ html {
 body {
 	background-color:#ffffff;
 	max-width:8in;
-	margin-left:auto;
+	margin-left:240px;
 	margin-right:auto;
   padding:20px;
   border:groove;
@@ -86,3 +86,4 @@ a:active,
 a:hover {
   outline: 0;
 }
+

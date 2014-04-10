@@ -26,4 +26,13 @@ function AddRobotToGetParams(robotId)
 
 $( function() {
     $('.book').attr('title', '');
+
+    // Add a LinkbotLabs icon on the left side that sticks no matter where you scroll
+    var baseStyle = "width:auto;height:auto;position:absolute;left:20px;background-color:#fff;padding:5px;border:solid;border-width:1px;top:20px;";
+    $('body').append('<div id="navIcon" style="'+baseStyle+'top:20px;"> <a href="../index.html"><img src="images/linkbot-labs-ER-logo-200x46px.png"/></a> </div>');
+    $(document).scroll( function() {
+      var top = parseInt($(window).scrollTop());
+      top = top + 20;
+      $('#navIcon').attr('style', baseStyle+'top:' + top + 'px;');
     });
+});

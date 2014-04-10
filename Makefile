@@ -33,7 +33,6 @@ saxon9:
 
 saxon-chunk-hlh:
 	/usr/bin/java -cp "/usr/share/saxon-6.5/lib/saxon.jar:./xslthl.jar" \
-		-Dxslthl.config="file:///usr/share/xml/docbook/stylesheet/docbook-xsl/highlighting/xslthl-config.xml" \
 		-Dxslthl.config="file:///usr/share/sgml/docbook/xsl-stylesheets/highlighting/xslthl-config.xml" \
 		com.icl.saxon.StyleSheet \
 		-o chunkout \

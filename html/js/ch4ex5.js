@@ -28,12 +28,10 @@ r.find('.stop').click( function(obj) {
 AddRobotToGetParams(GetRobotId());
 
 r.find('input.j1text').keyup( function() {
-  r.find('input.j1text').val( $(this).val() );
   j1text = $(this).val();
 });
 
 r.find('input.j3text').keyup( function() {
-  r.find('input.j3text').val( $(this).val() );
   j3text = $(this).val();
 });
 
